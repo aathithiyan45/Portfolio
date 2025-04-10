@@ -1,0 +1,84 @@
+.social-links {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.social-icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Media queries for responsive design */
+@media screen and (max-width: 768px) {
+  .social-links {
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .social-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .social-icon i {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .social-links {
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .social-icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+.social-icon.linkedin {
+  background-color: #0A66C2;
+  color: white;
+}
+
+.social-icon.github {
+  background-color: #ffffff;
+  color: #24292F;
+  border: 1px solid #e1e4e8;
+}
+
+.social-icon.instagram {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  color: white;
+}
+
+.social-icon.figma {
+  background-color: #1E1E1E;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-icon.figma i {
+  background: linear-gradient(to bottom, #F24E1E, #FF7262, #A259FF, #1ABCFE, #0ACF83);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.social-icon i {
+  font-size: 1.2rem;
+}
+
+.social-icon:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
