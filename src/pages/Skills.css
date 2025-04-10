@@ -1,139 +1,295 @@
 .skills-page {
   min-height: 100vh;
-  background: white;
-  padding: 4rem 2rem;
-}
-
-.skills-container {
-  max-width: 1200px;
-  margin: 0 auto;
+  display: flex;
+  align-items: center;
   padding: 2rem;
-}
-
-.skills-header {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
-.skills-header h1 {
-  font-size: 48px;
-  margin-bottom: 1rem;
-}
-
-.skills-header p {
-  color: #666;
-  font-size: 18px;
-}
-
-.skills {
-  min-height: 100vh;
-  background: white;
-  padding: 4rem;
 }
 
 .skills-section {
   max-width: 1200px;
   margin: 0 auto;
-}
-
-.skills-content {
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   gap: 4rem;
 }
 
-.skills-text {
+.skills-cards {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skill-card {
   width: 100%;
+  max-width: 400px;
+  padding: 2.5rem;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 15px;
+  transition: all 0.5s ease;
+  animation: fadeIn 0.5s ease;
+  cursor: pointer;
 }
 
-.skills-text h1 {
-  font-size: 48px;
-  font-weight: 600;
-  margin-bottom: 1rem;
+.hero-content {
+  max-width: 500px;
 }
 
-.skills-text h2 {
-  font-size: 24px;
-  color: #666;
+.hero-content p {
   margin-bottom: 2rem;
 }
 
-.skills-text p {
-  font-size: 18px;
-  line-height: 1.6;
-  color: #666;
-  margin-bottom: 3rem;
-  max-width: 800px;
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: #2d3436;
 }
 
-.skills-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 3rem;
-}
-
-.skill-category h3 {
-  font-size: 24px;
+.hero-content h2 {
+  font-size: 2rem;
   margin-bottom: 1.5rem;
+  color: #000;
 }
 
-.skill-items {
+.skills-cards {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
 }
 
-.skill-item {
+.card-section {
   width: 100%;
+  max-width: 400px;
 }
 
-.skill-item span {
-  display: block;
-  margin-bottom: 0.5rem;
+.card-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.card-nav span {
+  padding: 0.8rem 2rem;
+  cursor: pointer;
+  border-radius: 25px;
+  background: #f5f5f5;
+  transition: all 0.3s ease;
   font-weight: 500;
 }
 
-.progress-bar {
+.skill-card {
   width: 100%;
-  height: 8px;
-  background: #e9ecef;
-  border-radius: 4px;
-  overflow: hidden;
+  padding: 2.5rem;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 15px;
+  transition: all 0.5s ease;
+  animation: fadeIn 0.5s ease;
 }
 
-.progress {
-  height: 100%;
-  background: black;
-  border-radius: 4px;
-  transition: width 1s ease-in-out;
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-number {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 1rem;
+  background: #f5f5f5;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+}
+
+.skill-card h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #000;
+}
+
+.skill-card p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.skill-card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.skill-card:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.skill-card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.skill-card:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 1024px) {
+  .skills-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .hero-content {
+    margin-bottom: 3rem;
+  }
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.card-section {
+  margin-bottom: 2rem;
+}
+
+.card-nav {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card-nav span {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 20px;
+  background: #f5f5f5;
+  transition: all 0.3s ease;
+}
+
+.card-nav span.active {
+  background: #0984e3;
+  color: white;
+}
+
+.card-nav span:hover {
+  transform: translateY(-2px);
+}
+
+.btn {
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.btn.primary {
+  background-color: #0984e3;
+  color: white;
+}
+
+.btn.primary:hover {
+  background-color: #0773c5;
+  transform: translateY(-2px);
+}
+
+.btn.secondary {
+  background-color: transparent;
+  color: #0984e3;
+  border: 2px solid #0984e3;
+}
+
+.btn.secondary:hover {
+  background-color: #0984e3;
+  color: white;
+  transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {
-  .skills {
-    padding: 2rem;
+  .cta-buttons {
+    flex-direction: column;
   }
-
-  .skills-text h1 {
-    font-size: 36px;
-  }
-
-  .skills-text h2 {
-    font-size: 20px;
+  
+  .btn {
+    width: 100%;
+    text-align: center;
   }
 }
 
-@media (max-width: 768px) {
-  .navbar {
-    margin-right: 0;
-    padding: 1rem;
-    justify-content: center;
-  }
+.nav-line {
+  position: relative;
+  display: flex;
+  gap: 3rem;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
 
-  .skills-header h1 {
-    font-size: 36px;
-  }
+.nav-line::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #eee;
+}
 
-  .skills-container {
-    padding: 2rem 1rem;
-  }
+.nav-item {
+  cursor: pointer;
+  padding: 0.5rem 0;
+  font-weight: 500;
+  color: #666;
+  transition: all 0.3s ease;
+}
+
+.nav-item.active {
+  color: #0984e3;
+}
+
+.nav-item.active ~ .nav-indicator {
+  transform: translateX(0);
+}
+
+.nav-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 50%;
+  background: #0984e3;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.nav-item:last-child.active ~ .nav-indicator {
+  transform: translateX(100%);
 }

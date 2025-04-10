@@ -1,84 +1,82 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import './Skills.css';
+import SocialLinks from '../components/SocialLinks';
 
 const Skills = () => {
-  useEffect(() => {
-    const handleScroll = () => {
-      const navbar = document.querySelector('.navbar');
-      if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
+  const [category, setCategory] = useState('development');
+  const [currentCard, setCurrentCard] = useState(0);
+  
+  const skillCards = {
+    development: [
+      {
+        number: "01",
+        title: "Frontend Development",
+        description: "Building responsive and interactive web applications using React, Next.js, and modern JavaScript."
+      },
+      {
+        number: "02",
+        title: "Backend Development",
+        description: "Creating robust server-side solutions with Node.js, Express, and database management."
       }
-    };
+    ],
+    design: [
+      {
+        number: "03",
+        title: "UI/UX Design",
+        description: "Crafting intuitive and engaging user interfaces with focus on user experience and accessibility."
+      },
+      {
+        number: "04",
+        title: "Tools & Technologies",
+        description: "Utilizing modern design tools like Figma, Adobe XD, and following latest design principles."
+      }
+    ]
+  };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const handleCardClick = () => {
+    setCurrentCard((prev) => (prev + 1) % skillCards[category].length);
+  };
 
   return (
-    <div className="skills">
+    <div className="skills-page">
       <div className="skills-section">
-        <div className="skills-content">
-          <div className="skills-text">
-            <h1>Skills & Expertise</h1>
-            <h2>Full-Stack Developer & UI/UX Designer</h2>
-            <p>
-              I specialize in building user-focused, responsive web applications using
-              modern technologies like Django, React, HTML/CSS, and Figma. From
-              wireframes to APIs, I love transforming ideas into real digital products
-              that solve problems and look great doing it.
-            </p>
-
-            <div className="skills-list">
-              <div className="skill-category">
-                <h3>Frontend Development</h3>
-                <div className="skill-items">
-                  <div className="skill-item">
-                    <span>React.js</span>
-                    <div className="progress-bar">
-                      <div className="progress" style={{ width: '85%' }}></div>
-                    </div>
-                  </div>
-                  <div className="skill-item">
-                    <span>HTML/CSS</span>
-                    <div className="progress-bar">
-                      <div className="progress" style={{ width: '90%' }}></div>
-                    </div>
-                  </div>
-                  <div className="skill-item">
-                    <span>JavaScript</span>
-                    <div className="progress-bar">
-                      <div className="progress" style={{ width: '80%' }}></div>
-                    </div>
-                  </div>
-                </div>
+        <div className="hero-content">
+          <h1>Our Vision,</h1>
+          <h1>Our Creativity</h1>
+          <h2>Building Digital Experiences That Matter!</h2>
+          <p>
+            I specialize in Full-Stack Development & UI/UX Design to
+            craft seamless and high-performing web applications
+          </p>
+          <div className="cta-buttons">
+            <a href="/projects" className="btn primary">View My Work</a>
+            <a href="/contact" className="btn secondary">Get In Touch</a>
+          </div>
+          <SocialLinks />
+        </div>
+        
+        <div className="skills-cards">
+          <div className="card-nav">
+            <div className="nav-line">
+              <div 
+                className={`nav-item ${category === 'development' ? 'active' : ''}`} 
+                onClick={() => { setCategory('development'); setCurrentCard(0); }}
+              >
+                Development
               </div>
-
-              <div className="skill-category">
-                <h3>Backend Development</h3>
-                <div className="skill-items">
-                  <div className="skill-item">
-                    <span>Django</span>
-                    <div className="progress-bar">
-                      <div className="progress" style={{ width: '75%' }}></div>
-                    </div>
-                  </div>
-                  <div className="skill-item">
-                    <span>Python</span>
-                    <div className="progress-bar">
-                      <div className="progress" style={{ width: '85%' }}></div>
-                    </div>
-                  </div>
-                  <div className="skill-item">
-                    <span>Node.js</span>
-                    <div className="progress-bar">
-                      <div className="progress" style={{ width: '70%' }}></div>
-                    </div>
-                  </div>
-                </div>
+              <div 
+                className={`nav-item ${category === 'design' ? 'active' : ''}`} 
+                onClick={() => { setCategory('design'); setCurrentCard(0); }}
+              >
+                Design
               </div>
+              <div className="nav-indicator"></div>
             </div>
+          </div>
+          <div className="skill-card" onClick={handleCardClick}>
+            <span className="card-number">{skillCards[category][currentCard].number}</span>
+            <h3>{skillCards[category][currentCard].title}</h3>
+            <p>{skillCards[category][currentCard].description}</p>
           </div>
         </div>
       </div>

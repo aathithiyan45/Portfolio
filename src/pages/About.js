@@ -8,10 +8,10 @@ const About = () => {
       <div className="hero-section">
         <div className="hero-content">
           <h1>Hi, I'm Aathithiyan</h1>
-          <h2>Information Technology student</h2>
+          <h2>🎓 Information Technology student</h2>
           <h3 className="animated">Full-Stack Developer & UI/UX Designer</h3>
           <p>
-          I love building applications that are not only functional but also offer great user experiences. From turning ideas into interactive interfaces to developing powerful backend logic, I enjoy every part of the development process.
+          I’m passionate about building digital experiences that are both functional and user-friendly. Whether it's crafting smooth user interfaces or developing strong backend systems, I enjoy turning ideas into real, working applications
           </p>
           <div className="cta-buttons">
             <a href="/resume.pdf" className="btn primary" download>Download CV</a>
