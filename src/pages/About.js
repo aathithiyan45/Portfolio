@@ -5,49 +5,22 @@ import SocialLinks from '../components/SocialLinks';
 const About = () => {
   return (
     <div className="about">
-      <div className="about-section">
-        <div className="about-content">
-          <div className="about-text">
-            <h1>About Me</h1>
-            <h2>Full-Stack Developer & UI/UX Designer</h2>
-            <p>
-              I'm a passionate Full Stack Developer and Creative Designer from Tamil Nadu. I specialize in crafting clean, user-centric web applications with a strong focus on both backend logic and frontend aesthetics.
-            </p>
-            <p>
-              Currently pursuing my degree in Information Technology, I have hands-on experience in building real-time projects using Django, React, and modern UI/UX tools like Figma. I believe in continuous learning, clean code, and solving real-world problems with technology.
-            </p>
-            <p>
-              When I'm not coding, I love designing interfaces, editing videos, and exploring new tools that boost productivity and creativity.
-            </p>
-
-            <div className="personal-info">
-              <div className="info-item">
-                <span>Full Name:</span>
-                <p>Aathithiyan P</p>
-              </div>
-              <div className="info-item">
-                <span>Email:</span>
-                <p>aathithiyan45@gmail.com</p>
-              </div>
-              <div className="info-item">
-                <span>Location:</span>
-                <p>Tamil Nadu, India</p>
-              </div>
-              <div className="info-item">
-                <span>Languages:</span>
-                <p>English, Tamil</p>
-              </div>
-            </div>
-
-            <div className="cta-buttons">
-              <a href="/contact" className="btn primary">Get In Touch</a>
-              <a href="/resume.pdf" className="btn secondary" download>Download CV</a>
-            </div>
-            <SocialLinks />
+      <div className="hero-section">
+        <div className="hero-content">
+          <h1>Hi, I'm Aathithiyan</h1>
+          <h2>Information Technology student</h2>
+          <h3 className="animated">Full-Stack Developer & UI/UX Designer</h3>
+          <p>
+          I love building applications that are not only functional but also offer great user experiences. From turning ideas into interactive interfaces to developing powerful backend logic, I enjoy every part of the development process.
+          </p>
+          <div className="cta-buttons">
+            <a href="/resume.pdf" className="btn primary" download>Download CV</a>
+            <a href="/contact" className="btn secondary">Get In Touch</a>
           </div>
-          <div className="about-image">
-            <img src="/profile.jpeg" alt="Aathithiyan" />
-          </div>
+          <SocialLinks />
+        </div>
+        <div className="hero-image">
+          <img src="profile.jpeg" alt="Aathithiyan" />
         </div>
       </div>
     </div>

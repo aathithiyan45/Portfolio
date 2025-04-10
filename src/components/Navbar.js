@@ -13,7 +13,12 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="nav-container">
-        <button className="menu-btn" onClick={toggleMenu}>
+        <button 
+          className="menu-btn" 
+          onClick={toggleMenu}
+          aria-expanded={isMenuOpen}
+          aria-label="Toggle navigation menu"
+        >
           {isMenuOpen ? '✕' : '☰'}
         </button>
         

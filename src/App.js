@@ -15,10 +15,10 @@ function App() {
       <main className="main-content">
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route exact path="/about" element={<About />} />
+          <Route exact path="/projects" element={<Projects />} />
+          <Route exact path="/skills" element={<Skills />} />
+          <Route exact path="/contact" element={<Contact />} />
         </Routes>
       </main>
     </div>
