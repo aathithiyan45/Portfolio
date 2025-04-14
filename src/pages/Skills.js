@@ -3,39 +3,71 @@ import './Skills.css';
 import SocialLinks from '../components/SocialLinks';
 
 const Skills = () => {
-  const [category, setCategory] = useState('development');
-  const [currentCard, setCurrentCard] = useState(0);
-  
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [category] = useState('development');  // Removed setCategory since it's not used
+
   const skillCards = {
     development: [
       {
         number: "01",
-        title: "Frontend Development",
-        description: "Building responsive and interactive web applications using React, Next.js, and modern JavaScript."
+        title: "UI/UX Design",
+        description: "I focus on creating intuitive, user-friendly, and visually appealing interfaces.",
+        skills: [
+          "Wireframing & Prototyping (Figma, Adobe XD)",
+          "User Research & Usability Testing",
+          "Design Systems & Accessibility",
+          "Responsive & Interactive UI Components"
+        ],
+        progress: 85
       },
       {
         number: "02",
-        title: "Backend Development",
-        description: "Creating robust server-side solutions with Node.js, Express, and database management."
-      }
-    ],
-    design: [
+        title: "Frontend Development",
+        description: "I build dynamic, responsive, and interactive web applications using:",
+        skills: [
+          "HTML, CSS, JavaScript (ES6+)",
+          "React.js (Learning & Implementing)",
+          "Tailwind CSS & Bootstrap for Styling",
+          "Flexbox & Grid for Layouts"
+        ],
+        progress: 75
+      },
       {
         number: "03",
-        title: "UI/UX Design",
-        description: "Crafting intuitive and engaging user interfaces with focus on user experience and accessibility."
+        title: "Backend Development",
+        description: "I develop scalable and efficient backend systems with:",
+        skills: [
+          "Django (Python) - REST APIs, Authentication",
+          "Database Management - PostgreSQL, SQLite",
+          "Django ORM & CRUD Operations",
+          "API Integration & Security Best Practices"
+        ],
+        progress: 70
       },
       {
         number: "04",
         title: "Tools & Technologies",
-        description: "Utilizing modern design tools like Figma, Adobe XD, and following latest design principles."
+        description: "I use various tools to streamline my workflow:",
+        skills: [
+          "Version Control: Git, GitHub",
+          "Project Management: Notion, Trello",
+          "AI Tools: GitHub Copilot, Codeium, Chatgpt, Claude",
+          "Automation & Deployment: Vercel, nelify, pythonanywhere"
+        ],
+        progress: 80
       }
     ]
   };
 
-  const handleCardClick = () => {
-    setCurrentCard((prev) => (prev + 1) % skillCards[category].length);
+  const handlePrevious = () => {
+    setCurrentIndex(prev => prev > 0 ? prev - 1 : skillCards[category].length - 1);
   };
+
+  const handleNext = () => {
+    setCurrentIndex(prev => prev < skillCards[category].length - 1 ? prev + 1 : 0);
+  };
+
+  const currentCard = skillCards[category][currentIndex];
 
   return (
     <div className="skills-page">
@@ -43,7 +75,7 @@ const Skills = () => {
         <div className="hero-content">
           <h1>Our Vision,</h1>
           <h1>Our Creativity</h1>
-          <h2>Building Digital Experiences That Matter!</h2>
+          <h2>Creating Digital Solutions That Inspire!</h2>
           <p>
             I specialize in Full-Stack Development & UI/UX Design to
             craft seamless and high-performing web applications
@@ -56,27 +88,32 @@ const Skills = () => {
         </div>
         
         <div className="skills-cards">
-          <div className="card-nav">
-            <div className="nav-line">
-              <div 
-                className={`nav-item ${category === 'development' ? 'active' : ''}`} 
-                onClick={() => { setCategory('development'); setCurrentCard(0); }}
-              >
-                Development
+          <div className="skill-cards-container">
+            <div className="skill-card">
+              <div className="skill-card-header">
+                <div className="skill-card-number">{currentCard.number}</div>
+                <div className="skill-card-nav">
+                  <span className="nav-arrow" onClick={handlePrevious}>◀</span>
+                  <span className="nav-arrow" onClick={handleNext}>▶</span>
+                </div>
               </div>
-              <div 
-                className={`nav-item ${category === 'design' ? 'active' : ''}`} 
-                onClick={() => { setCategory('design'); setCurrentCard(0); }}
-              >
-                Design
+              
+              <h3 className="skill-card-title">{currentCard.title}</h3>
+              <p className="skill-card-description">{currentCard.description}</p>
+              
+              <ul className="skill-card-list">
+                {currentCard.skills.map((skill, skillIndex) => (
+                  <li key={skillIndex}>{skill}</li>
+                ))}
+              </ul>
+              
+              <div className="skill-card-progress">
+                <div 
+                  className="progress-bar" 
+                  style={{ width: `${currentCard.progress}%` }}
+                ></div>
               </div>
-              <div className="nav-indicator"></div>
             </div>
-          </div>
-          <div className="skill-card" onClick={handleCardClick}>
-            <span className="card-number">{skillCards[category][currentCard].number}</span>
-            <h3>{skillCards[category][currentCard].title}</h3>
-            <p>{skillCards[category][currentCard].description}</p>
           </div>
         </div>
       </div>
