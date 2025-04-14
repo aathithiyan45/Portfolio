@@ -9,41 +9,41 @@ const Projects = () => {
     {
       number: "01",
       title: "Portfolio Website",
-      description: "A modern, responsive portfolio website built with React",
+      description: "A modern, responsive portfolio website built with React, featuring smooth animations and interactive components",
       technologies: [
         "React.js & React Router",
-        "CSS3 Animations & Transitions",
+        "Custom CSS Animations",
         "Responsive Design",
-        "Custom Components"
+        "Social Media Integration"
       ],
       status: 90,
-      link: "https://github.com/yourusername/portfolio"
+      link: "https://github.com/AthiSelvan/Portfolio-2"
     },
     {
       number: "02",
-      title: "E-Commerce Platform",
-      description: "Full-stack e-commerce solution with user authentication",
+      title: "Student Management System",
+      description: "A comprehensive system for managing student data, attendance, and academic performance",
       technologies: [
-        "Django Backend API",
+        "Django & Python",
         "PostgreSQL Database",
-        "Payment Integration",
-        "Admin Dashboard"
+        "RESTful APIs",
+        "JWT Authentication"
       ],
       status: 85,
-      link: "https://github.com/yourusername/ecommerce"
+      link: "https://github.com/AthiSelvan/student-management"
     },
     {
       number: "03",
-      title: "Task Management App",
-      description: "A collaborative task management application",
+      title: "Weather Dashboard",
+      description: "Real-time weather application with location-based forecasts and interactive maps",
       technologies: [
         "React & Redux",
-        "Real-time Updates",
-        "User Authentication",
-        "Task Analytics"
+        "Weather API Integration",
+        "Geolocation Services",
+        "Chart.js Visualizations"
       ],
-      status: 75,
-      link: "https://github.com/yourusername/taskmanager"
+      status: 95,
+      link: "https://github.com/AthiSelvan/weather-app"
     }
   ];
 
@@ -68,7 +68,7 @@ const Projects = () => {
             and passion for creating innovative digital solutions.
           </p>
           <div className="cta-buttons">
-            <a href="https://github.com/yourusername" className="btn primary">GitHub Profile</a>
+            <a href="https://github.com/AthiSelvan" className="btn primary">GitHub Profile</a>
             <a href="/contact" className="btn secondary">Get In Touch</a>
           </div>
           <SocialLinks />
