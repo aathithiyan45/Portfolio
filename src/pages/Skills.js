@@ -18,7 +18,7 @@ const Skills = () => {
           "Design Systems & Accessibility",
           "Responsive & Interactive UI Components"
         ],
-        progress: 85
+       
       },
       {
         number: "02",
@@ -30,7 +30,7 @@ const Skills = () => {
           "Tailwind CSS & Bootstrap for Styling",
           "Flexbox & Grid for Layouts"
         ],
-        progress: 75
+        
       },
       {
         number: "03",
@@ -42,7 +42,7 @@ const Skills = () => {
           "Django ORM & CRUD Operations",
           "API Integration & Security Best Practices"
         ],
-        progress: 70
+       
       },
       {
         number: "04",
@@ -54,7 +54,7 @@ const Skills = () => {
           "AI Tools: GitHub Copilot, Codeium, Chatgpt, Claude",
           "Automation & Deployment: Vercel, nelify, pythonanywhere"
         ],
-        progress: 80
+        
       }
     ]
   };
@@ -107,12 +107,7 @@ const Skills = () => {
                 ))}
               </ul>
               
-              <div className="skill-card-progress">
-                <div 
-                  className="progress-bar" 
-                  style={{ width: `${currentCard.progress}%` }}
-                ></div>
-              </div>
+              
             </div>
           </div>
         </div>
