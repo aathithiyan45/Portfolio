@@ -10,6 +10,8 @@ const Contact = () => {
     message: ''
   });
 
+  const [submitting, setSubmitting] = useState(false);
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -17,10 +19,40 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add your form submission logic here
-    console.log('Form submitted:', formData);
+    setSubmitting(true);
+
+    try {
+      const response = await fetch('https://formspree.io/f/mdkzjwrw', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        alert("✅ Message sent successfully!");
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+      } else {
+        alert("❌ Error sending message. Please try again.");
+        console.error(result);
+      }
+    } catch (err) {
+      alert("❌ Something went wrong. Try again later.");
+      console.error(err);
+    }
+
+    setSubmitting(false);
   };
 
   return (
@@ -88,8 +120,8 @@ const Contact = () => {
                 rows="6"
               ></textarea>
             </div>
-            <button type="submit" className="submit-btn">
-              Send Message
+            <button type="submit" className="submit-btn" disabled={submitting}>
+              {submitting ? "Sending..." : "Send Message"}
             </button>
           </form>
         </div>
