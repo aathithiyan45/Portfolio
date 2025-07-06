@@ -8,52 +8,77 @@ const Projects = () => {
   const projectCards = [
     {
       number: "01",
-      title: "Portfolio Website",
+      title: "SmartSpend.AI",
       description:
-        "A modern, responsive portfolio website built with React, featuring smooth animations and interactive components",
+        "An AI-powered expense tracker that uses machine learning to categorize expenses, analyze trends, and provide intelligent financial insights.",
       technologies: [
-        "React.js & React Router",
-        "Custom CSS Animations",
-        "Responsive Design",
-        "Social Media Integration"
+        "Backend: Django (Python)",
+        "Frontend: HTML, Tailwind CSS, Chart.js",
+        "Database: SQLite (Development)",
+        "ML Utilities: Scikit-learn, Tesseract OCR",
+        "Exporting: ReportLab (PDF), CSV Writer"
       ],
-      idea: "Showcase your personal projects and resume with a professional online presence.",
+      idea: "To help users manage their finances by intelligently tracking and analyzing spending patterns using AI, OCR, and visual dashboards.",
       image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&auto=format",
-      link: "https://github.com/AthiSelvan/Portfolio-2"
+        "https://github.com/aathithiyan45/smartspend-ai/assets/141872222/98e8d7c7-85f1-49f7-8128-d090ebbf4a38",
+      link: "https://github.com/aathithiyan45/smartspend-ai"
     },
     {
       number: "02",
-      title: "Student Management System",
+      title: "Personal Portfolio Website",
       description:
-        "A comprehensive system for managing student data, attendance, and academic performance",
+        "A modern, responsive, and animated portfolio website built using React. Designed to showcase my projects, resume, and contact form with a clean UI/UX.",
       technologies: [
-        "Django & Python",
-        "PostgreSQL Database",
-        "RESTful APIs",
-        "JWT Authentication"
+        "Frontend: React.js",
+        "Routing: React Router",
+        "Styling: Custom CSS & Animations",
+        "Forms: Formspree Integration",
+        "Deployment: Vercel"
       ],
-      idea: "Provide schools with a centralized platform for managing students and records.",
+      idea:
+        "To create a professional web presence that reflects my skills, showcases my work, and makes it easy for people to reach me.",
       image:
-        "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop&auto=format",
-      link: "https://github.com/AthiSelvan/student-management"
+        "https://github.com/aathithiyan45/Portfolio/assets/141872222/fb0647e2-0ec6-42f2-89c6-77f65aa7dbb5", // Replace with your actual screenshot image URL if needed
+      link: "portfolio-aathithiyan.vercel.app"
     },
+    
     {
       number: "03",
-      title: "Weather Dashboard",
+      title: "Smart Book Manager",
       description:
-        "Real-time weather application with location-based forecasts and interactive maps",
+        "A full-stack MERN application for managing personal book collections. Includes real-time barcode scanning to auto-fetch book details and full CRUD features.",
       technologies: [
-        "React & Redux",
-        "Weather API Integration",
-        "Geolocation Services",
-        "Chart.js Visualizations"
+        "Frontend: React.js, Tailwind CSS",
+        "Backend: Node.js, Express.js",
+        "Database: MongoDB",
+        "Barcode Scanner: BSSN Scanner",
+        "Features: Barcode Scan, CRUD, Search, Responsive UI"
       ],
-      idea: "Enable users to check real-time weather and forecasts using data visualizations.",
+      idea:
+        "To streamline personal library management by allowing users to scan book barcodes, auto-fill details, and manage them with a user-friendly dashboard.",
       image:
-        "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop&auto=format",
-      link: "https://github.com/AthiSelvan/weather-app"
+        "https://github.com/aathithiyan45/book-application/assets/141872222/9e2ea154-63aa-4c60-a05d-3e92c180ae6d", // optional: your screenshot
+      link: "https://github.com/aathithiyan45/book-application"
+    },
+    {
+      number: "04",
+      title: "Translate App – Real-Time Language Translator",
+      description:
+        "A Django-powered translation app that uses the DeepL API to convert text between multiple languages with high accuracy. Built with clean HTML templates and a user-friendly UI.",
+      technologies: [
+        "Backend: Django (Python)",
+        "Frontend: HTML, CSS & JavaScript",
+        "Translation API: DeepL",
+        "Features: Real-time Translation, Copy to Clipboard, Clean UX"
+      ],
+      idea:
+        "To offer users a fast, distraction-free, and highly accurate translation tool leveraging DeepL’s neural machine translation capabilities.",
+      image:
+        "https://github.com/aathithiyan45/translate_app/assets/141872222/2b1b54c5-418f-4075-95fb-419a66ad1dd2", // Optional: change to your screenshot
+      link: "https://github.com/aathithiyan45/translate_app"
     }
+    
+    
   ];
 
   const handlePrevious = () => {
