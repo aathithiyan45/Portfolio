@@ -19,7 +19,8 @@ const Projects = () => {
         "Exporting: ReportLab (PDF), CSV Writer"
       ],
       idea: "To help users manage their finances by intelligently tracking and analyzing spending patterns using AI, OCR, and visual dashboards.",
-      image:"/images/smartspend-dashboard.png",
+      image:
+        "https://github.com/aathithiyan45/smartspend-ai/assets/141872222/98e8d7c7-85f1-49f7-8128-d090ebbf4a38",
       link: "https://github.com/aathithiyan45/smartspend-ai"
     },
     {
