@@ -20,7 +20,7 @@ const Projects = () => {
       ],
       idea: "To help users manage their finances by intelligently tracking and analyzing spending patterns using AI, OCR, and visual dashboards.",
       image:
-        "https://github.com/aathithiyan45/smartspend-ai/assets/141872222/98e8d7c7-85f1-49f7-8128-d090ebbf4a38",
+        "images/smartspend-dashboard.png",
       link: "https://github.com/aathithiyan45/smartspend-ai"
     },
     {
@@ -38,7 +38,7 @@ const Projects = () => {
       idea:
         "To create a professional web presence that reflects my skills, showcases my work, and makes it easy for people to reach me.",
       image:
-        "https://github.com/aathithiyan45/Portfolio/assets/141872222/fb0647e2-0ec6-42f2-89c6-77f65aa7dbb5", // Replace with your actual screenshot image URL if needed
+        "images/Portfolio.png", 
       link: "portfolio-aathithiyan.vercel.app"
     },
     
