@@ -1,8 +1,7 @@
-/* Updated Projects.css with improved carousel animation */
-
 .projects-page {
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   padding: 150px 2rem 2rem;
   animation: fadeIn 0.8s ease-out;
@@ -226,22 +225,61 @@
   transform: scale(1.03);
 }
 
+.project-action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Common style */
 .project-link {
-  color: white;
-  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.4rem;
   font-weight: 600;
-  font-size: 1.1rem;
-  transition: opacity 0.3s ease;
+  font-size: 1rem;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  gap: 0.5rem;
 }
 
+/* Live Demo button */
+.project-link.live-demo {
+  background: #f5f5f5;
+  color:#111827;
+}
+
+/* GitHub Code button */
+.project-link.github-link {
+  background: #111827;
+  color: #0984e3;
+  
+}
+
+/* Hover effects */
 .project-link:hover {
-  opacity: 0.8;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  opacity: 0.95;
 }
 
-@keyframes fadeIn {
+/* Disabled button */
+.project-link.disabled {
+  background-color: #e5e7eb;
+  color: #9ca3af;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Fade-slide-in animation on load */
+@keyframes fadeSlideUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(40px);
   }
   to {
     opacity: 1;
@@ -249,55 +287,21 @@
   }
 }
 
-@keyframes slideFade {
-  0% {
-    opacity: 0;
-    transform: translateX(50px) scale(0.95);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-  }
+.project-card {
+  animation: fadeSlideUp 0.7s ease forwards;
+  opacity: 0;
 }
 
-/* Responsive Styles */
-@media (max-width: 1024px) {
-  .projects-section {
-    padding: 2rem;
-  }
-
-  .hero-section {
-    flex-direction: column;
-    text-align: center;
-    gap: 2rem;
-  }
-
-  .project-card {
-    flex-direction: column;
-  }
+/* Optional: stagger animation delays */
+.project-card:nth-child(1) {
+  animation-delay: 0.1s;
 }
-
-@media (max-width: 768px) {
-  .project-card {
-    width: 100%;
-    padding: 1.5rem;
-  }
+.project-card:nth-child(2) {
+  animation-delay: 0.2s;
 }
-
-@media (max-width: 480px) {
-  .projects-page {
-    padding: 1rem;
-  }
-
-  .project-card {
-    padding: 1.2rem;
-  }
-
-  .project-card-nav {
-    gap: 0.5rem;
-  }
-
-  .project-image {
-    border-radius: 10px;
-  }
+.project-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.project-card:nth-child(4) {
+  animation-delay: 0.4s;
 }

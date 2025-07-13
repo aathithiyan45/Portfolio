@@ -16,6 +16,9 @@ const SocialLinks = () => {
       <a href="https://www.figma.com/files/team/1439977738552784288/recents-and-sharing?fuid=1439977736845671965" target="_blank" rel="noopener noreferrer" className="social-icon figma">
         <i className="fab fa-figma"></i>
       </a>
+      <a href="https://www.behance.net/aathithaathith1" target="_blank" rel="noopener noreferrer" className="social-icon behance">
+        <i className="fab fa-behance"></i>
+      </a>
     </div>
   );
 };

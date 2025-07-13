@@ -17,6 +17,7 @@ const Skills = () => {
           "User Research & Usability Testing",
           "Design Systems & Accessibility",
           "Responsive & Interactive UI Components"
+          
         ],
        
       },
