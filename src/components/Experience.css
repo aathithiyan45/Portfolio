@@ -1,14 +1,12 @@
-/* Experience Page Layout */
+/* Experience Component Layout */
 .experience-page {
-  min-height: 100vh;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
-  padding: 4rem 2rem;
   animation: fadeIn 0.8s ease-out;
-
-  color: white;
+  color:black;
+  
 }
 
 .experience-section {
@@ -22,21 +20,57 @@
   flex-wrap: wrap;
 }
 
-/* Experience Cards - Left Side */
-.experience-cards {
+/* Hero Content - Left Side */
+.experience-page .hero-content {
   flex: 1;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  max-width: 500px;
+  animation: fadeIn 0.8s ease-out;
+  order: 1;
 }
 
-.experience-cards-container {
+.experience-page .hero-content h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.8rem;
+  color: #2d3436;
+  line-height: 1.1;
+  animation: fadeInRight 0.8s ease forwards;
+}
+
+.experience-page .hero-content h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #000000;
+  line-height: 1.3;
+  animation: fadeInRight 0.8s ease 0.2s forwards;
+  opacity: 0;
+}
+
+.experience-page .hero-content p {
+  font-size: 1rem;
+  color: #636e72;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  max-width: 100%;
+  animation: fadeInRight 0.8s ease 0.4s forwards;
+  opacity: 0;
+}
+
+/* Experience Cards - Right Side */
+.experience-page .experience-cards {
+  flex: 1;
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
+  align-items: flex-start;
+  order: 2;
+}
+
+.experience-page .experience-cards-container {
+  display: flex;
+  justify-content: flex-end;
   width: 100%;
 }
 
-.experience-card {
+.experience-page .experience-card {
   width: 500px;
   min-height: 600px;
   background-color: #0984e3;
@@ -48,7 +82,7 @@
   animation: scaleIn 0.6s ease-out;
   display: flex;
   flex-direction: column;
-  margin-left: 0;
+  margin-right: 0;
 }
 
 .experience-card:hover {
@@ -133,31 +167,6 @@
   color: rgba(255, 255, 255, 0.7);
 }
 
-/* Hero Content - Right Side */
-.hero-content {
-  flex: 1;
-  max-width: 500px;
-  animation: fadeIn 0.8s ease-out;
-}
-
-.hero-content h1 {
-  font-size: 2rem;
-  margin: 0;
-  color: white;
-}
-
-.hero-content h2 {
-  font-size: 1.4rem;
-  color: #dfe6e9;
-  margin: 1rem 0;
-}
-
-.hero-content p {
-  font-size: 1rem;
-  color: #dfe6e9;
-  line-height: 1.6;
-}
-
 /* Animations */
 @keyframes scaleIn {
   from {
@@ -190,24 +199,34 @@
     align-items: flex-start;
   }
   
-  .experience-card {
+  .experience-page .hero-content {
+    max-width: 100%;
+    order: 1;
+  }
+  
+  .experience-page .experience-cards {
+    justify-content: flex-start;
+    order: 2;
+  }
+  
+  .experience-page .experience-cards-container {
+    justify-content: flex-start;
+  }
+  
+  .experience-page .experience-card {
     width: 100%;
     min-height: 500px;
     padding: 1.5rem;
-    margin-left: 0;
+    margin-right: 0;
   }
   
-  .experience-card-title {
+  .experience-page .experience-card-title {
     font-size: 1.3rem;
   }
   
-  .experience-card-description,
-  .experience-card-list li {
+  .experience-page .experience-card-description,
+  .experience-page .experience-card-list li {
     font-size: 1rem;
-  }
-  
-  .hero-content {
-    max-width: 100%;
   }
 }
 
@@ -220,16 +239,16 @@
     gap: 1.5rem;
   }
   
-  .experience-card {
+  .experience-page .experience-card {
     min-height: 450px;
     padding: 1.2rem;
   }
   
-  .hero-content h1 {
+  .experience-page .hero-content h1 {
     font-size: 1.8rem;
   }
   
-  .hero-content h2 {
+  .experience-page .hero-content h2 {
     font-size: 1.2rem;
   }
 }
@@ -239,28 +258,28 @@
     padding: 1rem;
   }
   
-  .experience-card {
+  .experience-page .experience-card {
     min-height: 400px;
     padding: 1rem;
   }
   
-  .experience-card-nav {
+  .experience-page .experience-card-nav {
     gap: 0.5rem;
   }
   
-  .nav-arrow {
+  .experience-page .nav-arrow {
     font-size: 0.9rem;
   }
   
-  .hero-content h1 {
+  .experience-page .hero-content h1 {
     font-size: 1.6rem;
   }
   
-  .hero-content h2 {
+  .experience-page .hero-content h2 {
     font-size: 1.1rem;
   }
   
-  .hero-content p {
+  .experience-page .hero-content p {
     font-size: 0.9rem;
   }
 }

@@ -387,7 +387,7 @@
   opacity: 0;
 }
 
-/* Make sure you have the fadeInRight animation defined in your CSS */
+
 @keyframes fadeInRight {
   from {
     opacity: 0;
@@ -416,4 +416,157 @@
     margin-top: 2rem;
     border-radius: 12px;
   }
+}
+/* Professional Section Animation Styles */
+
+/* Base styles for animated sections */
+.section-animate {
+  opacity: 0;
+  transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform, opacity;
+}
+
+/* Subtle fade in up animation */
+.section-animate[data-animation="fade-in-up"] {
+  transform: translateY(30px);
+}
+
+.section-animate[data-animation="fade-in-up"].animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Gentle slide in from left */
+.section-animate[data-animation="slide-in-left"] {
+  transform: translateX(-40px);
+}
+
+.section-animate[data-animation="slide-in-left"].animate-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Gentle slide in from right */
+.section-animate[data-animation="slide-in-right"] {
+  transform: translateX(40px);
+}
+
+.section-animate[data-animation="slide-in-right"].animate-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Soft scale in animation */
+.section-animate[data-animation="scale-in"] {
+  transform: scale(0.95);
+}
+
+.section-animate[data-animation="scale-in"].animate-in {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Simple fade in animation */
+.section-animate[data-animation="fade-in"] {
+  opacity: 0;
+}
+
+.section-animate[data-animation="fade-in"].animate-in {
+  opacity: 1;
+}
+
+/* Professional blur effect (optional) */
+.section-animate[data-animation="blur-in"] {
+  opacity: 0;
+  filter: blur(10px);
+}
+
+.section-animate[data-animation="blur-in"].animate-in {
+  opacity: 1;
+  filter: blur(0px);
+}
+
+/* Staggered animation for child elements */
+.section-animate.animate-in .hero-content > * {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideInElement 0.8s ease-out forwards;
+  animation-delay: calc(var(--animation-order, 0) * 0.15s);
+}
+
+@keyframes slideInElement {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Stagger timing for hero elements */
+.hero-content h1 { --animation-order: 1; }
+.hero-content h2 { --animation-order: 2; }
+.hero-content h3 { --animation-order: 3; }
+.hero-content p { --animation-order: 4; }
+.cta-buttons { --animation-order: 5; }
+.social-links { --animation-order: 6; }
+.hero-image { --animation-order: 3; }
+
+/* Smooth performance optimizations */
+.section-animate {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+/* Intersection Observer trigger point adjustment */
+.section-animate {
+  transition-delay: 0.1s;
+}
+
+/* Respect user preferences for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .section-animate,
+  .section-animate * {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+  }
+}
+
+/* Mobile optimizations - even gentler animations */
+@media (max-width: 768px) {
+  .section-animate {
+    transition-duration: 1s;
+  }
+  
+  .section-animate[data-animation="fade-in-up"] {
+    transform: translateY(20px);
+  }
+  
+  .section-animate[data-animation="slide-in-left"],
+  .section-animate[data-animation="slide-in-right"] {
+    transform: translateY(20px);
+  }
+  
+  .section-animate[data-animation="slide-in-left"].animate-in,
+  .section-animate[data-animation="slide-in-right"].animate-in {
+    transform: translateY(0);
+  }
+  
+  /* Reduce stagger timing on mobile */
+  .section-animate.animate-in .hero-content > * {
+    animation-delay: calc(var(--animation-order, 0) * 0.1s);
+  }
+}
+
+/* Optional: Hover effects for interactive elements */
+.section-animate.animate-in .cta-buttons button,
+.section-animate.animate-in .social-links a {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section-animate.animate-in .cta-buttons button:hover,
+.section-animate.animate-in .social-links a:hover {
+  transform: translateY(-2px);
 }

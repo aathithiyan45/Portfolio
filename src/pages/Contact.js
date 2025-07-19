@@ -79,6 +79,11 @@ const Contact = () => {
         </div>
 
         <div className="contact-form-container">
+          <div className="form-header">
+            <h3>Send me a message</h3>
+            <p>I'll get back to you within 24 hours</p>
+          </div>
+          
           <form className="contact-form" onSubmit={handleSubmit}>
             <div className="form-group">
               <input
@@ -90,6 +95,7 @@ const Contact = () => {
                 required
               />
             </div>
+            
             <div className="form-group">
               <input
                 type="email"
@@ -100,6 +106,7 @@ const Contact = () => {
                 required
               />
             </div>
+            
             <div className="form-group">
               <input
                 type="text"
@@ -110,6 +117,7 @@ const Contact = () => {
                 required
               />
             </div>
+            
             <div className="form-group">
               <textarea
                 name="message"
@@ -120,6 +128,7 @@ const Contact = () => {
                 rows="6"
               ></textarea>
             </div>
+            
             <button type="submit" className="submit-btn" disabled={submitting}>
               {submitting ? "Sending..." : "Send Message"}
             </button>

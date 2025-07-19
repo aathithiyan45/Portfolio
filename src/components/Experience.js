@@ -130,12 +130,10 @@ const ExperiencePage = () => {
 
         {/* Hero Content - Right Side */}
         <div className="hero-content">
-          <h1>My Journey,</h1>
-          <h1>My Growth</h1>
-          <h2>Building Excellence Through Experience!</h2>
-          <p>
-            From junior developer to full-stack expert, each role has shaped
-            my skills and passion for creating innovative digital solutions
+          <h1>The Path I've Built</h1>
+         
+          <h2>Shaping Skills Through Real-World Experience</h2>
+          <p>I architect every pixel and process — shaping apps that feel as good as they function!
           </p>
         </div>
       </div>
