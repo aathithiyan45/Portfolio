@@ -1,9 +1,12 @@
 .about {
   min-height: calc(100vh - 80px);
   display: flex;
+  flex-direction: column; /* 🔥 Important! Stack children vertically */
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start; /* Align content from top */
   padding: 2rem;
+  gap: 2rem; /* Optional spacing between sections */
+  margin-top: 150px; /* Adjust for fixed navbar height */
 }
 
 .hero-section {
@@ -394,5 +397,23 @@
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+.experience-wrapper {
+  margin-top: 4rem;
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .experience-wrapper {
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+    border-radius: 12px;
   }
 }

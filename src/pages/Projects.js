@@ -68,7 +68,7 @@ const Projects = () => {
     },
     {
       number: "04",
-      title: "Translate App – Real-Time Language Translator",
+      title: "Translate App",
       description:
         "A Django-powered translation app that uses the DeepL API to convert text between multiple languages with high accuracy. Built with clean HTML templates and a user-friendly UI.",
       technologies: [
