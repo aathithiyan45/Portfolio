@@ -1,12 +1,12 @@
 .about {
   min-height: calc(100vh - 80px);
   display: flex;
-  flex-direction: column; /* 🔥 Important! Stack children vertically */
+  flex-direction: column; 
   align-items: center;
-  justify-content: flex-start; /* Align content from top */
+  justify-content: flex-start; 
   padding: 2rem;
-  gap: 2rem; /* Optional spacing between sections */
-  margin-top: 150px; /* Adjust for fixed navbar height */
+  gap: 2rem; 
+  margin-top: 150px; 
 }
 
 .hero-section {
@@ -18,25 +18,22 @@
   gap: 4rem;
   padding: 0 2rem;
   flex-wrap: wrap;
-  /* Added for better responsiveness */
 }
 
 .hero-content {
   flex: 1;
   min-width: 300px;
-  /* Added minimum width */
   max-width: 600px;
-  /* Added maximum width */
 }
 
 .hero-image {
   flex: 1;
   min-width: 300px;
-  /* Added minimum width */
+
   max-width: 500px;
-  /* Added maximum width */
+  
   margin: 0 auto;
-  /* Center image on smaller screens */
+
 }
 
 .hero-image img {
@@ -227,12 +224,12 @@
 }
 
 .btn.primary {
-  background-color: #0984e3;
+  background-color:black;
   color: white;
 }
 
 .btn.primary:hover {
-  background-color: #0773c5;
+  background-color:black;
   transform: translateY(-2px);
 }
 
