@@ -17,7 +17,7 @@ const Home = () => {
           </p>
           <CTAButtons />
           <SocialLinks />
-        
+
         </div>
         <div className="hero-image">
           <img src="profile.jpeg" alt="Aathithiyan" />

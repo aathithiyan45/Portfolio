@@ -1,8 +1,11 @@
 .skills-page {
-  min-height: 100vh;
+  min-height: calc(100vh - 80px);
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   padding: 2rem;
+  margin-top: 150px;
 }
 
 .skills-section {
@@ -15,183 +18,9 @@
   gap: 4rem;
 }
 
-.skills-cards {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Add these styles for the skill cards */
-
-.skill-cards-container {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.skill-card {
-  width: 500px;
-  min-height: 600px;
-  background-color: #0984e3;
-  color: white;
-  border-radius: 16px;
-  padding: 2rem;
-  box-shadow: 0 8px 20px rgba(9, 132, 227, 0.2);
-  transition: all 0.5s ease;
-  animation: slideIn 0.5s ease;
-  display: flex;
-  flex-direction: column;
-}
-
-.skill-card-list {
-  flex-grow: 1;
-  margin: 1.5rem 0;
-}
-
-.skill-card-progress {
-  margin-top: auto;
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.skill-card.exit {
-  animation: slideOut 0.5s ease;
-}
-
-@keyframes slideOut {
-  from {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-}
-
-/* Remove min-width and max-width since we're going vertical */
-
-.skill-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(9, 132, 227, 0.3);
-}
-
-.skill-card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1.5rem;
-}
-
-.skill-card-date {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.clock-icon {
-  font-size: 1.2rem;
-}
-
-.skill-card-nav {
-  display: flex;
-  gap: 1rem;
-}
-
-.nav-arrow {
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-.skill-card-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 2rem;
-}
-
-.skill-card-assigned {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.assigned-avatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 2px solid white;
-}
-
-.assigned-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.assigned-label {
-  font-size: 0.9rem;
-  opacity: 0.8;
-  margin: 0;
-}
-
-.assigned-name {
-  font-size: 1.1rem;
-  font-weight: 500;
-  margin: 0;
-}
-
-.skill-card-progress {
-  position: relative;
-  height: 8px;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-  overflow: visible;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
-}
-
-.progress-bar {
-  height: 100%;
-  background-color: white;
-  border-radius: 10px;
-  transition: width 0.3s ease;
-}
-
-.progress-percentage {
-  position: absolute;
-  right: 0;
-  bottom: -30px;
-  font-weight: 600;
-  font-size: 1.5rem;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-/* Remove the ::after pseudo-element that was adding an extra % symbol */
-
-.progress-percentage::after {
-  content: '%';
-  margin-left: 4px;
-}
-
-/* Keep your existing navigation styles */
-
 .hero-content {
   max-width: 500px;
-}
-
-.hero-content p {
-  margin-bottom: 2rem;
+  animation: slideInLeft 1s ease-out;
 }
 
 .hero-content h1 {
@@ -206,56 +35,95 @@
   color: #000;
 }
 
-.skill-card-description {
-  color: rgba(255, 255, 255, 0.9);
+.hero-content p {
+  margin-bottom: 2rem;
+}
+
+.skills-cards {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skill-card {
+  width: 500px;
+  min-height: 600px;
+  background-color: #ECECEC;
+  color: #000;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 20px rgba(236, 236, 236, 0.3);
+  transition: all 0.5s ease;
+  animation: scaleIn 0.6s ease-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(236, 236, 236, 0.4);
+}
+
+.skill-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 1.5rem;
-  line-height: 1.6;
-}
-
-.skill-card-list {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 2rem 0;
-}
-
-.skill-card-list li {
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 0.8rem;
-  padding-left: 1.5rem;
-  position: relative;
-}
-
-.skill-card-list li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: rgba(255, 255, 255, 0.7);
 }
 
 .skill-card-number {
   font-size: 1.2rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.9);
-  background: rgba(255, 255, 255, 0.1);
+  color: #000;
+  background: rgba(0, 0, 0, 0.1);
   padding: 0.5rem 1rem;
   border-radius: 8px;
   display: inline-block;
+}
+
+.skill-card-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-arrow {
+  cursor: pointer;
+  font-size: 1rem;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.nav-arrow:hover {
+  color: #007bff;
+}
+
+.skill-card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #000;
 }
 
 .skill-card-description {
   font-size: 1.1rem;
   line-height: 1.6;
   margin: 1rem 0;
-  color: rgba(255, 255, 255, 0.9);
+  color: #333;
 }
 
 .skill-card-list {
+  list-style: none;
+  padding: 0;
   margin: 1.5rem 0;
+  flex-grow: 1;
 }
 
 .skill-card-list li {
+  color: #333;
   margin-bottom: 1rem;
   padding-left: 1.5rem;
+  position: relative;
   line-height: 1.4;
 }
 
@@ -263,30 +131,30 @@
   content: "•";
   position: absolute;
   left: 0;
-  color: rgba(255, 255, 255, 0.7);
+  color: #666;
 }
 
-/* Add page animation */
-.skills-page {
-  animation: fadeIn 0.8s ease-out;
+.certificate-section {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  color: #333;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.certificate-link {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-/* Add hero content animation */
-.hero-content {
-  animation: slideInLeft 1s ease-out;
+.certificate-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
 }
 
+/* Animations */
 @keyframes slideInLeft {
   from {
     opacity: 0;
@@ -296,11 +164,6 @@
     opacity: 1;
     transform: translateX(0);
   }
-}
-
-/* Enhance skill card animation */
-.skill-card {
-  animation: scaleIn 0.6s ease-out;
 }
 
 @keyframes scaleIn {
@@ -314,22 +177,7 @@
   }
 }
 
-/* Progress bar animation */
-.progress-bar {
-  animation: progressFill 1s ease-out forwards;
-  transform-origin: left;
-}
-
-@keyframes progressFill {
-  from {
-    transform: scaleX(0);
-  }
-  to {
-    transform: scaleX(1);
-  }
-}
-
-/* Add these responsive styles */
+/* Responsive styles */
 @media (max-width: 1024px) {
   .skills-section {
     flex-direction: column;

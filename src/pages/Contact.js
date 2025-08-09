@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './Contact.css';
 import SocialLinks from '../components/SocialLinks';
+import CTAButtons from '../components/CTAButtons';
+
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -75,7 +77,9 @@ const Contact = () => {
               <span>Thanjavur, Tamil Nadu</span>
             </div>
           </div>
+          <CTAButtons />
           <SocialLinks />
+
         </div>
 
         <div className="contact-form-container">

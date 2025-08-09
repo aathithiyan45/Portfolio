@@ -6,6 +6,9 @@ import About from './pages/About';
 import Projects from './pages/Projects';
 import Skills from './pages/Skills';
 import Contact from './pages/Contact';
+import DevelopmentProjects from './pages/DevelopmentProjects'; 
+import UIUXProjects from './pages/UIUXProjects'; 
+
 import './App.css';
 
 function App() {
@@ -19,6 +22,8 @@ function App() {
           <Route exact path="/projects" element={<Projects />} />
           <Route exact path="/skills" element={<Skills />} />
           <Route exact path="/contact" element={<Contact />} />
+          <Route path="/projects/development" element={<DevelopmentProjects />} />
+          <Route path="/projects/uiux" element={<UIUXProjects />} />
         </Routes>
       </main>
     </div>
