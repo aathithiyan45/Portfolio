@@ -2,8 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import './About.css';
 import SocialLinks from '../components/SocialLinks';
 import CTAButtons from '../components/CTAButtons';
-import Experience from '../components/Experience';
-import Achievement from '../components/Achievement';
+
 
 const About = () => {
   const experienceRef = useRef(null);
@@ -57,11 +56,11 @@ const About = () => {
       </section>
       
       <section ref={experienceRef} className="experience-wrapper section-animate" data-animation="slide-in-left">
-        <Experience />
+       
       </section>
       
       <section ref={achievementRef} className="achievement-wrapper section-animate" data-animation="slide-in-right">
-        <Achievement />
+       
       </section>
     </div>
   );
