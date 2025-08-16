@@ -1,42 +1,13 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import './About.css';
 import SocialLinks from '../components/SocialLinks';
-import CTAButtons from '../components/CTAButtons';
-
+import Education from "../components/Education";
+import Achievements from "../components/Achievements";
 
 const About = () => {
-  const experienceRef = useRef(null);
-  const achievementRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-in');
-          }
-        });
-      },
-      {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      }
-    );
-
-    const sections = [experienceRef.current, achievementRef.current];
-    sections.forEach((section) => {
-      if (section) observer.observe(section);
-    });
-
-    return () => {
-      sections.forEach((section) => {
-        if (section) observer.unobserve(section);
-      });
-    };
-  }, []);
-
   return (
     <div className="about">
+      {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-content">
           <h1>Hi, I'm Aathithiyan</h1>
@@ -47,22 +18,33 @@ const About = () => {
             Whether it's crafting smooth user interfaces or developing strong backend systems, I enjoy
             turning ideas into real, working applications.
           </p>
-          <CTAButtons />
+          <div className="cta-buttons">
+          <a href="/experience" className="btn primary">View My Experience</a>
+
+      <a href="/contact" className="btn secondary">Contact Me</a>
+    </div>
           <SocialLinks />
         </div>
         <div className="hero-image">
           <img src="profile.jpeg" alt="Aathithiyan" />
         </div>
       </section>
-      
-      <section ref={experienceRef} className="experience-wrapper section-animate" data-animation="slide-in-left">
-       
+
+      {/* Divider */}
+      <hr className="section-divider" />
+
+      {/* Education Timeline */}
+      <section className="education-section">
+        <h2 className="section-title">Education</h2>
+        <Education />
       </section>
-      
-      <section ref={achievementRef} className="achievement-wrapper section-animate" data-animation="slide-in-right">
-       
-      </section>
+
+       <hr className="section-divider" />
+       <section className="achievements-section">
+  <Achievements />
+</section>
     </div>
+    
   );
 };
 

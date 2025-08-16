@@ -1,0 +1,239 @@
+.achievements {
+    margin: 3rem 0;
+    padding: 2rem 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    position: relative;
+    overflow: hidden;
+    max-width: 100vw; /* Prevent page from getting wider */
+  }
+  
+  .achievements-title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #2d3436;
+    text-align: center;
+    position: relative;
+  }
+  
+  .achievements-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #2575fc 0%, #6a82fb 100%);
+    border-radius: 2px;
+  }
+  
+  /* Marquee Container */
+  .marquee-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 220px;
+    max-width: 1200px; /* Limit container width */
+    margin: 0 auto; /* Center the container */
+    
+    /* Fade effect on edges */
+    mask: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(0, 0, 0, 1) 2%,
+      rgba(0, 0, 0, 1) 98%,
+      transparent 100%
+    );
+    -webkit-mask: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(0, 0, 0, 1) 2%,
+      rgba(0, 0, 0, 1) 98%,
+      transparent 100%
+    );
+  }
+  
+  /* Marquee Content */
+  .marquee-content {
+    display: flex;
+    gap: 30px;
+    width: fit-content;
+    
+    /* Start with cards visible, then scroll */
+    animation: marqueeFromVisible 20s linear infinite;
+    
+    /* Pause on hover */
+    transition: animation-play-state 0.3s ease;
+  }
+  
+  .marquee-container:hover .marquee-content {
+    animation-play-state: paused;
+  }
+  
+  /* Modified Marquee Animation - Start with cards visible */
+  @keyframes marqueeFromVisible {
+    0% {
+      transform: translateX(0); /* Start with cards visible */
+    }
+    100% {
+      transform: translateX(-100%); /* Move completely to the left */
+    }
+  }
+  
+  /* Achievement Cards */
+  .achievement-card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    min-width: 300px; /* Slightly smaller to fit better */
+    max-width: 300px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    flex-shrink: 0; /* Prevent cards from shrinking */
+  }
+  
+  /* Hover Effect */
+  .achievement-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(37, 117, 252, 0.1), transparent);
+    transition: left 0.6s ease;
+  }
+  
+  .achievement-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+  }
+  
+  .achievement-card:hover::before {
+    left: 100%;
+  }
+  
+  /* Card Content */
+  .achievement-card h3 {
+    font-size: 1.2rem;
+    color: #2575fc;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  
+  .achievement-card p {
+    font-size: 0.9rem;
+    color: #636e72;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+  }
+  
+  .ach-year {
+    display: inline-block;
+    background: linear-gradient(135deg, #2575fc 0%, #6a82fb 100%);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    align-self: flex-end;
+    box-shadow: 0 3px 10px rgba(37, 117, 252, 0.3);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .marquee-container {
+      max-width: 900px;
+    }
+    
+    .achievement-card {
+      min-width: 280px;
+      max-width: 280px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .achievements {
+      margin: 2rem 0;
+      padding: 1.5rem 0;
+    }
+  
+    .achievements-title {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    .marquee-container {
+      height: 200px;
+      max-width: 600px;
+    }
+  
+    .marquee-content {
+      gap: 20px;
+      animation-duration: 15s;
+    }
+  
+    .achievement-card {
+      min-width: 250px;
+      max-width: 250px;
+      height: 160px;
+      padding: 1.25rem;
+    }
+  
+    .achievement-card h3 {
+      font-size: 1.1rem;
+    }
+  
+    .achievement-card p {
+      font-size: 0.85rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .marquee-container {
+      max-width: 350px;
+    }
+    
+    .marquee-content {
+      animation-duration: 12s;
+      gap: 15px;
+    }
+  
+    .achievement-card {
+      min-width: 220px;
+      max-width: 220px;
+      height: 150px;
+      padding: 1rem;
+    }
+  
+    .achievements-title {
+      font-size: 1.6rem;
+    }
+  }
+  
+  /* Additional Animation Variations */
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-content {
+      animation: none;
+    }
+    
+    .marquee-container {
+      overflow-x: auto;
+      scrollbar-width: thin;
+    }
+    
+    .marquee-content {
+      justify-content: flex-start;
+      padding: 0 20px;
+    }
+  }

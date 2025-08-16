@@ -125,8 +125,6 @@
   transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   will-change: transform, opacity;
   transition-delay: 0.1s;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
   transform-style: preserve-3d;
 }
 
@@ -262,4 +260,10 @@
     opacity: 1 !important;
     filter: none !important;
   }
+}
+.section-divider {
+  border: none;
+  border-top: 2px solid rgba(0, 0, 0, 0.1); /* light line */
+  margin: 3rem auto;
+  width: 80%; /* adjust length */
 }

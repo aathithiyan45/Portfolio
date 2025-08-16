@@ -8,6 +8,7 @@ import Skills from './pages/Skills';
 import Contact from './pages/Contact';
 import DevelopmentProjects from './pages/DevelopmentProjects'; 
 import UIUXProjects from './pages/UIUXProjects'; 
+import Experience from "./pages/Experience";
 
 import './App.css';
 
@@ -24,6 +25,7 @@ function App() {
           <Route exact path="/contact" element={<Contact />} />
           <Route path="/projects/development" element={<DevelopmentProjects />} />
           <Route path="/projects/uiux" element={<UIUXProjects />} />
+          <Route path="/experience" element={<Experience />} />
         </Routes>
       </main>
     </div>
