@@ -19,7 +19,7 @@ const About = () => {
             turning ideas into real, working applications.
           </p>
           <div className="cta-buttons">
-          <a href="/experience" className="btn primary">View My Experience</a>
+          <a href="/experience" className="btn primary">View Experience</a>
 
       <a href="/contact" className="btn secondary">Contact Me</a>
     </div>
