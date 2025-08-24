@@ -9,98 +9,89 @@ const DevelopmentProjects = () => {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
-      description: "Scalable online store with modern UI and smooth checkout.",
-      category: "Full-Stack Development",
+      title: "SmartSpend.AI",
+      description: "AI-powered expense tracker with analytics dashboard.",
+      category: "Full-Stack + AI/ML",
       image: "images/smartspend-dashboard.png",
-      detailedDescription: "A comprehensive e-commerce solution built with React, Node.js, and MongoDB. Features include user authentication, payment processing, inventory management, and admin dashboard. The platform supports multiple payment gateways and provides real-time order tracking.",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe API", "JWT Authentication", "Redux"],
+      detailedDescription: "SmartSpend.AI is an intelligent expense manager that tracks spending, predicts categories using a trained ML model (Naive Bayes with scikit-learn), and provides insights with charts. Built using Django, Tailwind, and Chart.js.",
+      technologies: ["Django", "Tailwind CSS", "Chart.js", "SQLite", "scikit-learn", "ReportLab"],
       features: [
-        "User authentication and authorization",
-        "Shopping cart and wishlist functionality",
-        "Secure payment processing with Stripe",
-        "Real-time inventory management",
-        "Order tracking and history",
-        "Admin dashboard with analytics"
+        "Add, edit, and delete expenses",
+        "AI-based automatic category prediction",
+        "Analytics dashboard with charts",
+        "Filter by date range",
+        "Export to PDF & CSV",
+        "Responsive Tailwind UI"
       ],
-      codeLink: "https://github.com/yourusername/ecommerce-platform",
-      liveLink: "https://ecommerce-demo.vercel.app"
+      codeLink: "https://github.com/aathithiyan45/smartspend-ai",
+      liveLink: "#"
     },
     {
       id: 2,
-      title: "Task Management System",
-      description: "Organize tasks with real-time team collaboration.",
-      category: "Frontend Development",
-      image: "/api/placeholder/600/400",
-      detailedDescription: "A collaborative task management application that enables teams to organize, track, and complete projects efficiently. Built with modern frontend technologies and real-time synchronization capabilities.",
-      technologies: ["React", "Socket.io", "Material-UI", "Firebase", "Redux Toolkit"],
+      title: "Translate App",
+      description: "Multi-language translator powered by DeepL API.",
+      category: "Full-Stack Development",
+      image: "images/translate-app.png",
+      detailedDescription: "A translation web app built with Django and templates. Integrates the DeepL API to deliver accurate translations across multiple languages. Frontend is built with HTML, CSS, and JavaScript.",
+      technologies: ["Django", "DeepL API", "HTML", "CSS", "JavaScript"],
       features: [
-        "Real-time task updates and notifications",
-        "Team collaboration and commenting",
-        "Drag-and-drop task organization",
-        "Project timeline and deadline tracking",
-        "File attachments and document sharing",
-        "Advanced filtering and search"
+        "Translate text across multiple languages",
+        "Django backend with template rendering",
+        "Responsive frontend with plain JS",
+        "Translation history storage"
       ],
-      codeLink: "https://github.com/yourusername/task-manager",
-      liveLink: "https://taskmanager-demo.netlify.app"
+      codeLink: "https://github.com/aathithiyan45/translate_app",
+      liveLink: "#"
     },
     {
       id: 3,
-      title: "RESTful API Backend",
-      description: "Secure, scalable backend APIs with authentication.",
-      category: "Backend Development",
-      image: "/api/placeholder/600/400",
-      detailedDescription: "A robust RESTful API backend service designed for scalability and security. Implements best practices for API design, authentication, and data management with comprehensive documentation.",
-      technologies: ["Node.js", "Express.js", "PostgreSQL", "JWT", "Swagger", "Docker"],
+      title: "Book Application",
+      description: "Full-stack book management system with CRUD operations.",
+      category: "Full-Stack (MERN-like)",
+      image: "images/book-app.png",
+      detailedDescription: "A full-stack Book Management App where users can browse, add, update, and delete books. React powers the frontend UI, while Node.js + Express handle backend APIs and MongoDB manages data.",
+      technologies: ["React", "Node.js", "Express", "MongoDB"],
       features: [
-        "RESTful API design principles",
-        "JWT-based authentication system",
-        "Rate limiting and security middleware",
-        "Database optimization and indexing",
-        "Comprehensive API documentation",
-        "Automated testing and CI/CD pipeline"
+        "Add, update, delete books",
+        "Manage book details (title, author, description)",
+        "RESTful API with Express.js",
+        "Responsive React frontend"
       ],
-      codeLink: "https://github.com/yourusername/restful-api",
-      liveLink: "https://api-docs-demo.herokuapp.com"
+      codeLink: "https://github.com/aathithiyan45/book-application",
+      liveLink: "#"
     },
     {
       id: 4,
-      title: "Weather Analytics Dashboard",
-      description: "Interactive weather forecasts with visual charts.",
+      title: "Macrocosm SFX",
+      description: "Static editing portfolio for design & short films.",
       category: "Frontend Development",
-      image: "/api/placeholder/600/400",
-      detailedDescription: "An interactive weather analytics dashboard that visualizes weather data through beautiful charts and graphs. Provides detailed forecasts, historical data analysis, and weather pattern insights.",
-      technologies: ["Vue.js", "D3.js", "Chart.js", "OpenWeather API", "Vuex", "Tailwind CSS"],
+      image: "images/macrocosm-sfx.png",
+      detailedDescription: "Macrocosm SFX is a static personal editing portfolio built with pure HTML, CSS, and JavaScript. It showcases creative editing work such as short films and travel edits with a multi-page layout.",
+      technologies: ["HTML", "CSS"],
       features: [
-        "Interactive weather charts and graphs",
-        "7-day weather forecast display",
-        "Historical weather data analysis",
-        "Location-based weather tracking",
-        "Weather alerts and notifications",
-        "Responsive design for all devices"
+        "Multi-page static website",
+        "Creative video showcase (short films, travel edits)",
+        "Simple responsive design",
       ],
-      codeLink: "https://github.com/yourusername/weather-dashboard",
-      liveLink: "https://weather-analytics-demo.vercel.app"
+      codeLink: "https://github.com/aathithiyan45/aathithiyan45-Macrocosm-Sfx",
+      liveLink: "https://aathithiyan45.github.io/aathithiyan45-Macrocosm-Sfx/"
     },
     {
       id: 5,
-      title: "Real-time Chat Application",
-      description: "Fast messaging with file sharing and reactions.",
-      category: "Full-Stack Development",
-      image: "/api/placeholder/600/400",
-      detailedDescription: "A modern real-time chat application with advanced messaging features. Supports group chats, file sharing, message reactions, and multimedia content with end-to-end encryption capabilities.",
-      technologies: ["React", "Socket.io", "Node.js", "MongoDB", "Cloudinary", "JWT"],
+      title: "Portfolio Website",
+      description: "Personal portfolio built with React and animations.",
+      category: "Frontend Development",
+      image: "images/portfolio-preview.png",
+      detailedDescription: "My personal portfolio website built with React. It showcases my journey as a full-stack developer and UI/UX designer with sections for projects, skills, experience, and design work.",
+      technologies: ["React", "CSS Animations", "Framer Motion", "Vercel"],
       features: [
-        "Real-time messaging with Socket.io",
-        "Group chat and private messaging",
-        "File and image sharing capabilities",
-        "Message reactions and emoji support",
-        "User presence and typing indicators",
-        "Message encryption and security"
+        "Animated hero section",
+        "Project showcase with slider/cards",
+        "Responsive layout (light/dark mode)",
+        "Integrated experience & skills sections"
       ],
-      codeLink: "https://github.com/yourusername/chat-application",
-      liveLink: "https://realtime-chat-demo.netlify.app"
+      codeLink: "https://github.com/aathithiyan45/aathithiyan45",
+      liveLink: "https://portfolio-aathithiyan.vercel.app"
     }
   ];
 
@@ -140,9 +131,9 @@ const DevelopmentProjects = () => {
             <>
               {/* Title Section */}
               <div className="project-list-header">
-                <h2 className="project-list-title">Building Scalable Software</h2>
+                <h2 className="project-list-title">My Development Projects</h2>
                 <p className="project-list-subtitle">
-                  From backend to full-stack, we build secure, high-performance solutions for growth.
+                  Showcasing real-world full-stack and design projects powered by AI, Django, React, and more.
                 </p>
               </div>
 
@@ -211,10 +202,6 @@ const DevelopmentProjects = () => {
                     className="project-link code-link"
                   >
                     <span>View Code</span>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="m18 13 6-6-6-6"/>
-                      <path d="m6 11 6-6-6-6"/>
-                    </svg>
                   </a>
                   <a 
                     href={currentProjectData.liveLink} 
@@ -223,11 +210,6 @@ const DevelopmentProjects = () => {
                     className="project-link live-link"
                   >
                     <span>Live Demo</span>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                      <polyline points="15,3 21,3 21,9"/>
-                      <line x1="10" x2="21" y1="14" y2="3"/>
-                    </svg>
                   </a>
                 </div>
               </div>
