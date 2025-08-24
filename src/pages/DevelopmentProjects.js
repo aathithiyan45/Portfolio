@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './DevelopmentProjects.css';
 
+
 const DevelopmentProjects = () => {
   const [currentProject, setCurrentProject] = useState(0);
   const [hoveredProject, setHoveredProject] = useState(null);
@@ -12,7 +13,7 @@ const DevelopmentProjects = () => {
       title: "SmartSpend.AI",
       description: "AI-powered expense tracker with analytics dashboard.",
       category: "Full-Stack + AI/ML",
-      image: "images/smartspend-dashboard.png",
+      image: "/images/Portfolio.png",
       detailedDescription: "SmartSpend.AI is an intelligent expense manager that tracks spending, predicts categories using a trained ML model (Naive Bayes with scikit-learn), and provides insights with charts. Built using Django, Tailwind, and Chart.js.",
       technologies: ["Django", "Tailwind CSS", "Chart.js", "SQLite", "scikit-learn", "ReportLab"],
       features: [
@@ -81,7 +82,7 @@ const DevelopmentProjects = () => {
       title: "Portfolio Website",
       description: "Personal portfolio built with React and animations.",
       category: "Frontend Development",
-      image: "images/portfolio-preview.png",
+      image: "/images/Profile.png",
       detailedDescription: "My personal portfolio website built with React. It showcases my journey as a full-stack developer and UI/UX designer with sections for projects, skills, experience, and design work.",
       technologies: ["React", "CSS Animations", "Framer Motion", "Vercel"],
       features: [
