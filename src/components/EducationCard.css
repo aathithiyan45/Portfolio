@@ -1,104 +1,109 @@
-.timeline {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    position: relative;
-    margin: 3rem auto;
-    padding: 2rem 0;
-    max-width: 1000px;
-  }
-  
-  /* horizontal line */
-  .timeline::before {
-    content: "";
-    position: absolute;
-    top: 40px; /* adjust to align with dots */
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, #6a11cb, #2575fc);
-  }
-  
-  .timeline-item {
-    position: relative;
-    flex: 1;
-    text-align: center;
-    padding: 0 1.5rem;
-  }
-  
-  /* dots on timeline */
-  .timeline-dot {
-    position: absolute;
-    top: 30px; /* aligns dot with line */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 18px;
-    height: 18px;
-    background: #6a11cb;
-    border-radius: 50%;
-    border: 3px solid #fff;
-    box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.3);
-    z-index: 2;
-  }
-  
-  /* card content */
-  .timeline-content {
-    background: #fff;
-    margin-top: 70px; /* push content below line */
-    padding: 1.2rem;
-    border-radius: 1rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-  }
-  
-  .timeline-content:hover {
-    transform: translateY(-5px);
-  }
-  
-  .timeline-year {
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: #2575fc;
-    margin-bottom: 0.5rem;
-    display: block;
-  }
-  /* Primary text (headings, degree title) */
+
+.education-section {
+  text-align: center;
+  margin: 1rem 0;
+  padding: 0 1rem;
+}
+
+.section-title {
+  font-size: 1.8rem;   /* smaller than 2.2rem */
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  color: #111;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 2px;
+  bottom: -8px;
+  left: 25%;
+  border-radius: 2px;
+}
+
+/* ===== CONTAINER ===== */
+.education-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+/* ===== CARD STYLING ===== */
+.timeline-item {
+  background-color: #ECECEC;
+  color: #222;
+  padding: 1.5rem; /* less padding = softer look */
+  border-radius: 16px;
+  flex: 1 1 45%;
+  min-width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== CONTENT ===== */
+.timeline-content {
+  flex-grow: 1;
+}
+
+.timeline-year {
+  background: #2575fc;
+  color: #fff;
+  padding: 0.3rem 0.8rem;
+  border-radius: 10px;
+  font-size: 0.9rem; /* smaller */
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 0.8rem;
+}
+
 .timeline-content h3 {
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: #2d3436; /* dark slate */
-    margin-bottom: 0.3rem;
+  margin: 0.3rem 0;
+  font-size: 1.2rem;  /* reduced */
+  font-weight: 600;
+  color: #000;
+}
+
+.timeline-content h4 {
+  margin: 0.2rem 0 0.8rem 0;
+  font-size: 1rem;   /* reduced */
+  font-weight: 500;
+  color: #555;
+}
+
+.timeline-content p {
+  margin: 0;
+  font-size: 0.9rem; /* smaller text for details */
+  line-height: 1.5;
+  color: #666;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .education-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem;
   }
-  
-  /* Secondary text (place, details, GPA, etc.) */
-  .timeline-content h4,
-  .timeline-content p,
-  .timeline-year {
-    color: #636e72; /* muted gray */
-    font-size: 0.95rem;
-    line-height: 1.5;
+  .timeline-item {
+    width: 95%;
+    min-width: unset;
   }
-  
-  /* Variation (subtle hover vibration effect on text) */
-  .timeline-content:hover h3 {
-    color: #2575fc; /* highlight on hover */
-    transition: color 0.3s ease, transform 0.2s ease;
-    transform: scale(1.05);
-  }
-  
-  .timeline-content:hover h4,
-  .timeline-content:hover p {
-    color: #2d3436;
-  }
-  @keyframes vibration {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-2px); }
-    50% { transform: translateX(2px); }
-    75% { transform: translateX(-2px); }
-    100% { transform: translateX(0); }
-  }
-  
-  .timeline-content:hover h3 {
-    animation: vibration 0.2s ease-in-out 2; /* vibrates twice */
-  }
-    
+}

@@ -1,8 +1,8 @@
 import React from 'react';
 import './About.css';
 import SocialLinks from '../components/SocialLinks';
-import Education from "../components/Education";
 import Achievements from "../components/Achievements";
+import EducationSection from '../components/EducationCard';
 
 const About = () => {
   return (
@@ -34,10 +34,8 @@ const About = () => {
       <hr className="section-divider" />
 
       {/* Education Timeline */}
-      <section className="education-section">
-        <h2 className="section-title">Education</h2>
-        <Education />
-      </section>
+      
+      <EducationSection />
 
        <hr className="section-divider" />
        <section className="achievements-section">

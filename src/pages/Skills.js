@@ -83,8 +83,8 @@ const Skills = () => {
     <div className="skills-page">
       <div className="skills-section">
         <div className="hero-content">
-          <h1>Our Vision,</h1>
-          <h1>Our Creativity</h1>
+          <h1>My Vision,</h1>
+          <h1>My Creativity</h1>
           <h2>Creating Digital Solutions That Inspire!</h2>
           <p>
             I specialize in Full-Stack Development & UI/UX Design to
