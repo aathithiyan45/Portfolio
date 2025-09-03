@@ -13,7 +13,7 @@ const DevelopmentProjects = () => {
       title: "SmartSpend.AI",
       description: "AI-powered expense tracker with analytics dashboard.",
       category: "Full-Stack + AI/ML",
-      image: "/images/Portfolio.png",
+      image: "/images/spendai.png",
       detailedDescription: "SmartSpend.AI is an intelligent expense manager that tracks spending, predicts categories using a trained ML model (Naive Bayes with scikit-learn), and provides insights with charts. Built using Django, Tailwind, and Chart.js.",
       technologies: ["Django", "Tailwind CSS", "Chart.js", "SQLite", "scikit-learn", "ReportLab"],
       features: [
@@ -32,7 +32,7 @@ const DevelopmentProjects = () => {
       title: "Translate App",
       description: "Multi-language translator powered by DeepL API.",
       category: "Full-Stack Development",
-      image: "images/translate-app.png",
+      image: "images/Translate.png",
       detailedDescription: "A translation web app built with Django and templates. Integrates the DeepL API to deliver accurate translations across multiple languages. Frontend is built with HTML, CSS, and JavaScript.",
       technologies: ["Django", "DeepL API", "HTML", "CSS", "JavaScript"],
       features: [
@@ -66,7 +66,7 @@ const DevelopmentProjects = () => {
       title: "Macrocosm SFX",
       description: "Static editing portfolio for design & short films.",
       category: "Frontend Development",
-      image: "images/macrocosm-sfx.png",
+      image: "images/macrocosm.png",
       detailedDescription: "Macrocosm SFX is a static personal editing portfolio built with pure HTML, CSS, and JavaScript. It showcases creative editing work such as short films and travel edits with a multi-page layout.",
       technologies: ["HTML", "CSS"],
       features: [
@@ -82,7 +82,7 @@ const DevelopmentProjects = () => {
       title: "Portfolio Website",
       description: "Personal portfolio built with React and animations.",
       category: "Frontend Development",
-      image: "/images/Profile.png",
+      image: "/images/portfolio.png",
       detailedDescription: "My personal portfolio website built with React. It showcases my journey as a full-stack developer and UI/UX designer with sections for projects, skills, experience, and design work.",
       technologies: ["React", "CSS Animations", "Framer Motion", "Vercel"],
       features: [
