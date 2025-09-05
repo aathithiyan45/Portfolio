@@ -1,89 +1,143 @@
+/* Social Links Container */
 .social-links {
   display: flex;
   gap: 2rem;
   margin-top: 2rem;
+  flex-wrap: wrap;
+  justify-content: left;
 }
 
+/* Generic circle container for icons */
 .social-icon {
-  width: 40px;
-  height: 40px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  transition: all 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInScale 0.6s ease forwards; /* load animation */
+  opacity: 0;
 }
 
-.social-icon i {
-  font-size: 1.2rem;
+/* Fade-in + scale animation */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-.social-icon:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-}
-
+/* LinkedIn */
 .social-icon.linkedin {
+  width: 42px;
+  height: 42px;
   background-color: #0A66C2;
-  color: white;
 }
 
+.social-icon.linkedin img.social-svg {
+  width: 24px;
+  height: 24px;
+}
+
+.social-icon.linkedin:hover {
+  transform: scale(1.2);
+  box-shadow: 0 3px 10px rgba(10, 102, 194, 0.3);
+}
+
+/* GitHub */
 .social-icon.github {
+  width: 42px;
+  height: 42px;
   background-color: #ffffff;
-  color: #24292F;
   border: 1px solid #e1e4e8;
 }
 
+.social-icon.github img.social-svg {
+  width: 24px;
+  height: 24px;
+}
+
+.social-icon.github:hover {
+  transform: scale(1.2);
+  box-shadow: 0 3px 10px rgba(36, 41, 47, 0.3);
+}
+
+/* Instagram */
 .social-icon.instagram {
+  width: 40px;
+  height: 40px;
   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-  color: white;
 }
 
+.social-icon.instagram img.social-svg {
+  width: 24px;
+  height: 24px;
+}
+
+.social-icon.instagram:hover {
+  transform: scale(1.2);
+  box-shadow: 0 3px 10px rgba(255, 0, 123, 0.3);
+}
+
+/* Figma */
 .social-icon.figma {
+  width: 40px;
+  height: 40px;
   background-color: #1E1E1E;
-  position: relative;
-  overflow: hidden;
 }
 
-.social-icon.figma i {
-  background: linear-gradient(to bottom, #F24E1E, #FF7262, #A259FF, #1ABCFE, #0ACF83);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.social-icon.figma img.social-svg {
+  width: 22px;
+  height: 22px;
 }
 
+.social-icon.figma:hover {
+  transform: scale(1.2);
+  box-shadow: 0 3px 10px rgba(30, 30, 30, 0.3);
+}
+
+/* Behance */
 .social-icon.behance {
+  width: 40px;
+  height: 40px;
   background-color: #1769ff;
-  color: #fff;
 }
 
-/* Media queries for responsive design */
+.social-icon.behance img.social-svg {
+  width: 24px;
+  height: 24px;
+}
+
+.social-icon.behance:hover {
+  transform: scale(1.2);
+  box-shadow: 0 3px 10px rgba(23, 105, 255, 0.3);
+}
+
+/* Responsive Adjustments */
 @media screen and (max-width: 768px) {
-  .social-links {
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 1.5rem;
-  }
-
   .social-icon {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
   }
-
-  .social-icon i {
-    font-size: 1rem;
+  .social-icon img.social-svg {
+    width: 21px;
+    height: 21px;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .social-links {
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-
   .social-icon {
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
+  }
+  .social-icon img.social-svg {
+    width: 18px;
+    height: 18px;
   }
 }
