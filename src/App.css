@@ -1,14 +1,68 @@
+/* CSS Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  background-color: #f5f5f5;
+/* Light mode variables */
+:root {
+  --bg-color: #fafafa;
+  --text-color: #1a1a1a;
+  --heading-color: #0d1117;
+  --paragraph-color: #4a5568;
+  --link-color: #0366d6;
+  --link-hover-color: #0256cc;
+  --accent-color: #f6f8fa;
+  --border-color: #e1e4e8;
+  --card-bg: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.08);
+  --success-color: #28a745;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+  --info-color: #17a2b8;
+  
+  /* Navbar specific colors - consistent with main theme */
+  --navbar-bg: #fafafa;
+  --navbar-text: #1a1a1a;
+  --navbar-active-bg: #0d1117;
+  --navbar-active-text: #ffffff;
+  --navbar-hover: #0366d6;
+  --dropdown-bg: #ffffff;
+  --dropdown-item-bg-hover: #f6f8fa;
+  --dropdown-item-active-bg: #0366d6;
+  --dropdown-item-active-text: #ffffff;
 }
+
+/* Dark mode variables */
+body.dark {
+  --bg-color: #0E1011;
+  --text-color: #e6edf3;
+  --heading-color: #ffffff;
+  --paragraph-color: #b0b8c0;
+  --link-color: #58a6ff;
+  --link-hover-color: #79c0ff;
+  --accent-color: #161b22;
+  --border-color: #30363d;
+  --card-bg:#121212;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --success-color: #3fb950;
+  --warning-color: #d29922;
+  --danger-color: #f85149;
+  --info-color: #58a6ff;
+  
+  /* Navbar specific colors - consistent with dark theme */
+  --navbar-bg:#0E1011;
+  --navbar-text: #e6edf3;
+  --navbar-active-bg: #ffffff;
+  --navbar-active-text: #0d1117;
+  --navbar-hover: #58a6ff;
+  --dropdown-bg: #21262d;
+  --dropdown-item-bg-hover: #30363d;
+  --dropdown-item-active-bg: #58a6ff;
+  --dropdown-item-active-text: #ffffff;
+}
+
 /* Base font size for the whole app */
 html {
   font-size: 16px; /* default, scalable with rem */
@@ -16,17 +70,22 @@ html {
 
 /* Body inherits global font family and adds default text styles */
 body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 1rem; /* 16px */
   line-height: 1.6;
-  color: #2d3436; /* default text color */
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
   font-family: inherit;
-  color: #2d3436;
+  color: var(--heading-color);
   margin-bottom: 0.5rem;
   line-height: 1.2;
+  transition: color 0.3s ease;
 }
 
 h1 { font-size: 2.5rem; }  /* ~40px */
@@ -40,19 +99,20 @@ h6 { font-size: 1rem; }    /* 16px */
 p {
   font-size: 1rem;
   line-height: 1.6;
-  color: #555;
+  color: var(--paragraph-color);
   margin-bottom: 1rem;
+  transition: color 0.3s ease;
 }
 
 /* Links */
 a {
-  color: #0984e3;
+  color: var(--link-color);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #74b9ff;
+  color: var(--link-hover-color);
 }
 
 /* Buttons */
@@ -60,13 +120,96 @@ button {
   font-family: inherit;
   font-size: 1rem;
   cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+/* Focus states for accessibility */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--link-color);
+  outline-offset: 2px;
+}
+
+/* Selection styling */
+::selection {
+  background-color: var(--link-color);
+  color: var(--bg-color);
+}
+
+::-moz-selection {
+  background-color: var(--link-color);
+  color: var(--bg-color);
+}
+
+/* Scrollbar styling for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--accent-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--paragraph-color);
+}
+
+/* Utility classes */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.font-bold { font-weight: bold; }
+.font-medium { font-weight: 500; }
+.font-light { font-weight: 300; }
+
+.text-sm { font-size: 0.875rem; }
+.text-lg { font-size: 1.125rem; }
+.text-xl { font-size: 1.25rem; }
+
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+
+/* Card component utility */
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px var(--shadow-color);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 16px var(--shadow-color);
 }
 
 /* Responsive font scaling */
 @media (max-width: 768px) {
-  html { font-size: 15px; }
+  html { 
+    font-size: 15px; 
+  }
+  
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.5rem; }
 }
 
 @media (max-width: 480px) {
-  html { font-size: 14px; }
+  html { 
+    font-size: 14px; 
+  }
+  
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
 }

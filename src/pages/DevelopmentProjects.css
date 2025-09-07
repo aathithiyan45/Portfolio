@@ -1,3 +1,5 @@
+/* Development Projects Page - Using consistent color variables */
+
 .development-projects-page {
   min-height: calc(100vh - 80px);
   display: flex;
@@ -7,6 +9,8 @@
   padding: 32px;
   gap: 32px;
   margin-top: 150px;
+  background-color: var(--bg-color);
+  transition: background-color 0.3s ease;
 }
 
 .projects-container {
@@ -32,25 +36,28 @@
 .project-list-title {
   font-size: 28px;
   font-weight: 700;
-  color: #2d3436;
+  color: var(--heading-color);
   margin-bottom: 16px;
   line-height: 1.2;
+  transition: color 0.3s ease;
 }
 
 .project-list-subtitle {
   font-size: 20px;
   font-weight: 500;
-  color: #636e72;
+  color: var(--paragraph-color);
   margin-bottom: 8px;
   line-height: 1.3;
+  transition: color 0.3s ease;
 }
 
 .project-list-subsubtitle {
   font-size: 19.2px;
   font-weight: 400;
-  color: #74b9ff;
+  color: var(--link-color);
   margin-bottom: 0;
   line-height: 1.4;
+  transition: color 0.3s ease;
 }
 
 .project-list-items {
@@ -67,12 +74,12 @@
   width: 780px;
   max-width: 800px;
   padding: 19.2px;
-  background-color: #ECECEC;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.3s ease;
-  border: 2px solid transparent;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  box-shadow: 0 4px 12px var(--shadow-color);
 }
 
 .project-list-info {
@@ -85,28 +92,33 @@
 
 .project-list-item-title {
   margin-bottom: 1.6px;
-  color: inherit;
+  color: var(--heading-color);
   transition: color 0.3s ease;
   line-height: 1.2;
   font-size: 18px;
+  font-weight: 600;
 }
 
 .project-list-item-subtitle {
   font-size: 16px;
   font-weight: 400;
+  color: var(--paragraph-color);
   opacity: 0.8;
   line-height: 1.3;
   margin: 0;
+  transition: color 0.3s ease;
 }
 
 .project-list-category {
   font-size: 14px;
+  color: var(--paragraph-color);
   opacity: 0.7;
   min-width: 140px;
   text-align: right;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  transition: color 0.3s ease;
 }
 
 .project-list-category::after {
@@ -115,6 +127,7 @@
   opacity: 0;
   transform: translateX(-10px);
   transition: all 0.3s ease;
+  color: var(--link-color);
 }
 
 .project-list-item:hover .project-list-category::after {
@@ -123,17 +136,22 @@
 }
 
 .project-list-item:hover {
-  background: linear-gradient(to left, #ccc, rgba(236,236,236,0.95));
+  background-color: var(--accent-color);
+  border-color: var(--link-color);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--shadow-color);
 }
 
 .project-preview-section {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #e3e7fc 0%, #c8d0f0 100%);
+  background: linear-gradient(135deg, var(--accent-color) 0%, var(--border-color) 100%);
+  border: 1px solid var(--border-color);
   border-radius: 20px;
   padding: 32px;
   min-height: 600px;
+  transition: all 0.3s ease;
 }
 
 .project-preview-container {
@@ -144,20 +162,22 @@
   max-width: 100%;
   height: auto;
   border-radius: 15px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  box-shadow: 0 20px 40px var(--shadow-color);
   transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
 }
 
 .project-preview-image:hover {
   transform: translateY(-10px);
-  box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+  box-shadow: 0 30px 60px var(--shadow-color);
 }
 
 .project-preview-caption {
   margin-top: 24px;
   font-size: 17.6px;
   font-weight: 600;
-  color: #2d3436;
+  color: var(--heading-color);
+  transition: color 0.3s ease;
 }
 
 /* Project Details Styles */
@@ -172,8 +192,8 @@
 
 .back-button {
   background: none;
-  border: 2px solid #74b9ff;
-  color: #74b9ff;
+  border: 2px solid var(--link-color);
+  color: var(--link-color);
   padding: 8px 16px;
   border-radius: 8px;
   cursor: pointer;
@@ -186,8 +206,8 @@
 }
 
 .back-button:hover {
-  background-color: #74b9ff;
-  color: white;
+  background-color: var(--link-color);
+  color: var(--bg-color);
 }
 
 .project-details-header {
@@ -198,19 +218,21 @@
 .project-details-title {
   font-size: 32px;
   font-weight: 700;
-  color: #2d3436;
+  color: var(--heading-color);
   margin-bottom: 8px;
   line-height: 1.2;
+  transition: color 0.3s ease;
 }
 
 .project-details-category {
   display: inline-block;
-  background-color: #74b9ff;
-  color: white;
+  background-color: var(--link-color);
+  color: var(--bg-color);
   padding: 4px 12px;
   border-radius: 20px;
   font-size: 14px;
   font-weight: 500;
+  transition: background-color 0.3s ease;
 }
 
 .project-details-content {
@@ -227,15 +249,17 @@
 .project-features h3 {
   font-size: 18px;
   font-weight: 600;
-  color: #2d3436;
+  color: var(--heading-color);
   margin-bottom: 12px;
+  transition: color 0.3s ease;
 }
 
 .project-description p {
   font-size: 15px;
   line-height: 1.5;
-  color: #636e72;
+  color: var(--paragraph-color);
   margin: 0;
+  transition: color 0.3s ease;
 }
 
 .tech-tags {
@@ -245,13 +269,20 @@
 }
 
 .tech-tag {
-  background-color: #f1f2f6;
-  color: #2d3436;
+  background-color: var(--accent-color);
+  color: var(--text-color);
   padding: 6px 12px;
   border-radius: 20px;
   font-size: 14px;
   font-weight: 500;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+  background-color: var(--link-color);
+  color: var(--bg-color);
+  border-color: var(--link-color);
 }
 
 .features-list {
@@ -262,16 +293,17 @@
 
 .features-list li {
   padding: 6px 0;
-  color: #636e72;
+  color: var(--paragraph-color);
   font-size: 15px;
   line-height: 1.4;
   position: relative;
   padding-left: 20px;
+  transition: color 0.3s ease;
 }
 
 .features-list li::before {
   content: '✓';
-  color: #74b9ff;
+  color: var(--success-color);
   font-weight: 600;
   position: absolute;
   left: 0;
@@ -297,22 +329,26 @@
 }
 
 .code-link {
-  background-color: #2d3436;
-  color: white;
+  background-color: var(--heading-color);
+  color: var(--bg-color);
+  border: 1px solid var(--heading-color);
 }
 
 .code-link:hover {
-  background-color: #636e72;
+  background-color: var(--paragraph-color);
+  border-color: var(--paragraph-color);
   transform: translateY(-2px);
 }
 
 .live-link {
-  background-color: #74b9ff;
-  color: white;
+  background-color: var(--link-color);
+  color: var(--bg-color);
+  border: 1px solid var(--link-color);
 }
 
 .live-link:hover {
-  background-color: #0984e3;
+  background-color: var(--link-hover-color);
+  border-color: var(--link-hover-color);
   transform: translateY(-2px);
 }
 
