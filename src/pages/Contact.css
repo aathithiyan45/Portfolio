@@ -4,7 +4,9 @@
   display: flex;
   align-items: center;
   padding: 2rem;
+  background-color: var(--bg-color);
   animation: fadeIn 0.8s ease-out;
+  transition: background-color 0.3s ease;
 }
 
 /* Contact layout */
@@ -27,23 +29,26 @@
 
 .hero-content h1 {
   font-size: 2.5rem;
-  color: #2d3436;
+  color: var(--heading-color);
   margin-bottom: 0.5rem;
   font-weight: 700;
+  transition: color 0.3s ease;
 }
 
 .hero-content h2 {
   font-size: 1.8rem;
-  color: #636e72;
+  color: var(--secondary-text-color);
   margin-bottom: 1rem;
   font-weight: 600;
+  transition: color 0.3s ease;
 }
 
 .hero-content p {
   font-size: 1rem;
-  color: #555;
+  color: var(--paragraph-color);
   line-height: 1.6;
   margin-bottom: 2rem;
+  transition: color 0.3s ease;
 }
 
 .contact-info {
@@ -53,44 +58,63 @@
 .info-item {
   margin-bottom: 1.5rem;
   padding: 1rem;
-  background: rgba(9, 132, 227, 0.05);
+  background: var(--accent-color);
+  border: 1px solid var(--border-color);
   border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.info-item:hover {
+  background: var(--card-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow-color);
 }
 
 .info-label {
   display: block;
   font-weight: 600;
-  color: #0984e3;
+  color: var(--link-color);
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
 }
 
 .info-item a,
 .info-item span {
-  color: #2d3436;
+  color: var(--paragraph-color);
   font-size: 1rem;
   text-decoration: none;
   font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .info-item a:hover {
-  color: #0984e3;
-  transition: color 0.3s ease;
+  color: var(--link-hover-color);
+}
+
+.info-item a:focus {
+  outline: 2px solid var(--link-color);
+  outline-offset: 2px;
 }
 
 /* Contact form container */
 .contact-form-container {
   flex: 1;
-  background: #f5f5f5;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
   border-radius: 16px;
   padding: 2.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px var(--shadow-color);
   animation: slideInRight 1s ease-out;
   max-width: 600px;
   width: 100%;
-  border: 1px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.contact-form-container:hover {
+  box-shadow: 0 8px 24px var(--shadow-color);
 }
 
 /* Form header */
@@ -101,15 +125,17 @@
 
 .form-header h3 {
   font-size: 1.5rem;
-  color: #333;
+  color: var(--heading-color);
   margin-bottom: 0.5rem;
   font-weight: 700;
+  transition: color 0.3s ease;
 }
 
 .form-header p {
-  color: #666;
+  color: var(--secondary-text-color);
   font-size: 0.95rem;
   margin: 0;
+  transition: color 0.3s ease;
 }
 
 /* Form layout */
@@ -127,50 +153,130 @@
 .form-group input,
 .form-group textarea {
   padding: 1.1rem;
-  border: 1px solid #d0d0d0;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   font-size: 1rem;
-  background: #ffffff;
-  transition: border 0.3s ease, box-shadow 0.3s ease;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
   font-family: inherit;
   resize: vertical;
-  color: #333;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
-  border-color: #999;
+  border-color: var(--link-color);
   outline: none;
-  box-shadow: 0 0 0 2px rgba(153, 153, 153, 0.15);
+  box-shadow: 0 0 0 2px var(--link-color);
+  background: var(--accent-color);
+}
+
+.form-group input:hover,
+.form-group textarea:hover {
+  border-color: var(--secondary-text-color);
+  background: var(--accent-color);
 }
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: #888;
+  color: var(--secondary-text-color);
+  opacity: 0.8;
+}
+
+/* Enhanced form validation states */
+.form-group input:invalid:not(:placeholder-shown),
+.form-group textarea:invalid:not(:placeholder-shown) {
+  border-color: var(--danger-color);
+  background: rgba(220, 53, 69, 0.05);
+}
+
+.form-group input:valid:not(:placeholder-shown),
+.form-group textarea:valid:not(:placeholder-shown) {
+  border-color: var(--success-color);
+  background: rgba(40, 167, 69, 0.05);
 }
 
 /* Submit button */
 .submit-btn {
-  background-color: #333;
-  color: #fff;
+  background-color: var(--link-color);
+  color: var(--bg-color);
   padding: 1rem;
   border: none;
   border-radius: 8px;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.submit-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
 }
 
 .submit-btn:hover:not(:disabled) {
-  background-color: #555;
+  background-color: var(--link-hover-color);
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.submit-btn:hover:not(:disabled)::before {
+  left: 100%;
+}
+
+.submit-btn:active:not(:disabled) {
+  transform: translateY(0);
 }
 
 .submit-btn:disabled {
   opacity: 0.7;
   cursor: not-allowed;
   transform: none;
+  background-color: var(--secondary-text-color);
+}
+
+.submit-btn:focus {
+  outline: 2px solid var(--link-color);
+  outline-offset: 2px;
+}
+
+/* Loading state for submit button */
+.submit-btn:disabled::after {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-left: 8px;
+  border: 2px solid transparent;
+  border-top: 2px solid var(--bg-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Dark mode specific enhancements */
+body.dark .contact-form-container {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+body.dark .contact-form-container:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+body.dark .info-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* Animations */
@@ -276,6 +382,7 @@
     margin-bottom: 1rem;
   }
 }
+
 /* Screen-reader only label helper */
 .sr-only {
   position: absolute !important;
@@ -287,4 +394,41 @@
   clip: rect(0, 0, 0, 0) !important;
   white-space: nowrap !important;
   border: 0 !important;
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .contact-page,
+  .contact-form-container,
+  .info-item,
+  .submit-btn,
+  .form-group input,
+  .form-group textarea {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .submit-btn::before {
+    display: none;
+  }
+
+  .info-item:hover,
+  .submit-btn:hover:not(:disabled) {
+    transform: none !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .form-group input,
+  .form-group textarea,
+  .info-item,
+  .contact-form-container {
+    border-width: 2px;
+  }
+
+  .submit-btn {
+    border: 2px solid var(--link-color);
+  }
 }

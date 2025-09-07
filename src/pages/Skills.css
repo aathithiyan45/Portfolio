@@ -6,6 +6,8 @@
   justify-content: flex-start;
   padding: 2rem;
   margin-top: 150px;
+  background-color: var(--bg-color);
+  transition: background-color 0.3s ease;
 }
 
 .skills-section {
@@ -26,17 +28,21 @@
 .hero-content h1 {
   font-size: 3.5rem;
   margin-bottom: 1rem;
-  color: #2d3436;
+  color: var(--heading-color);
+  transition: color 0.3s ease;
 }
 
 .hero-content h2 {
   font-size: 2rem;
   margin-bottom: 1.5rem;
-  color: #000;
+  color: var(--paragraph-color);
+  transition: color 0.3s ease;
 }
 
 .hero-content p {
   margin-bottom: 2rem;
+  color: var(--secondary-text-color);
+  transition: color 0.3s ease;
 }
 
 .skills-cards {
@@ -49,11 +55,12 @@
 .skill-card {
   width: 500px;
   min-height: 600px;
-  background-color: #ECECEC;
-  color: #000;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
   border-radius: 16px;
   padding: 2rem;
-  box-shadow: 0 8px 20px rgba(236, 236, 236, 0.3);
+  box-shadow: 0 8px 20px var(--shadow-color);
   transition: all 0.5s ease;
   animation: scaleIn 0.6s ease-out;
   display: flex;
@@ -62,7 +69,7 @@
 
 .skill-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(236, 236, 236, 0.4);
+  box-shadow: 0 12px 25px var(--shadow-color);
 }
 
 .skill-card-header {
@@ -75,11 +82,12 @@
 .skill-card-number {
   font-size: 1.2rem;
   font-weight: 600;
-  color: #000;
-  background: rgba(0, 0, 0, 0.1);
+  color: var(--bg-color);
+  background: var(--link-color);
   padding: 0.5rem 1rem;
   border-radius: 8px;
   display: inline-block;
+  transition: all 0.3s ease;
 }
 
 .skill-card-nav {
@@ -90,26 +98,44 @@
 .nav-arrow {
   cursor: pointer;
   font-size: 1rem;
-  color: #333;
-  transition: color 0.3s ease;
+  color: var(--secondary-text-color);
+  background: var(--accent-color);
+  padding: 0.5rem;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
 }
 
 .nav-arrow:hover {
-  color: #007bff;
+  color: var(--bg-color);
+  background: var(--link-color);
+  transform: scale(1.1);
+}
+
+.nav-arrow:focus {
+  outline: 2px solid var(--link-color);
+  outline-offset: 2px;
 }
 
 .skill-card-title {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 2rem;
-  color: #000;
+  color: var(--heading-color);
+  transition: color 0.3s ease;
 }
 
 .skill-card-description {
   font-size: 1.1rem;
   line-height: 1.6;
   margin: 1rem 0;
-  color: #333;
+  color: var(--secondary-text-color);
+  transition: color 0.3s ease;
 }
 
 .skill-card-list {
@@ -120,38 +146,63 @@
 }
 
 .skill-card-list li {
-  color: #333;
+  color: var(--paragraph-color);
   margin-bottom: 1rem;
   padding-left: 1.5rem;
   position: relative;
   line-height: 1.4;
+  transition: color 0.3s ease;
 }
 
 .skill-card-list li::before {
   content: "•";
   position: absolute;
   left: 0;
-  color: #666;
+  color: var(--link-color);
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
 .certificate-section {
   margin-top: 1.5rem;
   padding: 1rem;
-  background: rgba(0, 0, 0, 0.05);
+  background: var(--accent-color);
+  border: 1px solid var(--border-color);
   border-radius: 8px;
-  color: #333;
+  color: var(--secondary-text-color);
+  transition: all 0.3s ease;
 }
 
 .certificate-link {
-  color: #007bff;
+  color: var(--link-color);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .certificate-link:hover {
-  color: #0056b3;
+  color: var(--link-hover-color);
   text-decoration: underline;
+}
+
+.certificate-link:focus {
+  outline: 2px solid var(--link-color);
+  outline-offset: 2px;
+}
+
+/* Enhanced visual feedback for interactive elements */
+.skill-card-number:hover {
+  background: var(--link-hover-color);
+  transform: scale(1.05);
+}
+
+/* Dark mode specific enhancements */
+body.dark .skill-card {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+body.dark .skill-card:hover {
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
 }
 
 /* Animations */
@@ -225,6 +276,12 @@
   .skill-card-list li {
     font-size: 0.95rem;
   }
+
+  .nav-arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -246,6 +303,32 @@
   }
 
   .nav-arrow {
-    font-size: 0.9rem;
+    width: 30px;
+    height: 30px;
+    font-size: 0.85rem;
+  }
+
+  .skill-card-number {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .skill-card,
+  .hero-content,
+  .nav-arrow,
+  .skill-card-number,
+  .certificate-link {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .skill-card:hover,
+  .nav-arrow:hover,
+  .skill-card-number:hover {
+    transform: none !important;
   }
 }

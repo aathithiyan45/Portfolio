@@ -17,30 +17,85 @@
   transition: all 0.3s ease;
   font-size: 1.1rem;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid transparent;
+}
+
+/* Animated shine effect */
+.cta-buttons .btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.cta-buttons .btn:hover::before {
+  left: 100%;
 }
 
 .cta-buttons .btn.primary {
-  background-color: #000;
-  color: #fff;
-  border: 2px solid #000;
+  background-color: var(--link-color);
+  color: var(--bg-color);
+  border-color: var(--link-color);
 }
 
 .cta-buttons .btn.primary:hover {
-  background-color: #333;
-  border-color: #333;
+  background-color: var(--link-hover-color);
+  border-color: var(--link-hover-color);
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.cta-buttons .btn.primary:active {
+  transform: translateY(0);
 }
 
 .cta-buttons .btn.secondary {
   background-color: transparent;
-  color: #000;
-  border: 2px solid #ECECEC;
+  color: var(--paragraph-color);
+  border-color: var(--border-color);
+  background: var(--accent-color);
 }
 
 .cta-buttons .btn.secondary:hover {
-  background-color: #ECECEC;
-  color: #000;
+  background-color: var(--link-color);
+  color: var(--bg-color);
+  border-color: var(--link-color);
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.cta-buttons .btn.secondary:active {
+  transform: translateY(0);
+}
+
+/* Focus states for accessibility */
+.cta-buttons .btn:focus {
+  outline: 2px solid var(--link-color);
+  outline-offset: 4px;
+}
+
+/* Enhanced hover effects */
+.cta-buttons .btn:hover {
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+/* Dark mode specific adjustments */
+body.dark .cta-buttons .btn.primary {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+body.dark .cta-buttons .btn.secondary {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body.dark .cta-buttons .btn:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
 }
 
 @keyframes fadeInRight {
@@ -66,6 +121,7 @@
   .cta-buttons .btn {
     width: auto;
     padding: 0.9rem 1.5rem;
+    min-width: 140px;
   }
 }
 
@@ -77,6 +133,7 @@
   .cta-buttons .btn {
     padding: 1rem 2rem;
     font-size: 1.1rem;
+    min-width: 160px;
   }
 }
 
@@ -90,5 +147,40 @@
   .cta-buttons .btn {
     padding: 0.8rem;
     font-size: 1rem;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .cta-buttons,
+  .cta-buttons .btn,
+  .cta-buttons .btn::before {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+  .cta-buttons .btn:hover {
+    transform: none !important;
+  }
+
+  .cta-buttons .btn::before {
+    display: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .cta-buttons .btn {
+    border-width: 3px;
+  }
+
+  .cta-buttons .btn.primary {
+    border-color: var(--link-color);
+  }
+
+  .cta-buttons .btn.secondary {
+    border-color: var(--paragraph-color);
   }
 }

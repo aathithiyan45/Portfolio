@@ -7,6 +7,8 @@
   padding: 32px;
   gap: 32px;
   margin-top: 150px;
+  background-color: var(--bg-color);
+  transition: background-color 0.3s ease;
 }
 
 .projects-container {
@@ -30,25 +32,28 @@
 .project-list-title {
   font-size: 28px;
   font-weight: 700;
-  color: #2d3436;
+  color: var(--heading-color);
   margin-bottom: 16px;
   line-height: 1.2;
+  transition: color 0.3s ease;
 }
 
 .project-list-subtitle {
   font-size: 20px;
   font-weight: 500;
-  color: #636e72;
+  color: var(--secondary-text-color);
   margin-bottom: 8px;
   line-height: 1.3;
+  transition: color 0.3s ease;
 }
 
 .project-list-subsubtitle {
   font-size: 19.2px;
   font-weight: 400;
-  color: #74b9ff;
+  color: var(--link-color);
   margin-bottom: 0;
   line-height: 1.4;
+  transition: color 0.3s ease;
 }
 
 .project-list-items {
@@ -65,12 +70,25 @@
   width: 780px;
   max-width: 800px;
   padding: 19.2px;
-  background-color: #ECECEC;
+  background-color: var(--card-bg);
+  border: 2px solid var(--border-color);
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.3s ease;
-  border: 2px solid transparent;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  box-shadow: 0 4px 12px var(--shadow-color);
+  color: var(--text-color);
+}
+
+.project-list-item:hover {
+  background: var(--accent-color);
+  border-color: var(--link-color);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px var(--shadow-color);
+}
+
+.project-list-item:focus {
+  outline: 2px solid var(--link-color);
+  outline-offset: 2px;
 }
 
 .project-list-info {
@@ -83,76 +101,159 @@
 
 .project-list-item-title {
   margin-bottom: 1.6px;
-  color: inherit;
+  color: var(--heading-color);
   transition: color 0.3s ease;
   line-height: 1.2;
   font-size: 18px;
+  font-weight: 600;
 }
 
 .project-list-item-subtitle {
   font-size: 16px;
   font-weight: 400;
-  opacity: 0.8;
+  color: var(--secondary-text-color);
+  opacity: 0.9;
   line-height: 1.3;
   margin: 0;
+  transition: color 0.3s ease;
 }
 
 .project-list-category {
   font-size: 14px;
-  opacity: 0.7;
+  color: var(--secondary-text-color);
+  opacity: 0.8;
   min-width: 140px;
   text-align: right;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  transition: all 0.3s ease;
 }
+
 .project-list-category::after {
   content: '→';
   margin-left: 8px;
   opacity: 0;
   transform: translateX(-10px);
   transition: all 0.3s ease;
+  color: var(--link-color);
+  font-weight: bold;
+}
+
+.project-list-item:hover .project-list-category {
+  color: var(--link-color);
+  opacity: 1;
 }
 
 .project-list-item:hover .project-list-category::after {
   opacity: 1;
   transform: translateX(0);
 }
-.project-list-item:hover {
-  background: linear-gradient(to left, #ccc, rgba(236,236,236,0.95));}
 
 .project-preview-section {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #e3e7fc 0%, #c8d0f0 100%);
+  background: var(--accent-color);
+  border: 1px solid var(--border-color);
   border-radius: 20px;
   padding: 32px;
   min-height: 600px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Enhanced gradient overlay for light mode */
+.project-preview-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, var(--accent-color) 0%, var(--card-bg) 100%);
+  opacity: 0.7;
+  z-index: 0;
+  transition: opacity 0.3s ease;
+}
+
+body.dark .project-preview-section::before {
+  opacity: 0.3;
 }
 
 .project-preview-container {
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 .project-preview-image {
   max-width: 100%;
   height: auto;
   border-radius: 15px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  box-shadow: 0 20px 40px var(--shadow-color);
   transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
 }
 
 .project-preview-image:hover {
   transform: translateY(-10px);
-  box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+  box-shadow: 0 30px 60px var(--shadow-color);
 }
 
 .project-preview-caption {
   margin-top: 24px;
   font-size: 17.6px;
   font-weight: 600;
-  color: #2d3436;
+  color: var(--heading-color);
+  transition: color 0.3s ease;
+}
+
+/* Active state for project items */
+.project-list-item.active {
+  background: var(--link-color);
+  border-color: var(--link-color);
+  color: var(--bg-color);
+}
+
+.project-list-item.active .project-list-item-title,
+.project-list-item.active .project-list-item-subtitle,
+.project-list-item.active .project-list-category {
+  color: var(--bg-color);
+  opacity: 1;
+}
+
+.project-list-item.active .project-list-category::after {
+  color: var(--bg-color);
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Enhanced dark mode support */
+body.dark .project-preview-section {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+body.dark .project-list-item {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+body.dark .project-list-item:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+body.dark .project-preview-image {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+body.dark .project-preview-image:hover {
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+}
+
+/* Loading state for images */
+.project-preview-image {
+  background: var(--accent-color);
 }
 
 /* Responsive */
@@ -164,6 +265,7 @@
   
   .project-list-item {
     max-width: 100%;
+    width: 100%;
   }
 }
 
@@ -209,6 +311,7 @@
     gap: 9.6px;
     height: auto;
     padding: 16px;
+    width: 100%;
   }
   
   .project-list-category {
@@ -250,5 +353,37 @@
   
   .project-list-subsubtitle {
     font-size: 14.4px;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .project-list-item,
+  .project-preview-image,
+  .project-list-category::after,
+  .project-preview-section::before {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .project-list-item:hover,
+  .project-preview-image:hover {
+    transform: none !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .project-list-item {
+    border-width: 3px;
+  }
+
+  .project-preview-section {
+    border-width: 2px;
+  }
+
+  .project-preview-image {
+    border-width: 2px;
   }
 }

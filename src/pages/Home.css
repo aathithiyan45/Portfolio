@@ -7,7 +7,8 @@
   padding: 2rem;
   gap: 2rem;
   margin-top: 150px;
-  
+  background-color: var(--bg-color);
+  transition: background-color 0.3s ease;
 }
 
 .hero-section {
@@ -28,29 +29,30 @@
 
 .hero-content h1 {
   font-size: 2.2rem;
- 
   margin-bottom: 0.8rem;
-  color: #2d3436;
+  color: var(--heading-color);
   line-height: 1.1;
   animation: fadeInRight 0.8s ease forwards;
+  transition: color 0.3s ease;
 }
 
 .hero-content h2 {
   font-size: 1.4rem;
   margin-bottom: 1rem;
-  color: #000;
+  color: var(--paragraph-color);
   line-height: 1.3;
   animation: fadeInRight 0.8s ease 0.2s forwards;
-  opacity: 0;
+  transition: color 0.3s ease;
 }
 
 .hero-content p {
   font-size: 1rem;
-  color: #636e72;
+  color: var(--secondary-text-color);
   margin-bottom: 1.5rem;
   line-height: 1.6;
   animation: fadeInRight 0.8s ease 0.4s forwards;
   opacity: 0;
+  transition: color 0.3s ease;
 }
 
 .hero-image {
@@ -67,8 +69,14 @@
   width: 100%;
   height: auto;
   border-radius: 20px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 20px var(--shadow-color);
   animation: fadeInUp 1s ease 0.4s forwards;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Enhanced shadow on hover */
+.hero-image img:hover {
+  box-shadow: 0 15px 30px var(--shadow-color);
 }
 
 /* Animations */
@@ -166,4 +174,15 @@
   .hero-image img {
     border-radius: 15px;
   }
+}
+
+/* Dark mode specific enhancements */
+body.dark .hero-image img {
+  border: 1px solid var(--border-color);
+}
+
+/* Focus states for accessibility */
+.hero-image img:focus {
+  outline: 2px solid var(--link-color);
+  outline-offset: 4px;
 }
