@@ -8,7 +8,7 @@ const achievements = [
     year: "2025",
   },
   {
-    title: "🥈 2nd Place – Coding Ninjas Event",
+    title: "🥈 2nd Place – Coding Ninjas Event", 
     desc: "Secured second place in competitive coding & UI design challenge.",
     year: "2025",
   },
@@ -17,9 +17,35 @@ const achievements = [
     desc: "Designed posters and event branding for college & tech clubs.",
     year: "2024",
   },
+  {
+    title: "🏆 Best Innovation Award",
+    desc: "Recognized for creative problem-solving in web development projects.",
+    year: "2024",
+  },
+  {
+    title: "⭐ Top Contributor",
+    desc: "Active contributor to open-source projects and developer community.",
+    year: "2024",
+  },
+  {
+    title: "🎯 Project Excellence",
+    desc: "Delivered high-quality full-stack applications with modern tech stack.",
+    year: "2024",
+  }
 ];
 
 const Achievements = () => {
+  // Create multiple sets for seamless infinite scroll
+  const renderAchievementSet = (setKey) => {
+    return achievements.map((ach, index) => (
+      <div key={`${setKey}-${index}`} className="achievement-card">
+        <h3>{ach.title}</h3>
+        <p>{ach.desc}</p>
+        <span className="ach-year">{ach.year}</span>
+      </div>
+    ));
+  };
+
   return (
     <div className="achievements">
       <h2 className="achievements-title">Achievements</h2>
@@ -27,32 +53,13 @@ const Achievements = () => {
       {/* Marquee Container */}
       <div className="marquee-container">
         <div className="marquee-content">
-          {/* First set of achievements */}
-          {achievements.map((ach, index) => (
-            <div key={`first-${index}`} className="achievement-card">
-              <h3>{ach.title}</h3>
-              <p>{ach.desc}</p>
-              <span className="ach-year">{ach.year}</span>
-            </div>
-          ))}
-          
-          {/* Duplicate for seamless loop */}
-          {achievements.map((ach, index) => (
-            <div key={`second-${index}`} className="achievement-card">
-              <h3>{ach.title}</h3>
-              <p>{ach.desc}</p>
-              <span className="ach-year">{ach.year}</span>
-            </div>
-          ))}
-          
-          {/* Third set for extra smooth scrolling */}
-          {achievements.map((ach, index) => (
-            <div key={`third-${index}`} className="achievement-card">
-              <h3>{ach.title}</h3>
-              <p>{ach.desc}</p>
-              <span className="ach-year">{ach.year}</span>
-            </div>
-          ))}
+          {/* Multiple sets for perfect endless loop */}
+          {renderAchievementSet('set1')}
+          {renderAchievementSet('set2')}
+          {renderAchievementSet('set3')}
+          {renderAchievementSet('set4')}
+          {renderAchievementSet('set5')}
+          {renderAchievementSet('set6')}
         </div>
       </div>
     </div>

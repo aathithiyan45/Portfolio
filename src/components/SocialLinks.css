@@ -4,17 +4,21 @@
   gap: 1.5rem;
   margin-top: 2rem;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: center; /* Ensures perfect horizontal alignment */
+  justify-content: flex-start; /* Already correct for left alignment */
+  align-items: center;
+  width: 100%; /* Changed from auto to 100% */
+  align-self: flex-start;
+  margin-left: 0; /* Ensure no left margin */
+  padding-left: 0; /* Ensure no left padding */
 }
 
 /* Generic circle container for icons - CONSISTENT SIZE FOR ALL */
 .social-icon {
-  width: 44px; /* Same size for ALL icons */
-  height: 44px; /* Same size for ALL icons */
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   display: flex;
-  align-items:left;
+  align-items: center; /* Fixed: was 'left', should be 'center' */
   justify-content: center;
   text-decoration: none;
   overflow: hidden;
@@ -22,7 +26,8 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   animation: fadeInScale 0.6s ease forwards;
   opacity: 0;
-  flex-shrink: 0; /* Prevents shrinking */
+  flex-shrink: 0;
+  margin: 0; /* Ensure no margin */
 }
 
 /* Fade-in + scale animation */
@@ -101,6 +106,7 @@
 @media screen and (min-width: 1200px) {
   .social-links {
     gap: 2rem;
+    justify-content: flex-start; /* Left alignment for large desktop only */
   }
   
   .social-icon {
@@ -118,6 +124,7 @@
 @media screen and (min-width: 769px) and (max-width: 1199px) {
   .social-links {
     gap: 1.75rem;
+    justify-content: flex-start; /* Left alignment for desktop only */
   }
   
   .social-icon {
@@ -135,7 +142,10 @@
 @media screen and (min-width: 481px) and (max-width: 768px) {
   .social-links {
     gap: 1.5rem;
-    justify-content: center; /* Center on tablets for better look */
+    justify-content: center; /* Center for tablet */
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .social-icon {
@@ -154,6 +164,9 @@
   .social-links {
     gap: 1.25rem;
     justify-content: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .social-icon {
@@ -172,6 +185,9 @@
   .social-links {
     gap: 1rem;
     justify-content: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .social-icon {
@@ -190,6 +206,9 @@
   .social-links {
     gap: 0.75rem;
     justify-content: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .social-icon {
@@ -203,12 +222,15 @@
   }
 }
 
-/* Additional alignment fixes for perfect horizontal alignment */
+/* Remove the pseudo-elements that might cause issues */
+/* Commented out the before/after elements that could add unwanted space */
+/*
 .social-links::before,
 .social-links::after {
   content: '';
   flex: 0;
 }
+*/
 
 /* Ensure no margin/padding issues */
 .social-icon * {
