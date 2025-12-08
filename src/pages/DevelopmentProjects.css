@@ -344,24 +344,10 @@
   border: 1px solid var(--heading-color);
 }
 
-.code-link:hover {
-  background-color: var(--paragraph-color);
-  color: var(--link-color);
-  border-color: var(--paragraph-color);
-  transform: translateY(-2px);
-}
-
 .live-link {
   background-color: var(--link-color);
   color: var(--bg-color);
   border: 1px solid var(--link-color);
-}
-
-.live-link:hover {
-  background-color: var(--link-hover-color);
-  border-color: var(--link-hover-color);
-  transform: translateY(-2px);
-  color: var(--link-color);
 }
 
 /* Responsive Design */

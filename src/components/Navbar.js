@@ -51,7 +51,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
         {/* Right-aligned toggle */}
         <div className="nav-right">
           <button className="theme-toggle-btn" onClick={() => setDarkMode(!darkMode)}>
-            {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
+            {darkMode ? "Light Mode" : "Dark Mode"}
           </button>
         </div>
       </div>

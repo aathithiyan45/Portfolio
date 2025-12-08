@@ -56,7 +56,8 @@ body.dark {
   /* Navbar specific colors - consistent with dark theme */
   --navbar-bg: #0E1011;
   --navbar-text: #e6edf3;
-  --navbar-active-bg: #ffffff;
+  --navbar-hover: #58a6ff;
+  --navbar-active-bg:#58a6ff;
   --navbar-active-text: #0d1117;
   --navbar-hover: #58a6ff;
   --dropdown-bg: #21262d;
