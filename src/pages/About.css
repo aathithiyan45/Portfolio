@@ -352,6 +352,7 @@ body.dark .hero-image img {
   .cta-buttons {
     gap: 0.5rem;
   }
+  
 }
 
 @media (max-width: 1200px) {

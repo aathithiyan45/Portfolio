@@ -1,8 +1,9 @@
 .cta-buttons {
+  flex-direction: row !important;
+  justify-content: center !important;
+  flex-wrap: nowrap !important;
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
   gap: 1rem;
   margin: 0;
   padding: 0;
@@ -126,9 +127,11 @@ body.dark .cta-buttons .btn:hover {
   }
   
   .cta-buttons .btn {
-    width: 165px;
-    height: 60px;
     font-size: 1rem;
+    width: auto !important;
+    padding: 10px 16px !important;
+    height: 44px !important;
+    font-size: 0.9rem !important;
   }
 }
 
