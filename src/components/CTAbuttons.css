@@ -1,15 +1,17 @@
-.cta-buttons {
-  flex-direction: row !important;
-  justify-content: center !important;
-  flex-wrap: nowrap !important;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin: 0;
-  padding: 0;
-  animation: fadeInRight 0.8s ease 0.6s forwards;
-  opacity: 0;
-}
+
+  .cta-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    flex-wrap: nowrap;
+    justify-content: flex-start; /* ✅ desktop alignment FIX */
+    animation: fadeInRight 0.8s ease 0.6s forwards;
+    opacity: 0;
+  }
+  
+
 
 .cta-buttons .btn {
   display: inline-flex;
@@ -124,11 +126,12 @@ body.dark .cta-buttons .btn:hover {
 @media (max-width: 480px) {
   .cta-buttons {
     gap: 0.75rem;
+    
   }
   
   .cta-buttons .btn {
     font-size: 1rem;
-    width: auto !important;
+    width: 10 !important;
     padding: 10px 16px !important;
     height: 44px !important;
     font-size: 0.9rem !important;
