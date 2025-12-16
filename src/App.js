@@ -8,6 +8,8 @@ import Contact from './pages/Contact';
 import DevelopmentProjects from './pages/DevelopmentProjects'; 
 import UIUXProjects from './pages/UIUXProjects'; 
 import Experience from "./pages/Experience";
+import Projects from "./pages/Projects";
+
 import './App.css';
 
 function App() {
@@ -40,6 +42,8 @@ function App() {
 
           <Route exact path="/skills" element={<Skills />} />
           <Route exact path="/contact" element={<Contact />} />
+          <Route exact path="/projects" element={<Projects />} />
+
           <Route path="/projects/development" element={<DevelopmentProjects />} />
           <Route path="/projects/uiux" element={<UIUXProjects />} />
           <Route path="/experience" element={<Experience />} />
