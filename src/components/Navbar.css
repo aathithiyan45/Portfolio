@@ -328,4 +328,18 @@
   .dropdown-menu:not(.open) {
     display: none;
   }
+}.nav-right {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.nav-right.hide {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+}
+
+.nav-right.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }

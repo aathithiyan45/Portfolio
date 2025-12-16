@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import './Experience.css';
-import SocialLinks from '../components/SocialLinks';
-import CTAButtons from '../components/CTAButtons';
+import React, { useState } from "react";
+import "./Experience.css";
+import SocialLinks from "../components/SocialLinks";
+import CTAButtons from "../components/CTAButtons";
 
 const Experience = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -9,130 +9,108 @@ const Experience = () => {
   const experienceCards = [
     {
       number: "01",
-      role: "UI/UX Designer Intern",
-      company: "ABC Designs",
-      duration: "Jan 2024 - Mar 2024",
-      description: "Focused on creating user-centric designs and improving user experience:",
-      details: [
-        "Worked on wireframing and prototyping in Figma",
+      title: "UI/UX Designer Intern",
+      subtitle: "@ ABC Designs",
+      duration: "Jan 2024 – Mar 2024",
+      description:
+        "Focused on creating user-centric designs and improving user experience:",
+      points: [
+        "Wireframing and prototyping using Figma",
         "Designed responsive UI components",
-        "Collaborated with developers for design handoff",
-        "Conducted user research and usability testing"
+        "Collaborated with developers for handoff",
+        "Conducted usability testing",
       ],
       certificate: {
-        name: "UI/UX Design Internship Certificate – ABC Designs",
-        link: "https://certificate-link.com"
-      }
+        name: "UI/UX Internship Certificate – ABC Designs",
+        link: "#",
+      },
     },
     {
       number: "02",
-      role: "Full-Stack Developer Intern",
-      company: "XYZ Solutions",
-      duration: "Jun 2024 - Aug 2024",
-      description: "Developed end-to-end web applications and improved system performance:",
-      details: [
-        "Developed full-stack web apps with React & Django",
-        "Implemented authentication & API integrations",
-        "Improved website performance by 30%",
-        "Built RESTful APIs and database optimization"
+      title: "Full-Stack Developer Intern",
+      subtitle: "@ XYZ Solutions",
+      duration: "Jun 2024 – Aug 2024",
+      description:
+        "Built scalable web applications using modern technologies:",
+      points: [
+        "React + Django full-stack development",
+        "REST API & authentication",
+        "Performance optimization",
+        "Database design & integration",
       ],
       certificate: {
-        name: "Full-Stack Development Certificate – XYZ Solutions",
-        link: "https://fullstack-cert.com"
-      }
+        name: "Full-Stack Certificate – XYZ Solutions",
+        link: "#",
+      },
     },
     {
       number: "03",
-      role: "Frontend Developer",
-      company: "Tech Innovators",
-      duration: "Sep 2024 - Dec 2024",
-      description: "Built modern, responsive web interfaces with focus on performance:",
-      details: [
-        "Developed interactive React.js applications",
-        "Implemented responsive designs with Tailwind CSS",
-        "Optimized web performance and accessibility",
-        "Collaborated in agile development environment"
+      title: "Frontend Developer",
+      subtitle: "@ Tech Innovators",
+      duration: "Sep 2024 – Dec 2024",
+      description:
+        "Developed responsive and high-performance user interfaces:",
+      points: [
+        "Interactive React components",
+        "Tailwind CSS layouts",
+        "Accessibility improvements",
+        "Agile team collaboration",
       ],
       certificate: {
-        name: "Frontend Excellence Award – Tech Innovators",
-        link: "https://frontend-award.com"
-      }
+        name: "Frontend Excellence Award",
+        link: "#",
+      },
     },
-    {
-      number: "04",
-      role: "Project Lead",
-      company: "Digital Solutions Hub",
-      duration: "Jan 2025 - Present",
-      description: "Leading cross-functional teams to deliver high-quality digital products:",
-      details: [
-        "Managing end-to-end project delivery cycles",
-        "Coordinating between design and development teams",
-        "Client communication and requirement analysis",
-        "Code review and quality assurance processes"
-      ],
-      certificate: {
-        name: "Project Management Certificate – Digital Solutions Hub",
-        link: "https://project-cert.com"
-      }
-    }
   ];
 
-  const handlePrevious = () => {
-    setCurrentIndex(prev => prev > 0 ? prev - 1 : experienceCards.length - 1);
-  };
+  const prev = () =>
+    setCurrentIndex((i) => (i > 0 ? i - 1 : experienceCards.length - 1));
+  const next = () =>
+    setCurrentIndex((i) => (i < experienceCards.length - 1 ? i + 1 : 0));
 
-  const handleNext = () => {
-    setCurrentIndex(prev => prev < experienceCards.length - 1 ? prev + 1 : 0);
-  };
-
-  const currentCard = experienceCards[currentIndex];
+  const card = experienceCards[currentIndex];
 
   return (
     <div className="experience-page">
-      <div className="experience-container">
-        <div className="experience-hero">
+      <div className="experience-section">
+        <div className="hero-content">
           <h1>My Journey,</h1>
           <h1>My Growth</h1>
-          <h2>Professional Experiences That Define Me!</h2>
+          <h2>Professional Experiences That Define Me</h2>
           <p>
-            I've gained hands-on experience working on real-world projects,
-            collaborating with teams, and solving problems with design & code
+            Hands-on industry experience working with teams, real products, and
+            modern tech stacks.
           </p>
-          <div className="experience-cta">
-            <CTAButtons />
-          </div>
+          <CTAButtons />
           <SocialLinks />
         </div>
 
         <div className="experience-cards">
           <div className="experience-card">
             <div className="experience-card-header">
-              <div className="experience-card-number">{currentCard.number}</div>
+              <div className="experience-card-number">{card.number}</div>
               <div className="experience-card-nav">
-                <span className="experience-nav-arrow" onClick={handlePrevious}>◀</span>
-                <span className="experience-nav-arrow" onClick={handleNext}>▶</span>
+                <span onClick={prev}>◀</span>
+                <span onClick={next}>▶</span>
               </div>
             </div>
 
-            <h3 className="experience-card-title">{currentCard.role}</h3>
-            <p className="experience-company">@ {currentCard.company}</p>
-            <p className="experience-duration">{currentCard.duration}</p>
-            <p className="experience-card-description">{currentCard.description}</p>
+            <h3 className="experience-card-title">{card.title}</h3>
+            <p className="experience-subtitle">{card.subtitle}</p>
+            <span className="experience-duration">{card.duration}</span>
 
-            <ul className="experience-card-list">
-              {currentCard.details.map((detail, index) => (
-                <li key={index}>{detail}</li>
+            <p className="experience-description">{card.description}</p>
+
+            <ul className="experience-list">
+              {card.points.map((p, i) => (
+                <li key={i}>{p}</li>
               ))}
             </ul>
 
             <div className="experience-certificate">
-              🎓 Certificate: <a
-                href={currentCard.certificate.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="experience-certificate-link"
-              >
-                {currentCard.certificate.name}
+              🎓 Certificate:&nbsp;
+              <a href={card.certificate.link} target="_blank" rel="noreferrer">
+                {card.certificate.name}
               </a>
             </div>
           </div>
