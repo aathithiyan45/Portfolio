@@ -1,213 +1,101 @@
-/* ============================= */
-/* PROJECTS PAGE */
-/* ============================= */
-
+/* PAGE */
 .projects-page {
-    min-height: calc(100vh - 80px);
-    margin-top: 150px;
-    padding: 2rem;
-    background-color: var(--bg-color);
-    display: flex;
-    justify-content: center;
-  }
-  
-  /* ============================= */
-  /* CONTAINER */
-  /* ============================= */
-  
+  min-height: 100vh;
+  padding-top: 140px;
+  padding-inline: 1.5rem;
+  padding-bottom: 3rem;
+  background: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CONTAINER */
+.projects-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+/* HEADER */
+.projects-container h1 {
+  font-size: 4rem;
+  color: var(--heading-color);
+  font-weight: 700;
+  flex-shrink: 0;
+  line-height: 1.2;
+}
+
+/* OPTIONS */
+.projects-options {
+  display: flex;
+  gap: 2rem;
+  flex: 1;
+}
+
+/* CARD */
+.project-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 2.5rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--link-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.project-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--heading-color);
+  font-weight: 600;
+}
+
+.project-card p {
+  color: var(--secondary-text-color);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* MOBILE */
+@media (max-width: 968px) {
   .projects-container {
-    max-width: 1300px; /* 🔥 wider container */
-    width: 100%;
-  }
-  
-  /* ============================= */
-  /* HEADER */
-  /* ============================= */
-  
-  .projects-title {
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--heading-color);
-    text-align: center; /* ✅ CENTER */
-    margin-bottom: 0.8rem;
-  }
-  
-  .projects-subtitle {
-    font-size: 1.1rem;
-    color: var(--secondary-text-color);
-    text-align: center; /* ✅ CENTER */
-    margin-bottom: 4rem;
-  }
-  
-  /* ============================= */
-  /* CARD GRID (DESKTOP FIX) */
-  /* ============================= */
-  
-  .projects-options {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* ✅ LEFT + RIGHT */
-    gap: 4rem;
+    flex-direction: column;
+    gap: 3rem;
     align-items: stretch;
   }
-  
-  /* ============================= */
-  /* PROJECT CARD */
-  /* ============================= */
-  
-  .project-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 22px;
-  
-    padding: 4rem; /* 🔥 BIG CARD */
-    min-height: 320px;
-  
-    text-decoration: none;
-    color: inherit;
-  
-    display: flex;
+
+  .projects-container h1 {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .projects-options {
     flex-direction: column;
-    justify-content: space-between;
-  
-    transition: all 0.35s ease;
-    box-shadow: 0 14px 36px var(--shadow-color);
-    position: relative;
-    overflow: hidden;
   }
-  
-  /* hover glow */
-  .project-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      135deg,
-      rgba(37, 99, 235, 0.12),
-      transparent 60%
-    );
-    opacity: 0;
-    transition: opacity 0.35s ease;
+}
+
+@media (max-width: 768px) {
+  .projects-page {
+    padding-top: 100px;
   }
-  
-  .project-card:hover::before {
-    opacity: 1;
+
+  .projects-container h1 {
+    font-size: 2.5rem;
   }
-  
-  .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 26px 60px var(--shadow-color);
-    border-color: var(--link-color);
+
+  .project-card {
+    padding: 2rem;
   }
-  
-  /* ============================= */
-  /* CARD CONTENT */
-  /* ============================= */
-  
-  .project-card h2 {
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: var(--heading-color);
-    margin-bottom: 1.2rem;
-  }
-  
-  .project-card p {
-    font-size: 1.05rem;
-    color: var(--secondary-text-color);
-    line-height: 1.7;
-    max-width: 90%;
-  }
-  
-  /* ============================= */
-  /* CTA */
-  /* ============================= */
-  
-  .project-cta {
-    margin-top: auto;
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--link-color);
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    transition: all 0.3s ease;
-  }
-  
-  .project-card:hover .project-cta {
-    transform: translateX(6px);
-    color: var(--link-hover-color);
-  }
-  
-  /* ============================= */
-  /* DARK MODE */
-  /* ============================= */
-  
-  body.dark .project-card {
-    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.6);
-  }
-  
-  /* ============================= */
-  /* TABLET */
-  /* ============================= */
-  
-  @media (max-width: 992px) {
-    .projects-options {
-      grid-template-columns: 1fr;
-      gap: 3rem;
-    }
-  
-    .project-card {
-      padding: 3rem 2.5rem;
-    }
-  }
-  
-  /* ============================= */
-  /* MOBILE */
-  /* ============================= */
-  
-  @media (max-width: 768px) {
-    .projects-page {
-      margin-top: 130px;
-      padding: 1.5rem;
-    }
-  
-    .projects-title {
-      font-size: 2.3rem;
-    }
-  
-    .projects-subtitle {
-      font-size: 1rem;
-      margin-bottom: 3rem;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .projects-page {
-      margin-top: 160px;
-      padding: 1rem;
-    }
-  
-    .projects-title {
-      font-size: 2rem;
-    }
-  
-    .project-card h2 {
-      font-size: 1.6rem;
-    }
-  
-    .project-card {
-      padding: 2.2rem;
-    }
-  }
-  
-  /* ============================= */
-  /* ACCESSIBILITY */
-  /* ============================= */
-  
-  @media (prefers-reduced-motion: reduce) {
-    * {
-      transition: none !important;
-      animation: none !important;
-      transform: none !important;
-    }
-  }
-  
+}

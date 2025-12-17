@@ -1,24 +1,30 @@
-/* Social Links Container */
+/* ============================= */
+/* SOCIAL LINKS CONTAINER */
+/* ============================= */
+
 .social-links {
   display: flex;
   gap: 1.5rem;
   margin-top: 2rem;
   flex-wrap: wrap;
-  justify-content: flex-start; /* Already correct for left alignment */
+  justify-content: flex-start;
   align-items: center;
-  width: 100%; /* Changed from auto to 100% */
+  width: 100%;
   align-self: flex-start;
-  margin-left: 0; /* Ensure no left margin */
-  padding-left: 0; /* Ensure no left padding */
+  margin-left: 0;
+  padding-left: 0;
 }
 
-/* Generic circle container for icons - CONSISTENT SIZE FOR ALL */
+/* ============================= */
+/* SOCIAL ICON BASE */
+/* ============================= */
+
 .social-icon {
   width: 44px;
   height: 44px;
   border-radius: 50%;
   display: flex;
-  align-items: center; /* Fixed: was 'left', should be 'center' */
+  align-items: center;
   justify-content: center;
   text-decoration: none;
   overflow: hidden;
@@ -27,10 +33,10 @@
   animation: fadeInScale 0.6s ease forwards;
   opacity: 0;
   flex-shrink: 0;
-  margin: 0; /* Ensure no margin */
+  margin: 0;
 }
 
-/* Fade-in + scale animation */
+/* Fade-in animation */
 @keyframes fadeInScale {
   0% {
     opacity: 0;
@@ -42,18 +48,22 @@
   }
 }
 
-/* All SVG icons same size */
+/* SVG sizing */
 .social-icon img.social-svg {
   width: 24px;
   height: 24px;
   object-fit: contain;
+  display: block;
 }
+
+/* ============================= */
+/* PLATFORM COLORS */
+/* ============================= */
 
 /* LinkedIn */
 .social-icon.linkedin {
   background-color: #0A66C2;
 }
-
 .social-icon.linkedin:hover {
   transform: scale(1.15);
   box-shadow: 0 4px 12px rgba(10, 102, 194, 0.3);
@@ -64,7 +74,6 @@
   background-color: #ffffff;
   border: 1px solid #e1e4e8;
 }
-
 .social-icon.github:hover {
   transform: scale(1.15);
   box-shadow: 0 4px 12px rgba(36, 41, 47, 0.3);
@@ -72,9 +81,15 @@
 
 /* Instagram */
 .social-icon.instagram {
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285AEB 90%
+  );
 }
-
 .social-icon.instagram:hover {
   transform: scale(1.15);
   box-shadow: 0 4px 12px rgba(255, 0, 123, 0.3);
@@ -84,7 +99,6 @@
 .social-icon.figma {
   background-color: #1E1E1E;
 }
-
 .social-icon.figma:hover {
   transform: scale(1.15);
   box-shadow: 0 4px 12px rgba(30, 30, 30, 0.3);
@@ -94,151 +108,119 @@
 .social-icon.behance {
   background-color: #1769ff;
 }
-
 .social-icon.behance:hover {
   transform: scale(1.15);
   box-shadow: 0 4px 12px rgba(23, 105, 255, 0.3);
 }
 
-/* Responsive Design - Consistent sizing across all devices */
+/* ============================= */
+/* RESPONSIVE SIZES */
+/* ============================= */
 
-/* Large Desktop (1200px+) */
+/* Large Desktop */
 @media screen and (min-width: 1200px) {
   .social-links {
     gap: 2rem;
-    justify-content: flex-start; /* Left alignment for large desktop only */
+    justify-content: flex-start;
   }
-  
+
   .social-icon {
     width: 48px;
     height: 48px;
   }
-  
+
   .social-icon img.social-svg {
     width: 26px;
     height: 26px;
   }
 }
 
-/* Desktop/Laptop (769px - 1199px) */
+/* Desktop / Laptop */
 @media screen and (min-width: 769px) and (max-width: 1199px) {
   .social-links {
     gap: 1.75rem;
-    justify-content: flex-start; /* Left alignment for desktop only */
-  }
-  
-  .social-icon {
-    width: 44px;
-    height: 44px;
-  }
-  
-  .social-icon img.social-svg {
-    width: 24px;
-    height: 24px;
+    justify-content: flex-start;
   }
 }
 
-/* Tablet (481px - 768px) */
+/* Tablet */
 @media screen and (min-width: 481px) and (max-width: 768px) {
   .social-links {
     gap: 1.5rem;
-    justify-content: center; /* Center for tablet */
+    justify-content: center;
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    margin-inline: auto;
   }
-  
+
   .social-icon {
     width: 40px;
     height: 40px;
   }
-  
+
   .social-icon img.social-svg {
     width: 22px;
     height: 22px;
   }
 }
 
-/* Mobile Large (361px - 480px) */
-@media screen and (min-width: 361px) and (max-width: 480px) {
+/* ============================= */
+/* MOBILE – PUSH TO BOTTOM ONLY */
+/* ============================= */
+
+@media screen and (max-width: 480px) {
   .social-links {
-    gap: 1.25rem;
+    margin-top: auto;          /* 🔥 PUSH TO BOTTOM */
+    padding-bottom: 1.5rem;
     justify-content: center;
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
   }
-  
+
   .social-icon {
     width: 36px;
     height: 36px;
   }
-  
+
   .social-icon img.social-svg {
     width: 20px;
     height: 20px;
   }
 }
 
-/* Mobile Small (320px - 360px) */
-@media screen and (min-width: 320px) and (max-width: 360px) {
-  .social-links {
-    gap: 1rem;
-    justify-content: center;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
+/* Small Mobile */
+@media screen and (max-width: 360px) {
   .social-icon {
     width: 34px;
     height: 34px;
   }
-  
+
   .social-icon img.social-svg {
     width: 18px;
     height: 18px;
   }
 }
 
-/* Extra Small Mobile (below 320px) */
+/* Extra Small Mobile */
 @media screen and (max-width: 319px) {
-  .social-links {
-    gap: 0.75rem;
-    justify-content: center;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
   .social-icon {
     width: 32px;
     height: 32px;
   }
-  
+
   .social-icon img.social-svg {
     width: 16px;
     height: 16px;
   }
 }
 
-/* Remove the pseudo-elements that might cause issues */
-/* Commented out the before/after elements that could add unwanted space */
-/*
-.social-links::before,
-.social-links::after {
-  content: '';
-  flex: 0;
-}
-*/
+/* ============================= */
+/* SAFETY FIXES */
+/* ============================= */
 
-/* Ensure no margin/padding issues */
 .social-icon * {
   margin: 0;
   padding: 0;
 }
 
-/* Fix for any potential alignment issues with different icon types */
 .social-icon svg,
 .social-icon img {
   display: block;
