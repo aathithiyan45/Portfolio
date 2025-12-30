@@ -6,62 +6,65 @@ import CTAButtons from "../components/CTAButtons";
 const Experience = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const experienceCards = [
-    {
-      number: "01",
-      title: "UI/UX Designer Intern",
-      subtitle: "@ ABC Designs",
-      duration: "Jan 2024 – Mar 2024",
-      description:
-        "Focused on creating user-centric designs and improving user experience:",
-      points: [
-        "Wireframing and prototyping using Figma",
-        "Designed responsive UI components",
-        "Collaborated with developers for handoff",
-        "Conducted usability testing",
-      ],
-      certificate: {
-        name: "UI/UX Internship Certificate – ABC Designs",
-        link: "#",
+    const experienceCards = [
+      {
+        number: "01",
+        title: "Web Development Intern",
+        subtitle: "@ JADAYU Software Technology",
+        duration: "Jun 2025 – Jul 2025 · On-site",
+        description:
+          "Hands-on internship focused on frontend web development and real-time project implementation:",
+        points: [
+          "Learned and applied HTML, CSS, and JavaScript fundamentals in real-time projects",
+          "Built static and responsive web pages following modern design principles",
+          "Implemented clean layouts with proper structure and styling standards",
+          "Worked under professional mentorship and understood real-world frontend workflows"
+        ],
+        certificate: {
+          name: "Web Development Internship – JADAYU Software Technology",
+          link: "#" // add certificate link if available
+        }
       },
-    },
-    {
-      number: "02",
-      title: "Full-Stack Developer Intern",
-      subtitle: "@ XYZ Solutions",
-      duration: "Jun 2024 – Aug 2024",
-      description:
-        "Built scalable web applications using modern technologies:",
-      points: [
-        "React + Django full-stack development",
-        "REST API & authentication",
-        "Performance optimization",
-        "Database design & integration",
-      ],
-      certificate: {
-        name: "Full-Stack Certificate – XYZ Solutions",
-        link: "#",
+      {
+        number: "02",
+        title: "UI/UX Design Intern",
+        subtitle: "@ JADAYU Software Technology",
+        duration: "Jun 2025 – Jul 2025 · On-site",
+        description:
+          "Focused on learning and applying UI/UX design principles for web and mobile interfaces:",
+        points: [
+          "Learned core design principles: layout, typography, hierarchy, and responsive design",
+          "Created low-fidelity and high-fidelity wireframes using Figma",
+          "Designed user-friendly interface structures with usability in mind",
+          "Developed a strong understanding of visual consistency and spacing"
+        ],
+        certificate: {
+          name: "UI/UX Design Internship – JADAYU Software Technology",
+          link: "#"
+        }
       },
-    },
-    {
-      number: "03",
-      title: "Frontend Developer",
-      subtitle: "@ Tech Innovators",
-      duration: "Sep 2024 – Dec 2024",
-      description:
-        "Developed responsive and high-performance user interfaces:",
-      points: [
-        "Interactive React components",
-        "Tailwind CSS layouts",
-        "Accessibility improvements",
-        "Agile team collaboration",
-      ],
-      certificate: {
-        name: "Frontend Excellence Award",
-        link: "#",
-      },
-    },
-  ];
+      {
+        number: "03",
+        title: "UI/UX Design Intern",
+        subtitle: "@ Cognifyz Technologies",
+        duration: "May 2025 – Jun 2025 · Remote",
+        description:
+          "Worked remotely on UI/UX design tasks with a focus on user-centric and accessible interfaces:",
+        points: [
+          "Designed mobile and web UI screens using Figma",
+          "Created clean, modern, and responsive interface layouts",
+          "Collaborated with the design team and followed task requirements precisely",
+          "Practiced wireframing, prototyping, and usability-focused design decisions",
+          "Demonstrated strong attention to detail and communication skills"
+        ],
+        certificate: {
+          name: "UI/UX Design Internship – Cognifyz Technologies",
+           link: "https://drive.google.com/file/d/1z9Cxx47xPbYXzF6D6kDxPKIf-yYqcA7S/view?usp=sharing"
+  }
+        
+      }
+    ];
+
 
   const prev = () =>
     setCurrentIndex((i) => (i > 0 ? i - 1 : experienceCards.length - 1));
