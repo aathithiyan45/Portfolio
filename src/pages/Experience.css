@@ -5,6 +5,10 @@
   background: var(--bg-color);
 }
 
+/* ===================== */
+/* LAYOUT */
+/* ===================== */
+
 .experience-section {
   max-width: 1200px;
   margin: 0 auto;
@@ -19,7 +23,10 @@
   justify-content: center;
 }
 
+/* ===================== */
 /* CARD */
+/* ===================== */
+
 .experience-card {
   width: 500px;
   min-height: 600px;
@@ -33,10 +40,14 @@
   animation: scaleIn 0.6s ease;
 }
 
+/* ===================== */
 /* HEADER */
+/* ===================== */
+
 .experience-card-header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 1.5rem;
 }
 
@@ -51,10 +62,11 @@
 .experience-card-nav span {
   cursor: pointer;
   margin-left: 0.75rem;
-  padding: 0.4rem;
+  padding: 0.4rem 0.6rem;
   border-radius: 50%;
   border: 1px solid var(--border-color);
   background: var(--accent-color);
+  transition: all 0.3s ease;
 }
 
 .experience-card-nav span:hover {
@@ -62,10 +74,14 @@
   color: var(--bg-color);
 }
 
+/* ===================== */
 /* CONTENT */
+/* ===================== */
+
 .experience-card-title {
   font-size: 1.5rem;
   color: var(--heading-color);
+  margin-bottom: 0.3rem;
 }
 
 .experience-subtitle {
@@ -75,7 +91,7 @@
 
 .experience-duration {
   display: inline-block;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   background: var(--accent-color);
   padding: 0.3rem 0.7rem;
   border-radius: 6px;
@@ -87,9 +103,14 @@
   margin-bottom: 1rem;
 }
 
+/* ===================== */
+/* LIST */
+/* ===================== */
+
 .experience-list {
   list-style: none;
   padding: 0;
+  margin: 0;
   flex-grow: 1;
 }
 
@@ -97,6 +118,7 @@
   margin-bottom: 0.8rem;
   padding-left: 1.2rem;
   position: relative;
+  line-height: 1.6;
 }
 
 .experience-list li::before {
@@ -106,25 +128,92 @@
   color: var(--link-color);
 }
 
+/* ===================== */
 /* CERTIFICATE */
+/* ===================== */
+
 .experience-certificate {
   margin-top: 1rem;
   padding: 0.8rem;
   background: var(--accent-color);
   border-radius: 8px;
+  font-size: 0.9rem;
 }
 
 .experience-certificate a {
   color: var(--link-color);
-  font-weight: 500;
+  font-weight: 600;
+  text-decoration: none;
 }
 
-/* RESPONSIVE */
+.experience-certificate a:hover {
+  text-decoration: underline;
+}
+
+/* ===================== */
+/* TABLET */
+/* ===================== */
+
 @media (max-width: 1024px) {
   .experience-section {
     flex-direction: column;
+    gap: 3rem;
+  }
+
+  .experience-card {
+    width: 100%;
+    max-width: 560px;
   }
 }
+
+/* ===================== */
+/* MOBILE */
+/* ===================== */
+
+@media (max-width: 768px) {
+  .experience-page {
+    margin-top: 120px;
+    padding: 1.5rem;
+  }
+
+  .experience-card {
+    padding: 1.6rem;
+    min-height: auto;
+  }
+
+  .experience-card-title {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-page {
+    margin-top: 140px;
+    padding: 1rem;
+  }
+
+  .experience-card {
+    width: 100%;
+    padding: 1.4rem;
+    border-radius: 14px;
+  }
+
+  .experience-card-header {
+    flex-direction: row;
+  }
+
+  .experience-card-nav span {
+    padding: 0.35rem 0.55rem;
+  }
+
+  .experience-list li {
+    font-size: 0.95rem;
+  }
+}
+
+/* ===================== */
+/* ANIMATION */
+/* ===================== */
 
 @keyframes scaleIn {
   from {

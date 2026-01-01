@@ -8,45 +8,46 @@ const UIUXProjects = () => {
   const projects = [
     {
       id: 1,
-      title: "Mobile Banking App",
-      description: "Intuitive banking experience with seamless transactions and security.",
-      category: "Mobile App Design",
-      image: "/api/placeholder/600/400",
-      behanceUrl: "https://www.behance.net/gallery/mobile-banking-app"
+      title: "NeuroHome Smart Home App",
+      description: "Minimal smart home control app focused on clarity and intuitive interactions.",
+      category: "Mobile App UI",
+      image: "/images/neurohome-ui.png",
+      behanceUrl: "https://www.behance.net/gallery/230197251/NeuroHome-A-Minimal-Smart-Home-Control-App-UIUX"
     },
     {
       id: 2,
-      title: "SaaS Dashboard Design",
-      description: "Clean, data-driven dashboard for business analytics and insights.",
-      category: "Web App Design",
-      image: "/api/placeholder/600/400",
-      behanceUrl: "https://www.behance.net/gallery/saas-dashboard-design"
+      title: "Login & Sign-Up UI",
+      description: "Clean and minimal authentication flow with strong visual hierarchy and smooth UX.",
+      category: "Mobile App UI",
+      image: "/images/login-signup-ui.png",
+      behanceUrl: "https://lnkd.in/g5DMA8zN"
     },
     {
       id: 3,
-      title: "E-Learning Platform",
-      description: "Engaging educational interface with interactive course modules.",
-      category: "Web Design",
-      image: "/api/placeholder/600/400",
-      behanceUrl: "https://www.behance.net/gallery/elearning-platform"
+      title: "Food Delivery App UI",
+      description: "Fast and intuitive food ordering interface focused on clarity and user flow.",
+      category: "Mobile App UI",
+      image: "/images/food-delivery-ui.png",
+      behanceUrl: "https://www.behance.net/"
     },
     {
       id: 4,
-      title: "Food Delivery App",
-      description: "User-friendly ordering experience with real-time tracking.",
-      category: "Mobile App Design",
-      image: "/api/placeholder/600/400",
-      behanceUrl: "https://www.behance.net/gallery/food-delivery-app"
+      title: "Hotel Booking Landing Page",
+      description: "Conversion-focused landing page guiding users smoothly from browse to booking.",
+      category: "Web UI Design",
+      image: "/images/hotel-booking-ui.png",
+      behanceUrl: "https://www.linkedin.com/posts/aathithiyan-p-7a6b692a3_conversion-focused-hotel-booking-landing-activity-7362726994540703744"
     },
     {
       id: 5,
-      title: "Healthcare Portal",
-      description: "Accessible patient portal with appointment booking and records.",
-      category: "Web App Design",
-      image: "/api/placeholder/600/400",
-      behanceUrl: "https://www.behance.net/gallery/healthcare-portal"
+      title: "E-Commerce Website UI",
+      description: "Premium shopping experience crafted with strong layout, colors, and storytelling.",
+      category: "Web UI Design",
+      image: "/images/ecommerce-ui.png",
+      behanceUrl: "https://www.linkedin.com/posts/aathithiyan-p-7a6b692a3_uidesign-frontendfinesse-figmadesign-activity-7328078112963866624"
     }
   ];
+  
 
   const displayProject = hoveredProject !== null ? hoveredProject : currentProject;
   const currentProjectData = projects[displayProject];

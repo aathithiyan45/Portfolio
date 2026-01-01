@@ -91,7 +91,7 @@ const DevelopmentProjects = () => {
         "Responsive layout (light/dark mode)",
         "Integrated experience & skills sections"
       ],
-      codeLink: "https://github.com/aathithiyan45/aathithiyan45",
+      codeLink: "https://github.com/aathithiyan45/Portfolio",
       liveLink: "https://portfolio-aathithiyan.vercel.app"
     }
   ];
