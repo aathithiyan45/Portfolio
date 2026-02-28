@@ -61,16 +61,6 @@ Push changes to the main branch to trigger redeployment.
 
 ---
 
-## Folder Structure
-
-src/
-  components/
-  pages/
-  styles/
-  App.js
-
----
-
 ## Author
 
 Aathithiyan  
