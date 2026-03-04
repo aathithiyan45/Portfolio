@@ -73,8 +73,7 @@
 }
 
 /* Icon before text (works even if your button text is just "Light" / "Dark") */
-.theme-toggle-btn::before {
-  content: "☀️";                      /* default icon */
+.theme-toggle-btn::before {       /* default icon */
   font-size: 0.9rem;
   transform: translateY(1px);
   transition:

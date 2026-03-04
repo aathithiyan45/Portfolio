@@ -1,17 +1,14 @@
-
-  .cta-buttons {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin: 0;
-    padding: 0;
-    flex-wrap: nowrap;
-    justify-content: flex-start; /* ✅ desktop alignment FIX */
-    animation: fadeInRight 0.8s ease 0.6s forwards;
-    opacity: 0;
-  }
-  
-
+.cta-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  animation: fadeInRight 0.8s ease 0.6s forwards;
+  opacity: 0;
+}
 
 .cta-buttons .btn {
   display: inline-flex;
@@ -28,7 +25,7 @@
   overflow: hidden;
   border: 2px solid transparent;
   box-sizing: border-box;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
   white-space: nowrap;
 }
 
@@ -38,131 +35,117 @@
   position: absolute;
   top: 0;
   left: -100%;
-  width: 100%;
+  width: 60%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s ease;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.55s ease;
 }
 
 .cta-buttons .btn:hover::before {
-  left: 100%;
+  left: 140%;
 }
 
+/* ===== PRIMARY ===== */
 .cta-buttons .btn.primary {
-  background-color: var(--link-color, #3b82f6);
-  color: var(--bg-color, #ffffff);
-  border-color: var(--link-color, #3b82f6);
+  background-color: var(--link-color);
+  color: var(--bg-color);
+  border-color: var(--link-color);
 }
 
 .cta-buttons .btn.primary:hover {
-  background-color: var(--link-hover-color, #2563eb);
-  border-color: var(--link-hover-color, #2563eb);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px var(--shadow-color, rgba(0, 0, 0, 0.15));
+  background-color: var(--link-hover-color);
+  border-color: var(--link-hover-color);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(3, 102, 214, 0.35);
 }
 
 .cta-buttons .btn.primary:active {
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
+  box-shadow: none;
 }
 
+/* ===== SECONDARY ===== */
 .cta-buttons .btn.secondary {
-  background-color: transparent;
-  color: var(--paragraph-color, #374151);
-  border-color: var(--border-color, #d1d5db);
-  background: var(--accent-color, #f9fafb);
+  background-color: var(--accent-color);
+  color: var(--paragraph-color);
+  border-color: var(--border-color);
 }
 
 .cta-buttons .btn.secondary:hover {
-  background-color: var(--link-color, #3b82f6);
-  color: var(--bg-color, #ffffff);
-  border-color: var(--link-color, #3b82f6);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px var(--shadow-color, rgba(0, 0, 0, 0.15));
+  background-color: var(--link-color);
+  color: var(--bg-color);
+  border-color: var(--link-color);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(3, 102, 214, 0.25);
 }
 
 .cta-buttons .btn.secondary:active {
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
+  box-shadow: none;
 }
 
-/* Focus states for accessibility */
+/* Focus states */
 .cta-buttons .btn:focus {
-  outline: 2px solid var(--link-color, #3b82f6);
+  outline: 2px solid var(--link-color);
   outline-offset: 4px;
 }
 
-/* Enhanced hover effects */
-.cta-buttons .btn:hover {
-  box-shadow: 0 4px 12px var(--shadow-color, rgba(0, 0, 0, 0.15));
+/* Dark mode */
+body.dark .cta-buttons .btn.primary {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Dark mode specific adjustments */
-body.dark .cta-buttons .btn.primary {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+body.dark .cta-buttons .btn.primary:hover {
+  box-shadow: 0 8px 24px rgba(88, 166, 255, 0.35);
 }
 
 body.dark .cta-buttons .btn.secondary {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: #e5e7eb;
   border-color: #4b5563;
   background: #1f2937;
 }
 
-body.dark .cta-buttons .btn:hover {
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+body.dark .cta-buttons .btn.secondary:hover {
+  box-shadow: 0 8px 24px rgba(88, 166, 255, 0.25);
 }
 
 @keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(30px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
 
-/* Responsive Styles */
+/* ===== RESPONSIVE ===== */
+
 @media (max-width: 480px) {
   .cta-buttons {
-    gap: 0.75rem;
-    
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    justify-content: center;
   }
-  
+
   .cta-buttons .btn {
-    font-size: 1rem;
-    width: 10 !important;
-    padding: 10px 16px !important;
-    height: 44px !important;
-    font-size: 0.9rem !important;
+    flex: 1;
+    width: auto;
+    min-width: 0;
+    height: 38px;
+    font-size: 0.8rem;
+    padding: 0 10px;
   }
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
-  .cta-buttons {
-    gap: 1rem;
-  }
-  
-  .cta-buttons .btn {
-    width: 175px;
-    height: 62px;
-    font-size: 1.05rem;
-  }
+  .cta-buttons { gap: 1rem; }
+  .cta-buttons .btn { width: 175px; height: 62px; font-size: 1.05rem; }
 }
 
 @media (min-width: 769px) {
-  .cta-buttons {
-    gap: 1rem;
-  }
-  
-  .cta-buttons .btn {
-    width: 185px;
-    height: 64px;
-    font-size: 1.1rem;
-  }
+  .cta-buttons { gap: 1rem; }
+  .cta-buttons .btn { width: 185px; height: 64px; font-size: 1.1rem; }
 }
 
-/* Accessibility improvements */
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .cta-buttons,
   .cta-buttons .btn,
@@ -172,27 +155,12 @@ body.dark .cta-buttons .btn:hover {
     transform: none !important;
     opacity: 1 !important;
   }
-  
-  .cta-buttons .btn:hover {
-    transform: none !important;
-  }
-  
-  .cta-buttons .btn::before {
-    display: none;
-  }
+  .cta-buttons .btn::before { display: none; }
 }
 
-/* High contrast mode support */
+/* High contrast */
 @media (prefers-contrast: high) {
-  .cta-buttons .btn {
-    border-width: 3px;
-  }
-  
-  .cta-buttons .btn.primary {
-    border-color: var(--link-color, #3b82f6);
-  }
-  
-  .cta-buttons .btn.secondary {
-    border-color: var(--paragraph-color, #374151);
-  }
+  .cta-buttons .btn { border-width: 3px; }
+  .cta-buttons .btn.primary  { border-color: var(--link-color); }
+  .cta-buttons .btn.secondary { border-color: var(--paragraph-color); }
 }

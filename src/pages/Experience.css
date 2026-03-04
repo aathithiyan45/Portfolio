@@ -1,3 +1,7 @@
+/* ===================== */
+/* EXPERIENCE PAGE       */
+/* ===================== */
+
 .experience-page {
   min-height: calc(100vh - 80px);
   padding: 2rem;
@@ -6,7 +10,7 @@
 }
 
 /* ===================== */
-/* LAYOUT */
+/* LAYOUT                */
 /* ===================== */
 
 .experience-section {
@@ -17,6 +21,32 @@
   align-items: center;
 }
 
+.experience-hero-content {
+  flex: 1;
+  max-width: 500px;
+  animation: experienceSlideInLeft 1s ease-out;
+}
+
+.experience-hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: var(--heading-color);
+  transition: color 0.3s ease;
+}
+
+.experience-hero-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--paragraph-color);
+  transition: color 0.3s ease;
+}
+
+.experience-hero-content p {
+  margin-bottom: 2rem;
+  color: var(--secondary-text-color);
+  transition: color 0.3s ease;
+}
+
 .experience-cards {
   flex: 1;
   display: flex;
@@ -24,7 +54,7 @@
 }
 
 /* ===================== */
-/* CARD */
+/* CARD                  */
 /* ===================== */
 
 .experience-card {
@@ -37,11 +67,17 @@
   box-shadow: 0 8px 20px var(--shadow-color);
   display: flex;
   flex-direction: column;
-  animation: scaleIn 0.6s ease;
+  animation: experienceScaleIn 0.6s ease;
+  transition: all 0.5s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px var(--shadow-color);
 }
 
 /* ===================== */
-/* HEADER */
+/* HEADER                */
 /* ===================== */
 
 .experience-card-header {
@@ -56,37 +92,63 @@
   color: var(--bg-color);
   padding: 0.5rem 1rem;
   border-radius: 8px;
+  font-size: 1.2rem;
   font-weight: 600;
-}
-
-.experience-card-nav span {
-  cursor: pointer;
-  margin-left: 0.75rem;
-  padding: 0.4rem 0.6rem;
-  border-radius: 50%;
-  border: 1px solid var(--border-color);
-  background: var(--accent-color);
   transition: all 0.3s ease;
 }
 
-.experience-card-nav span:hover {
+.experience-card-number:hover {
+  background: var(--link-hover-color);
+  transform: scale(1.05);
+}
+
+.experience-card-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.experience-nav-arrow {
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--secondary-text-color);
+  background: var(--accent-color);
+  padding: 0.5rem;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.experience-nav-arrow:hover {
   background: var(--link-color);
   color: var(--bg-color);
+  transform: scale(1.1);
+}
+
+.experience-nav-arrow:focus {
+  outline: 2px solid var(--link-color);
+  outline-offset: 2px;
 }
 
 /* ===================== */
-/* CONTENT */
+/* CONTENT               */
 /* ===================== */
 
 .experience-card-title {
   font-size: 1.5rem;
   color: var(--heading-color);
   margin-bottom: 0.3rem;
+  transition: color 0.3s ease;
 }
 
 .experience-subtitle {
   color: var(--secondary-text-color);
   margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
 }
 
 .experience-duration {
@@ -96,15 +158,20 @@
   padding: 0.3rem 0.7rem;
   border-radius: 6px;
   margin-bottom: 1rem;
+  border: 1px solid var(--border-color);
+  color: var(--secondary-text-color);
+  transition: all 0.3s ease;
 }
 
 .experience-description {
   color: var(--secondary-text-color);
   margin-bottom: 1rem;
+  line-height: 1.6;
+  transition: color 0.3s ease;
 }
 
 /* ===================== */
-/* LIST */
+/* LIST                  */
 /* ===================== */
 
 .experience-list {
@@ -119,6 +186,8 @@
   padding-left: 1.2rem;
   position: relative;
   line-height: 1.6;
+  color: var(--paragraph-color);
+  transition: color 0.3s ease;
 }
 
 .experience-list li::before {
@@ -126,38 +195,76 @@
   position: absolute;
   left: 0;
   color: var(--link-color);
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
 /* ===================== */
-/* CERTIFICATE */
+/* CERTIFICATE           */
 /* ===================== */
 
 .experience-certificate {
   margin-top: 1rem;
   padding: 0.8rem;
   background: var(--accent-color);
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   font-size: 0.9rem;
+  color: var(--secondary-text-color);
+  transition: all 0.3s ease;
 }
 
 .experience-certificate a {
   color: var(--link-color);
   font-weight: 600;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .experience-certificate a:hover {
+  color: var(--link-hover-color);
   text-decoration: underline;
 }
 
+.experience-certificate a:focus {
+  outline: 2px solid var(--link-color);
+  outline-offset: 2px;
+}
+
 /* ===================== */
-/* TABLET */
+/* DARK MODE             */
+/* ===================== */
+
+body.dark .experience-card {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+body.dark .experience-card:hover {
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* ===================== */
+/* TABLET                */
 /* ===================== */
 
 @media (max-width: 1024px) {
   .experience-section {
     flex-direction: column;
-    gap: 3rem;
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .experience-hero-content {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .experience-hero-content h1 {
+    font-size: 2.8rem;
+  }
+
+  .experience-hero-content h2 {
+    font-size: 1.8rem;
   }
 
   .experience-card {
@@ -167,7 +274,7 @@
 }
 
 /* ===================== */
-/* MOBILE */
+/* MOBILE                */
 /* ===================== */
 
 @media (max-width: 768px) {
@@ -183,6 +290,14 @@
 
   .experience-card-title {
     font-size: 1.3rem;
+  }
+
+  .experience-hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .experience-hero-content h2 {
+    font-size: 1.5rem;
   }
 }
 
@@ -202,8 +317,15 @@
     flex-direction: row;
   }
 
-  .experience-card-nav span {
-    padding: 0.35rem 0.55rem;
+  .experience-nav-arrow {
+    width: 30px;
+    height: 30px;
+    font-size: 0.85rem;
+  }
+
+  .experience-card-number {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
   }
 
   .experience-list li {
@@ -212,10 +334,10 @@
 }
 
 /* ===================== */
-/* ANIMATION */
+/* ANIMATIONS            */
 /* ===================== */
 
-@keyframes scaleIn {
+@keyframes experienceScaleIn {
   from {
     opacity: 0;
     transform: scale(0.95);
@@ -223,5 +345,39 @@
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@keyframes experienceSlideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ===================== */
+/* ACCESSIBILITY         */
+/* ===================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-card,
+  .experience-hero-content,
+  .experience-nav-arrow,
+  .experience-card-number,
+  .experience-certificate a {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+  .experience-card:hover,
+  .experience-nav-arrow:hover,
+  .experience-card-number:hover {
+    transform: none !important;
   }
 }
