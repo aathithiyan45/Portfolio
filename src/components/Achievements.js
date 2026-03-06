@@ -16,7 +16,7 @@ const achievements = [
     link: "https://www.linkedin.com/posts/aathithiyan-p-7a6b692a3_hackathon-fullstackdevelopment-uiux-activity-7311003219852177408-oi44"
   },
   {
-    title: "🥈 Frontend Finesse – DRAIGONX",
+    title: "🥈 Frontend Finesse",
     desc: "Won second prize in a national-level UI design challenge by designing a handcrafted e-commerce website interface.",
     year: "2025",
     link: "https://www.linkedin.com/posts/aathithiyan-p-7a6b692a3_uidesign-frontendfinesse-figmadesign-activity-7328078112963866624-ZLRR"
