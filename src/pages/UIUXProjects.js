@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './UIUXProjects.css';
 
 const UIUXProjects = () => {
-  const [currentProject, setCurrentProject] = useState(0);
+  const [currentProject] = useState(0);
   const [hoveredProject, setHoveredProject] = useState(null);
 
   const projects = [
@@ -47,24 +47,22 @@ const UIUXProjects = () => {
       behanceUrl: "https://www.linkedin.com/posts/aathithiyan-p-7a6b692a3_uidesign-frontendfinesse-figmadesign-activity-7328078112963866624"
     }
   ];
-  
 
   const displayProject = hoveredProject !== null ? hoveredProject : currentProject;
   const currentProjectData = projects[displayProject];
 
   const handleProjectClick = (project) => {
-    // Open Behance URL in a new tab
-    window.open(project.behanceUrl, '_blank');
+    window.open(project.behanceUrl, "_blank");
   };
 
   return (
     <div className="uiux-projects-page">
       <div className="projects-container">
-        
-        {/* Left side - Project Image */}
+
+        {/* Left Side - Project Image */}
         <div className="project-preview-section">
           <div className="project-preview-container">
-            <img 
+            <img
               src={currentProjectData.image}
               alt={currentProjectData.title}
               className="project-preview-image"
@@ -75,9 +73,9 @@ const UIUXProjects = () => {
           </div>
         </div>
 
-        {/* Right side - Project List */}
+        {/* Right Side - Project List */}
         <div className="project-list-section">
-          {/* Title Section */}
+
           <div className="project-list-header">
             <h2 className="project-list-title">Crafting User Experiences</h2>
             <p className="project-list-subtitle">
@@ -85,26 +83,27 @@ const UIUXProjects = () => {
             </p>
           </div>
 
-          {/* Project List */}
           <div className="project-list-items">
             {projects.map((project, index) => (
-              <div 
+              <div
                 key={project.id}
-                className={`project-list-item ${index === currentProject ? 'active' : ''}`}
+                className={`project-list-item ${index === displayProject ? "active" : ""}`}
                 onMouseEnter={() => setHoveredProject(index)}
                 onMouseLeave={() => setHoveredProject(null)}
-                                 onClick={() => handleProjectClick(project)}
+                onClick={() => handleProjectClick(project)}
               >
                 <div className="project-list-info">
                   <p className="project-list-item-title">{project.title}</p>
                   <p className="project-list-item-subtitle">{project.description}</p>
                 </div>
+
                 <div className="project-list-category">
                   {project.category}
                 </div>
               </div>
             ))}
           </div>
+
         </div>
       </div>
     </div>
