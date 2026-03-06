@@ -25,6 +25,7 @@ const achievements = [
     title: "Coding Ninjas Core Designer",
     desc: "Core design team member responsible for posters, event branding, and visual assets for the Coding Ninjas SCE community.",
     year: "2024",
+    link: "https://www.linkedin.com/posts/aathithiyan-p-7a6b692a3_posterdesign-creativejourney-graphicdesign-activity-7307737920688242689-Cd5y",
   },
 ];
 

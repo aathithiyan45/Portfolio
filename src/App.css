@@ -228,3 +228,19 @@ a:focus-visible {
   h2 { font-size: 1.5rem; }
   h3 { font-size: 1.25rem; }
 }
+/* ================================= */
+/* HERO HEADING MOBILE FIX           */
+/* ================================= */
+
+@media (max-width: 480px) {
+
+  /* Make two H1 hero titles appear in one line */
+  .hero-content h1 {
+    display: inline;
+  }
+
+  .hero-content h1:first-child::after {
+    content: " ";
+  }
+
+}

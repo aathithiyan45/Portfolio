@@ -284,13 +284,40 @@ body.dark .skill-card:hover {
   }
 }
 
-@media (max-width: 480px) {
-  .skills-page {
-    padding: 1rem;
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .skill-card,
+  .hero-content,
+  .nav-arrow,
+  .skill-card-number,
+  .certificate-link {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
   }
 
+  .skill-card:hover,
+  .nav-arrow:hover,
+  .skill-card-number:hover {
+    transform: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+
+  /* Make only the two H1 appear in one line */
   .hero-content h1 {
+    display: inline;
     font-size: 2rem;
+  }
+
+  .hero-content h1:first-child::after {
+    content: " ";
+  }
+
+  .skills-page {
+    padding: 1rem;
   }
 
   .skill-card {
@@ -311,24 +338,5 @@ body.dark .skill-card:hover {
   .skill-card-number {
     font-size: 1rem;
     padding: 0.4rem 0.8rem;
-  }
-}
-
-/* Accessibility improvements */
-@media (prefers-reduced-motion: reduce) {
-  .skill-card,
-  .hero-content,
-  .nav-arrow,
-  .skill-card-number,
-  .certificate-link {
-    transition: none !important;
-    animation: none !important;
-    transform: none !important;
-  }
-
-  .skill-card:hover,
-  .nav-arrow:hover,
-  .skill-card-number:hover {
-    transform: none !important;
   }
 }
