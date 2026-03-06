@@ -4,7 +4,7 @@ import "./EducationCard.css";
 const EducationCard = ({ year, title, place, details }) => {
   return (
     <article className="timeline-item">
-      {/* Title + Year row */}
+      {/* Title + Year */}
       <div className="timeline-header">
         <h3 className="timeline-title">{title}</h3>
         <span className="timeline-year">{year}</span>
@@ -16,25 +16,27 @@ const EducationCard = ({ year, title, place, details }) => {
   );
 };
 
-
 const EducationSection = () => {
   return (
     <section className="education-section" id="education">
       <h2 className="section-title">Education Timeline</h2>
 
       <div className="education-container">
+
         <EducationCard
-          year="2023-2027"
-          title="Bachelor of Technology"
-          place="Saranathan Collge of Engineering"
-          details="Information Technology  • CGPA: 8.1/10"
+          year="2023 – 2027"
+          title="B.Tech – Information Technology"
+          place="Saranathan College of Engineering, Trichy"
+          details="CGPA: 8.1"
         />
+
         <EducationCard
-          year="2022-2020"
+          year="2020 – 2022"
           title="Higher Secondary Education"
-          place="XYZ High School"
-          details="Science Stream • Percentage: 92% • State Board"
+          place="Kalaimagal Higher Secondary School, Thanjavur"
+          details="Percentage: 84.5%"
         />
+
       </div>
     </section>
   );
