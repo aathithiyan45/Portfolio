@@ -32,7 +32,7 @@ const DevelopmentProjects = () => {
       title: "Translate App",
       description: "Multi-language translator powered by DeepL API.",
       category: "Full-Stack Development",
-      image: "images/Translate.png",
+      image: "/images/Translate.png",
       detailedDescription: "A translation web app built with Django and templates. Integrates the DeepL API to deliver accurate translations across multiple languages. Frontend is built with HTML, CSS, and JavaScript.",
       technologies: ["Django", "DeepL API", "HTML", "CSS", "JavaScript"],
       features: [
@@ -49,7 +49,7 @@ const DevelopmentProjects = () => {
       title: "Book Application",
       description: "Full-stack book management system with CRUD operations.",
       category: "Full-Stack (MERN-like)",
-      image: "images/book-app.png",
+      image: "/images/book-app.png",
       detailedDescription: "A full-stack Book Management App where users can browse, add, update, and delete books. React powers the frontend UI, while Node.js + Express handle backend APIs and MongoDB manages data.",
       technologies: ["React", "Node.js", "Express", "MongoDB"],
       features: [
@@ -66,7 +66,7 @@ const DevelopmentProjects = () => {
       title: "Macrocosm SFX",
       description: "Static editing portfolio for design & short films.",
       category: "Frontend Development",
-      image: "images/macrocosm.png",
+      image: "/images/macrocosm.png",
       detailedDescription: "Macrocosm SFX is a static personal editing portfolio built with pure HTML, CSS, and JavaScript. It showcases creative editing work such as short films and travel edits with a multi-page layout.",
       technologies: ["HTML", "CSS"],
       features: [
