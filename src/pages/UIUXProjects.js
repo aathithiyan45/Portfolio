@@ -62,11 +62,14 @@ const UIUXProjects = () => {
         {/* Left Side - Project Image */}
         <div className="project-preview-section">
           <div className="project-preview-container">
-            <img
-              src={currentProjectData.image}
-              alt={currentProjectData.title}
-              className="project-preview-image"
-            />
+            <div className="project-preview-frame">
+              <img
+                key={currentProjectData.image}
+                src={currentProjectData.image}
+                alt={currentProjectData.title}
+                className="project-preview-image fade-image"
+              />
+            </div>
             <div className="project-preview-caption">
               {currentProjectData.title}
             </div>

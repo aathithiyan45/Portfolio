@@ -10,6 +10,42 @@ const DevelopmentProjects = () => {
   const projects = [
     {
       id: 1,
+      title: "AI Adaptive Learning System",
+      description: "AI-powered platform that personalizes learning based on student engagement.",
+      category: "Full-Stack + AI/ML",
+      image: "/images/ai-learning.png",
+      detailedDescription: "AI Adaptive Learning System is an intelligent education platform that analyzes student engagement and dynamically adapts learning content in real time. The frontend is built with React while Django powers the backend APIs and AI logic for personalized learning.",
+      technologies: ["React", "Django", "Python", "Machine Learning", "REST API"],
+      features: [
+        "AI-powered personalized learning",
+        "Student engagement tracking",
+        "Dynamic learning content adaptation",
+        "Interactive learning dashboard",
+        "Django backend with AI processing"
+      ],
+      codeLink: "https://github.com/aathithiyan45/ai-adaptive-learning",
+      liveLink: "#"
+    },
+    {
+      id: 2,
+      title: "Potato Disease Classifier",
+      description: "Deep learning model that classifies potato diseases using EfficientNet-B0.",
+      category: "Deep Learning + Computer Vision",
+      image: "/images/potato-classifier.png",
+      detailedDescription: "Potato Disease Classifier is a deep learning-based image classification system built with PyTorch and EfficientNet-B0. The model is trained on a potato dataset and integrated with a Django web application to allow real-time image uploads and disease prediction.",
+      technologies: ["Python", "PyTorch", "EfficientNet-B0", "Django", "Computer Vision"],
+      features: [
+        "Deep learning image classifier using EfficientNet-B0",
+        "Image preprocessing and augmentation",
+        "Model training with PyTorch",
+        "Django web interface for predictions",
+        "Upload potato images and get disease classification"
+      ],
+      codeLink: "https://github.com/aathithiyan45/Potato-Classifier",
+      liveLink: "#"
+    },
+    {
+      id: 3,
       title: "SmartSpend.AI",
       description: "AI-powered expense tracker with analytics dashboard.",
       category: "Full-Stack + AI/ML",
@@ -28,7 +64,7 @@ const DevelopmentProjects = () => {
       liveLink: "#"
     },
     {
-      id: 2,
+      id: 4,
       title: "Translate App",
       description: "Multi-language translator powered by DeepL API.",
       category: "Full-Stack Development",
@@ -43,39 +79,6 @@ const DevelopmentProjects = () => {
       ],
       codeLink: "https://github.com/aathithiyan45/translate_app",
       liveLink: "#"
-    },
-    {
-      id: 3,
-      title: "Book Application",
-      description: "Full-stack book management system with CRUD operations.",
-      category: "Full-Stack (MERN-like)",
-      image: "/images/book-app.png",
-      detailedDescription: "A full-stack Book Management App where users can browse, add, update, and delete books. React powers the frontend UI, while Node.js + Express handle backend APIs and MongoDB manages data.",
-      technologies: ["React", "Node.js", "Express", "MongoDB"],
-      features: [
-        "Add, update, delete books",
-        "Manage book details (title, author, description)",
-        "RESTful API with Express.js",
-        "Responsive React frontend"
-      ],
-      codeLink: "https://github.com/aathithiyan45/book-application",
-      liveLink: "#"
-    },
-    {
-      id: 4,
-      title: "Macrocosm SFX",
-      description: "Static editing portfolio for design & short films.",
-      category: "Frontend Development",
-      image: "/images/macrocosm.png",
-      detailedDescription: "Macrocosm SFX is a static personal editing portfolio built with pure HTML, CSS, and JavaScript. It showcases creative editing work such as short films and travel edits with a multi-page layout.",
-      technologies: ["HTML", "CSS"],
-      features: [
-        "Multi-page static website",
-        "Creative video showcase (short films, travel edits)",
-        "Simple responsive design",
-      ],
-      codeLink: "https://github.com/aathithiyan45/aathithiyan45-Macrocosm-Sfx",
-      liveLink: "https://aathithiyan45.github.io/aathithiyan45-Macrocosm-Sfx/"
     },
     {
       id: 5,
@@ -111,15 +114,18 @@ const DevelopmentProjects = () => {
   return (
     <div className="development-projects-page">
       <div className="projects-container">
-        
+
         {/* Left side - Project Image */}
         <div className="project-preview-section">
           <div className="project-preview-container">
-            <img 
-              src={currentProjectData.image}
-              alt={currentProjectData.title}
-              className="project-preview-image"
-            />
+            <div className="project-preview-frame">
+              <img
+                key={currentProjectData.image}
+                src={currentProjectData.image}
+                alt={currentProjectData.title}
+                className="project-preview-image fade-image"
+              />
+            </div>
             <div className="project-preview-caption">
               {currentProjectData.title}
             </div>
@@ -141,7 +147,7 @@ const DevelopmentProjects = () => {
               {/* Project List */}
               <div className="project-list-items">
                 {projects.map((project, index) => (
-                  <div 
+                  <div
                     key={project.id}
                     className={`project-list-item ${index === currentProject ? 'active' : ''}`}
                     onMouseEnter={() => setHoveredProject(index)}
@@ -165,7 +171,7 @@ const DevelopmentProjects = () => {
               <button className="back-button" onClick={handleBackClick}>
                 ← Back to Projects
               </button>
-              
+
               <div className="project-details-header">
                 <h2 className="project-details-title">{currentProjectData.title}</h2>
                 <span className="project-details-category">{currentProjectData.category}</span>
@@ -196,17 +202,17 @@ const DevelopmentProjects = () => {
                 </div>
 
                 <div className="project-links">
-                  <a 
-                    href={currentProjectData.codeLink} 
-                    target="_blank" 
+                  <a
+                    href={currentProjectData.codeLink}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="project-link code-link"
                   >
                     <span>View Code</span>
                   </a>
-                  <a 
-                    href={currentProjectData.liveLink} 
-                    target="_blank" 
+                  <a
+                    href={currentProjectData.liveLink}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="project-link live-link"
                   >
