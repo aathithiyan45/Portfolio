@@ -18,8 +18,8 @@ const Skills = () => {
         "Responsive & Interactive UI Components"
       ],
       certificate: {
-        name: "UI/UX Design Certificate – Coding Ninjas",
-        link: "https://certificate-link.com"
+        name: "UI/UX Design Certificate – Udemy",
+        link: "https://www.udemy.com/certificate/UC-82e7d16a-89d2-495c-bb5a-870f112ec2d5/"
       }
     },
     {
