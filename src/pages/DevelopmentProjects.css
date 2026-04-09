@@ -13,19 +13,18 @@
   transition: background-color 0.3s ease;
 }
 
-/* ── KEY FIX: grid with align-items stretch so both columns match height ── */
 .projects-container {
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: stretch;        /* both columns same height */
+  align-items: stretch;
   gap: 48px;
   margin-bottom: 64px;
 }
 
-/* ── Preview Section: fills its grid cell completely ── */
+/* ── Desktop Preview Section ── */
 .project-preview-section {
   display: flex;
   flex-direction: column;
@@ -37,10 +36,9 @@
   padding: 24px;
   transition: all 0.3s ease;
   width: 100%;
-  align-self: stretch;         /* stretch to match right column height */
+  align-self: stretch;
 }
 
-/* ── Preview Container fills the section ── */
 .project-preview-container {
   width: 100%;
   height: 100%;
@@ -49,17 +47,15 @@
   flex: 1;
 }
 
-/* ── Frame: grows to fill all available space ── */
 .project-preview-frame {
   width: 100%;
-  flex: 1;                     /* fills remaining height */
+  flex: 1;
   min-height: 300px;
   border-radius: 14px;
   overflow: hidden;
   position: relative;
 }
 
-/* ── Image fills the frame ── */
 .project-preview-image {
   width: 100%;
   height: 100%;
@@ -73,7 +69,6 @@
   transform: scale(1.04);
 }
 
-/* ── Fade-in animation on image change ── */
 .fade-image {
   animation: fadeInImage 0.5s ease;
 }
@@ -118,16 +113,6 @@
   font-size: 18px;
   font-weight: 500;
   color: var(--paragraph-color);
-  margin-bottom: 0;
-  line-height: 1.4;
-  transition: color 0.3s ease;
-}
-
-.project-list-subsubtitle {
-  font-size: 16px;
-  font-weight: 400;
-  color: var(--link-color);
-  margin-top: 6px;
   margin-bottom: 0;
   line-height: 1.4;
   transition: color 0.3s ease;
@@ -423,23 +408,196 @@
   border-color: var(--link-color);
 }
 
-/* ── Accessibility ── */
-@media (prefers-reduced-motion: reduce) {
-  .project-list-item,
-  .project-preview-image,
-  .project-list-category::after,
-  .fade-image {
-    transition: none !important;
-    animation: none !important;
+/* ══════════════════════════════════════════════
+   MOBILE / TABLET  (≤ 1023px)
+   The big change: image preview is removed from
+   the top and instead inserted INLINE just above
+   whichever card the user tapped.
+══════════════════════════════════════════════ */
+
+@media (max-width: 1023px) {
+
+  /* Switch to single column */
+  .projects-container {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    max-width: 700px;
+    margin-bottom: 40px;
   }
-  .project-list-item:hover,
-  .project-preview-frame:hover .project-preview-image {
-    transform: none !important;
+
+  /* Hide the fixed desktop preview panel completely */
+  .desktop-preview-only {
+    display: none !important;
+  }
+
+  /* ── Mobile Inline Preview ── */
+  /* This block appears INSIDE the card list, right above the tapped card */
+  .mobile-inline-preview {
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--border-color) 100%);
+    border: 1px solid var(--link-color);
+    padding: 16px;
+    box-sizing: border-box;
+    animation: slideDownPreview 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    /* connector: a bottom border that visually links to the card below */
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    position: relative;
+  }
+
+  /* Downward connector arrow from preview to card */
+  .mobile-inline-preview::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid var(--link-color);
+    z-index: 2;
+  }
+
+  @keyframes slideDownPreview {
+    from {
+      opacity: 0;
+      transform: translateY(-12px) scaleY(0.92);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scaleY(1);
+    }
+  }
+
+  .mobile-inline-frame {
+    width: 100%;
+    height: 220px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .mobile-inline-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+  }
+
+  .mobile-inline-caption {
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--heading-color);
+    text-align: center;
+  }
+
+  .mobile-inline-hint {
+    margin-top: 4px;
+    font-size: 12px;
+    color: var(--link-color);
+    text-align: center;
+    opacity: 0.85;
+  }
+
+  /* Card that currently has its image shown gets a top-connected style */
+  .project-list-item.image-shown {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-color: var(--link-color);
+    border-top-color: var(--link-color);
+  }
+
+  /* Mobile tap hint shown before any card is tapped */
+  .mobile-tap-hint {
+    margin-top: 14px;
+    font-size: 13px;
+    color: var(--paragraph-color);
+    opacity: 0.6;
+    text-align: center;
+  }
+
+  /* Slightly tighten up card layout on mobile */
+  .project-list-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    min-height: auto;
+    padding: 14px 16px;
+  }
+
+  .project-list-category {
+    text-align: left;
+    min-width: auto;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .project-list-category::after {
+    opacity: 0.5;
+    transform: translateX(0);
+  }
+
+  .project-list-title {
+    font-size: 24px;
+  }
+
+  .project-list-subtitle {
+    font-size: 16px;
+  }
+
+  .project-details-title {
+    font-size: 24px;
+  }
+
+  .project-links {
+    flex-direction: column;
   }
 }
 
-/* ── Responsive ── */
+@media (max-width: 767px) {
+  .development-projects-page {
+    padding: 16px;
+    margin-top: 80px;
+  }
 
+  .mobile-inline-frame {
+    height: 190px;
+  }
+
+  .project-list-title {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .development-projects-page {
+    padding: 12px;
+    margin-top: 70px;
+  }
+
+  .mobile-inline-frame {
+    height: 160px;
+  }
+
+  .project-list-title {
+    font-size: 20px;
+  }
+
+  .project-list-subtitle {
+    font-size: 15px;
+  }
+
+  .project-details-title {
+    font-size: 20px;
+  }
+}
+
+/* ── Larger desktop ── */
 @media (min-width: 1440px) {
   .projects-container {
     max-width: 1500px;
@@ -460,80 +618,18 @@
   }
 }
 
-@media (max-width: 1023px) {
-  .development-projects-page {
-    margin-top: 100px;
-    padding: 20px;
+/* ── Accessibility ── */
+@media (prefers-reduced-motion: reduce) {
+  .project-list-item,
+  .project-preview-image,
+  .mobile-inline-preview,
+  .project-list-category::after,
+  .fade-image {
+    transition: none !important;
+    animation: none !important;
   }
-  .projects-container {
-    grid-template-columns: 1fr;
-    gap: 28px;
-    max-width: 700px;
-  }
-  .project-preview-section {
-    order: -1;
-    min-height: unset;
-  }
-  .project-preview-frame {
-    min-height: 320px;
-    flex: unset;
-    height: 320px;
-  }
-  .project-list-title {
-    font-size: 26px;
-  }
-  .project-details-title {
-    font-size: 24px;
-  }
-}
-
-@media (max-width: 767px) {
-  .development-projects-page {
-    padding: 16px;
-    margin-top: 80px;
-  }
-  .projects-container {
-    gap: 20px;
-    margin-bottom: 32px;
-  }
-  .project-preview-frame {
-    height: 260px;
-    min-height: 260px;
-  }
-  .project-list-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    min-height: auto;
-    padding: 14px;
-  }
-  .project-list-category {
-    text-align: left;
-    min-width: auto;
-    justify-content: flex-start;
-    width: 100%;
-  }
-  .project-links {
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 480px) {
-  .development-projects-page {
-    padding: 12px;
-    margin-top: 70px;
-  }
-  .project-preview-frame {
-    height: 210px;
-    min-height: 210px;
-  }
-  .project-list-title {
-    font-size: 22px;
-  }
-  .project-list-subtitle {
-    font-size: 15px;
-  }
-  .project-details-title {
-    font-size: 20px;
+  .project-list-item:hover,
+  .project-preview-frame:hover .project-preview-image {
+    transform: none !important;
   }
 }

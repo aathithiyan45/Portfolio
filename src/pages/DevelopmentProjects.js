@@ -1,11 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './DevelopmentProjects.css';
-
 
 const DevelopmentProjects = () => {
   const [currentProject, setCurrentProject] = useState(0);
   const [hoveredProject, setHoveredProject] = useState(null);
   const [showDetails, setShowDetails] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [inlineImageIndex, setInlineImageIndex] = useState(null);
+  const inlineImageRef = useRef(null);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 1023);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const projects = [
     {
@@ -99,24 +108,61 @@ const DevelopmentProjects = () => {
     }
   ];
 
+  /* Which project to show in the LEFT desktop preview */
   const displayProject = hoveredProject !== null ? hoveredProject : currentProject;
   const currentProjectData = projects[displayProject];
 
+  const handleMouseEnter = (index) => {
+    if (!isMobile) {
+      setHoveredProject(index);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (!isMobile) {
+      setHoveredProject(null);
+    }
+  };
+
+  /* 
+    MOBILE LOGIC:
+    - First tap on a card  → show inline image just above that card
+    - Second tap (same card that already shows its image) → open details
+    - Tapping a different card → switch inline image to that card
+  */
   const handleProjectClick = (index) => {
-    setCurrentProject(index);
-    setShowDetails(true);
+    if (isMobile) {
+      if (inlineImageIndex === index) {
+        // Already showing this card's image → open details
+        setCurrentProject(index);
+        setShowDetails(true);
+        setInlineImageIndex(null);
+      } else {
+        // Show image above this card
+        setInlineImageIndex(index);
+        setCurrentProject(index);
+        // Scroll the inline image into view
+        setTimeout(() => {
+          inlineImageRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 50);
+      }
+    } else {
+      setCurrentProject(index);
+      setShowDetails(true);
+    }
   };
 
   const handleBackClick = () => {
     setShowDetails(false);
+    setInlineImageIndex(null);
   };
 
   return (
     <div className="development-projects-page">
       <div className="projects-container">
 
-        {/* Left side - Project Image */}
-        <div className="project-preview-section">
+        {/* ── LEFT: Desktop image preview (hidden on mobile) ── */}
+        <div className="project-preview-section desktop-preview-only">
           <div className="project-preview-container">
             <div className="project-preview-frame">
               <img
@@ -132,11 +178,11 @@ const DevelopmentProjects = () => {
           </div>
         </div>
 
-        {/* Right side - Project List or Details */}
+        {/* ── RIGHT: Project list or details ── */}
         <div className="project-list-section">
           {!showDetails ? (
             <>
-              {/* Title Section */}
+              {/* Title */}
               <div className="project-list-header">
                 <h2 className="project-list-title">My Development Projects</h2>
                 <p className="project-list-subtitle">
@@ -144,29 +190,61 @@ const DevelopmentProjects = () => {
                 </p>
               </div>
 
-              {/* Project List */}
+              {/* Project list */}
               <div className="project-list-items">
                 {projects.map((project, index) => (
-                  <div
-                    key={project.id}
-                    className={`project-list-item ${index === currentProject ? 'active' : ''}`}
-                    onMouseEnter={() => setHoveredProject(index)}
-                    onMouseLeave={() => setHoveredProject(null)}
-                    onClick={() => handleProjectClick(index)}
-                  >
-                    <div className="project-list-info">
-                      <p className="project-list-item-title">{project.title}</p>
-                      <p className="project-list-item-subtitle">{project.description}</p>
+                  <React.Fragment key={project.id}>
+
+                    {/*
+                      MOBILE INLINE IMAGE:
+                      Renders ABOVE the card that is currently active (inlineImageIndex).
+                      On desktop this is always hidden via CSS.
+                    */}
+                    {isMobile && inlineImageIndex === index && (
+                      <div
+                        className="mobile-inline-preview"
+                        ref={inlineImageRef}
+                      >
+                        <div className="mobile-inline-frame">
+                          <img
+                            key={project.image}
+                            src={project.image}
+                            alt={project.title}
+                            className="mobile-inline-image fade-image"
+                          />
+                        </div>
+                        <div className="mobile-inline-caption">{project.title}</div>
+                        <div className="mobile-inline-hint">Tap the card below to view details →</div>
+                      </div>
+                    )}
+
+                    {/* Card */}
+                    <div
+                      className={`project-list-item ${index === currentProject ? 'active' : ''} ${isMobile && inlineImageIndex === index ? 'image-shown' : ''}`}
+                      onMouseEnter={() => handleMouseEnter(index)}
+                      onMouseLeave={handleMouseLeave}
+                      onClick={() => handleProjectClick(index)}
+                    >
+                      <div className="project-list-info">
+                        <p className="project-list-item-title">{project.title}</p>
+                        <p className="project-list-item-subtitle">{project.description}</p>
+                      </div>
+                      <div className="project-list-category">
+                        {project.category}
+                      </div>
                     </div>
-                    <div className="project-list-category">
-                      {project.category}
-                    </div>
-                  </div>
+
+                  </React.Fragment>
                 ))}
               </div>
+
+              {/* Mobile tap hint (shown only before any card is tapped) */}
+              {isMobile && inlineImageIndex === null && (
+                <p className="mobile-tap-hint">Tap a project to preview its image</p>
+              )}
             </>
           ) : (
-            /* Project Details */
+            /* ── Details view ── */
             <div className="project-details">
               <button className="back-button" onClick={handleBackClick}>
                 ← Back to Projects
