@@ -164,3 +164,10 @@ body.dark .cta-buttons .btn.secondary:hover {
   .cta-buttons .btn.primary  { border-color: var(--link-color); }
   .cta-buttons .btn.secondary { border-color: var(--paragraph-color); }
 }
+
+@media (max-width: 768px) {
+  .cta-buttons .btn.secondary {
+    background-color: transparent !important;
+    border: 2px solid var(--border-color) !important;
+  }
+}

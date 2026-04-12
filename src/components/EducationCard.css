@@ -139,8 +139,13 @@
 }
 
 @media (max-width: 600px) {
+  .education-section {
+    margin: 1rem 0 !important;
+  }
+
   .section-title {
     font-size: 1.7rem;
+    margin-bottom: 2rem;
   }
 
   .timeline-item {

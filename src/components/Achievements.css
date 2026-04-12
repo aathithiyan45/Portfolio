@@ -135,7 +135,12 @@
   }
 
   .achievements {
-    padding: 60px 16px;
+    padding: 16px 16px; /* Significantly reduced from 60px */
+  }
+  
+  .card-header {
+    margin-bottom: 0.25rem;
+    min-height: auto; /* Prevent empty vertical space if title is short */
   }
 }
 

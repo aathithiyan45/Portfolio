@@ -289,8 +289,8 @@
   .nav-right {
     position: fixed;
     top: 1rem;
-    left: 1.5rem;   /* Move theme toggle to the left */
-    right: auto;    /* Remove right-side locking */
+    left: 1.5rem;   
+    right: auto;    
     z-index: 1002;
   }
 
@@ -341,4 +341,15 @@
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
+}
+
+@media screen and (max-width: 768px) {
+  .nav-right {
+    position: fixed;
+    top: 1.15rem;
+    left: 1.5rem;   /* Left side as requested */
+    right: auto;
+    z-index: 1002;
+    transition: none; /* Prevent jumpy animations on mobile */
+  }
 }

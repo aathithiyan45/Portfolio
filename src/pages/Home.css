@@ -11,6 +11,11 @@
   transition: background-color 0.3s ease;
 }
 
+/* Visibility Control */
+.mobile-only-img {
+  display: none !important;
+}
+
 .hero-section {
   display: flex;
   flex-direction: column-reverse;
@@ -161,6 +166,32 @@
 @media (min-width: 1201px) {
   .hero-image {
     max-width: 450px;
+  }
+}
+
+/* Mobile & Tablet Tweaks */
+@media (max-width: 768px) {
+  .home {
+    padding-top: 40px !important;
+    margin-top: 80px !important;
+  }
+  
+  .mobile-only-img {
+    display: flex !important;
+    margin-top: 1.5rem !important;
+    margin-bottom: 3rem !important; /* Increased gap */
+    width: 100%;
+  }
+  .desktop-only-img {
+    display: none !important;
+  }
+
+  .hero-content p {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    text-align: left !important;
+    padding: 0 !important; /* Removing extra padding to increase content length */
+    max-width: 100%;
   }
 }
 

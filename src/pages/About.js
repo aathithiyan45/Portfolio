@@ -13,6 +13,11 @@ const About = () => {
           <h1>Hi, I'm Aathithiyan</h1>
           <h2>🎓 Information Technology student</h2>
           <h3 className="animated">Full-Stack Developer & UI/UX Designer</h3>
+          
+          <div className="hero-image mobile-only-img">
+            <img src="profile.jpeg" alt="Aathithiyan" />
+          </div>
+
           <p>
             I'm passionate about building digital experiences that are both functional and user-friendly.
             Whether it's crafting smooth user interfaces or developing strong backend systems, I enjoy
@@ -25,7 +30,7 @@ const About = () => {
     </div>
           <SocialLinks />
         </div>
-        <div className="hero-image">
+        <div className="hero-image desktop-only-img">
           <img src="profile.jpeg" alt="Aathithiyan" />
         </div>
       </section>

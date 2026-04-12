@@ -226,3 +226,10 @@
   display: block;
   margin: auto;
 }
+
+@media screen and (max-width: 768px) {
+  .social-icon.figma {
+    display: none !important;
+  }
+  /* Inheriting default gap: 1.5rem and margin to match past visual layout */
+}
