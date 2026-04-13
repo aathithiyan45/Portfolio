@@ -71,7 +71,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
 
           <Link
             to="/projects"
-            className={`nav-item ${location.pathname === "/projects" ? "active" : ""}`}
+            className={`nav-item ${location.pathname.startsWith("/projects") ? "active" : ""}`}
             onClick={closeMenu}
           >
             <div className="nav-text">Projects</div>

@@ -20,7 +20,7 @@ const UIUXProjects = () => {
       description: "Clean and minimal authentication flow with strong visual hierarchy and smooth UX.",
       category: "Mobile App UI",
       image: "/images/login-signup-ui.png",
-      behanceUrl: "https://lnkd.in/g5DMA8zN"
+      behanceUrl: "https://www.behance.net/gallery/233399293/Login-Sign-Up-UIUX-Concept"
     },
     {
       id: 3,
@@ -28,7 +28,7 @@ const UIUXProjects = () => {
       description: "Fast and intuitive food ordering interface focused on clarity and user flow.",
       category: "Mobile App UI",
       image: "/images/food-delivery-ui.png",
-      behanceUrl: "https://www.behance.net/"
+      behanceUrl: "https://www.linkedin.com/posts/aathithiyan-p-7a6b692a3_food-delivery-app-ui-activity-7340613774476787713-zbiT?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAElSGy4B5y3tVVQqgJwZiQtKiR3p3lCF_kE"
     },
     {
       id: 4,
@@ -36,7 +36,7 @@ const UIUXProjects = () => {
       description: "Conversion-focused landing page guiding users smoothly from browse to booking.",
       category: "Web UI Design",
       image: "/images/hotel-booking-ui.png",
-      behanceUrl: "https://www.linkedin.com/posts/aathithiyan-p-7a6b692a3_conversion-focused-hotel-booking-landing-activity-7362726994540703744"
+      behanceUrl: "https://www.linkedin.com/posts/aathithiyan-p-7a6b692a3_conversion-focused-hotel-booking-landing-activity-7362726994540703744-PKXI?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAElSGy4B5y3tVVQqgJwZiQtKiR3p3lCF_kE"
     },
     {
       id: 5,
