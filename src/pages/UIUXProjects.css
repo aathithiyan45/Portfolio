@@ -19,7 +19,7 @@
   max-width: 1400px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 65fr 35fr;
   align-items: stretch;        /* both columns same height */
   gap: 48px;
   margin-bottom: 64px;
