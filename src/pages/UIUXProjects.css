@@ -16,12 +16,12 @@
 /* ── KEY FIX: grid with align-items stretch so both columns match height ── */
 .projects-container {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1500px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 65fr 35fr;
-  align-items: stretch;        /* both columns same height */
-  gap: 48px;
+  grid-template-columns: calc(55% - 16px) calc(45% - 16px);
+  align-items: stretch; /* Both columns same height */
+  gap: 32px;
   margin-bottom: 64px;
 }
 
@@ -37,7 +37,8 @@
   padding: 24px;
   transition: all 0.3s ease;
   width: 100%;
-  align-self: stretch;         /* stretch to match right column height */
+  align-self: stretch;
+  min-width: 0;
 }
 
 /* ── Preview Container fills the section ── */
@@ -52,7 +53,7 @@
 /* ── Frame: grows to fill all available space ── */
 .project-preview-frame {
   width: 100%;
-  flex: 1;                     /* fills remaining height */
+  flex: 1;
   min-height: 300px;
   border-radius: 14px;
   overflow: hidden;
@@ -98,6 +99,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  min-width: 0;
 }
 
 .project-list-header {
