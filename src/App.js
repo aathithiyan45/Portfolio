@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -49,6 +50,7 @@ function App() {
           <Route path="/experience" element={<Experience />} />
         </Routes>
       </main>
+      <SpeedInsights />
     </div>
   );
 }
