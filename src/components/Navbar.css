@@ -38,62 +38,123 @@
   margin-left: auto;
 }
 
-/* Theme toggle button – upgraded design */
-.theme-toggle-btn {
+/* Custom premium Theme Toggle Switch */
+.theme-toggle-switch {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
-
-  padding: 0.25rem 0.9rem;
-  border-radius: 999px;               /* pill shape */
-
-  background: rgba(255, 255, 255, 0.04);
+  position: relative;
+  width: 125px;
+  height: 38px;
+  border-radius: 99px;
   border: 1px solid var(--border-color);
-
-  color: var(--navbar-text);
-  font-size: 0.8rem;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-
   cursor: pointer;
   outline: none;
-
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  transition:
-    background 0.25s ease,
-    color 0.25s ease,
-    border-color 0.25s ease,
-    transform 0.18s ease,
-    box-shadow 0.25s ease,
-    opacity 0.25s ease;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-sizing: border-box;
+  padding: 0;
 }
 
-/* Icon before text (works even if your button text is just "Light" / "Dark") */
-.theme-toggle-btn::before {       /* default icon */
-  font-size: 0.9rem;
-  transform: translateY(1px);
-  transition:
-    transform 0.18s ease,
-    filter 0.25s ease,
-    opacity 0.25s ease;
+/* Light / Day mode Track */
+.theme-toggle-switch.light {
+  background-color: #EAEAEA;
+  border-color: #D5D5D5;
 }
 
-/* Hover / focus */
-.theme-toggle-btn:hover {
-  background: var(--navbar-hover);
-  color: #fff;
-  border-color: var(--navbar-hover);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+/* Dark / Night mode Track */
+.theme-toggle-switch.dark {
+  background-color: #1A1A1A;
+  border-color: #333333;
 }
 
-.theme-toggle-btn:active {
+/* Text styles */
+.theme-toggle-switch .switch-text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 750;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+/* Day text (Light theme) */
+.theme-toggle-switch.light .day-text {
+  left: 14px;
+  color: #1A1A1A;
+  opacity: 1;
+  transform: translateY(-50%) scale(1);
+}
+.theme-toggle-switch.dark .day-text {
+  left: 14px;
+  color: #1A1A1A;
+  opacity: 0;
+  transform: translateY(-50%) scale(0.8);
+}
+
+/* Night text (Dark theme) */
+.theme-toggle-switch.light .night-text {
+  right: 14px;
+  color: #FFFFFF;
+  opacity: 0;
+  transform: translateY(-50%) scale(0.8);
+}
+.theme-toggle-switch.dark .night-text {
+  right: 14px;
+  color: #FFFFFF;
+  opacity: 1;
+  transform: translateY(-50%) scale(1);
+}
+
+/* Switch circular thumb */
+.theme-toggle-switch .switch-thumb {
+  position: absolute;
+  top: 3px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Thumb sliding physics */
+.theme-toggle-switch.light .switch-thumb {
+  left: 92px; /* 125px - 30px - 3px */
+  transform: rotate(0deg);
+}
+
+.theme-toggle-switch.dark .switch-thumb {
+  left: 3px;
+  transform: rotate(-360deg);
+}
+
+/* Icon hover states and general alignment */
+.theme-toggle-switch .switch-thumb svg {
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+@media (hover: hover) {
+  .theme-toggle-switch:hover .switch-thumb svg {
+    transform: scale(1.1);
+  }
+
+  .theme-toggle-switch:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+    transform: translateY(-1px);
+  }
+}
+
+.theme-toggle-switch:active {
   transform: translateY(0);
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
 }
 
 /* Navigation Items */
@@ -210,38 +271,72 @@
 }
 
 
-/* Mobile Menu Button */
+/* Mobile Menu Button - High Fidelity Morphing Design */
 .menu-btn {
   display: none !important; 
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.06);
   border: 1px solid var(--border-color);
-  color: var(--navbar-text);
-  font-size: 1.4rem;
   cursor: pointer;
-  padding: 0.55rem;
-  border-radius: 12px;
-  width: 42px;
-  height: 42px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
+  border-radius: 10px;
+  width: 36px;       /* 🔥 Reduced size in mobile view */
+  height: 36px;      /* 🔥 Reduced size in mobile view */
   position: fixed;
-  top: 1rem;
+  top: 1.1rem;
   right: 1.5rem;
   z-index: 1002;
-
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;          /* Vertical gap between lines */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0;
 }
 
-.menu-btn:hover {
-  background: var(--navbar-hover);
-  color: #fff;
-  border-color: var(--navbar-hover);
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+/* Three hamburger lines */
+.menu-btn .hamburger-line {
+  display: block;
+  width: 17px;
+  height: 2px;
+  background-color: var(--navbar-text);
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+}
+
+/* Morphing animations on .open state */
+.menu-btn.open .hamburger-line:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menu-btn.open .hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.menu-btn.open .hamburger-line:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Perfect premium hover effects */
+@media (hover: hover) {
+  .menu-btn:hover {
+    background: var(--navbar-hover);
+    border-color: var(--navbar-hover);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+  }
+
+  .menu-btn:hover .hamburger-line {
+    background-color: #ffffff !important;
+  }
+}
+
+/* Active click state */
+.menu-btn:active {
+  transform: translateY(0) scale(0.95);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Mobile Styles */
@@ -277,13 +372,14 @@
     visibility: hidden;
     transform: translateY(-10px);
     transition: all 0.3s ease;
+    display: none !important; /* Completely hide when closed to prevent any off-screen layout boundaries */
   }
 
   .nav-components.open {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
-    display: flex;
+    display: flex !important; /* Show when open */
   }
 
   .nav-right {
@@ -294,10 +390,44 @@
     z-index: 1002;
   }
 
-  .theme-toggle-btn {
-    padding: 0.2rem 0.5rem;
-    font-size: 12px;
+  /* Compact theme switch on mobile devices */
+  .theme-toggle-switch {
+    width: 102px !important;
+    height: 30px !important;
   }
+
+  .theme-toggle-switch .switch-thumb {
+    width: 24px !important;
+    height: 24px !important;
+    top: 2px !important;
+  }
+
+  .theme-toggle-switch.light .switch-thumb {
+    left: 74px !important; /* 102px - 24px - 4px */
+  }
+
+  .theme-toggle-switch.dark .switch-thumb {
+    left: 4px !important;
+  }
+
+  .theme-toggle-switch .switch-text {
+    font-size: 0.58rem !important;
+  }
+
+  .theme-toggle-switch.light .day-text {
+    left: 10px !important;
+  }
+
+  .theme-toggle-switch.dark .night-text {
+    right: 10px !important;
+  }
+  
+  .theme-toggle-switch .switch-thumb svg {
+    width: 13px !important;
+    height: 13px !important;
+    stroke-width: 2.2 !important;
+  }
+
 
   .nav-item {
     width: 150px;
@@ -351,5 +481,28 @@
     right: auto;
     z-index: 1002;
     transition: none; /* Prevent jumpy animations on mobile */
+  }
+}
+
+/* ======================================================= */
+/* TOUCH-DEVICE BULLETPROOF HOVER OVERRIDES                */
+/* ======================================================= */
+@media (hover: none) or (pointer: coarse) {
+  /* Neutralize menu button hover styles on touch screens */
+  .menu-btn:hover {
+    background: rgba(255, 255, 255, 0.06) !important;
+    border-color: var(--border-color) !important;
+    transform: none !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12) !important;
+  }
+
+  .menu-btn:hover .hamburger-line {
+    background-color: var(--navbar-text) !important;
+  }
+
+  /* Neutralize theme switch hover styles on touch screens */
+  .theme-toggle-switch:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12) !important;
+    transform: none !important;
   }
 }

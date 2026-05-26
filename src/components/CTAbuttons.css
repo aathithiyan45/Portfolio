@@ -60,6 +60,7 @@
   transform: translateY(-4px) scale(1.03);
   box-shadow: 0 10px 28px rgba(3, 102, 214, 0.45);
 }
+
 .cta-buttons .btn.primary:active {
   transform: translateY(0) scale(1);
   box-shadow: none;
@@ -111,8 +112,15 @@ body.dark .cta-buttons .btn.secondary:hover {
 }
 
 @keyframes fadeInRight {
-  from { opacity: 0; transform: translateX(30px); }
-  to   { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* ===== RESPONSIVE ===== */
@@ -123,6 +131,9 @@ body.dark .cta-buttons .btn.secondary:hover {
     flex-wrap: nowrap;
     gap: 0.5rem;
     justify-content: center;
+    max-width: 280px;
+    margin: 0 auto;
+    width: 100%;
   }
 
   .cta-buttons .btn {
@@ -136,17 +147,32 @@ body.dark .cta-buttons .btn.secondary:hover {
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
-  .cta-buttons { gap: 1rem; }
-  .cta-buttons .btn { width: 175px; height: 62px; font-size: 1.05rem; }
+  .cta-buttons {
+    gap: 1rem;
+  }
+
+  .cta-buttons .btn {
+    width: 175px;
+    height: 62px;
+    font-size: 1.05rem;
+  }
 }
 
 @media (min-width: 769px) {
-  .cta-buttons { gap: 1rem; }
-  .cta-buttons .btn { width: 185px; height: 64px; font-size: 1.1rem; }
+  .cta-buttons {
+    gap: 1rem;
+  }
+
+  .cta-buttons .btn {
+    width: 185px;
+    height: 64px;
+    font-size: 1.1rem;
+  }
 }
 
-/* Reduced motion */
+
 @media (prefers-reduced-motion: reduce) {
+
   .cta-buttons,
   .cta-buttons .btn,
   .cta-buttons .btn::before {
@@ -155,14 +181,25 @@ body.dark .cta-buttons .btn.secondary:hover {
     transform: none !important;
     opacity: 1 !important;
   }
-  .cta-buttons .btn::before { display: none; }
+
+  .cta-buttons .btn::before {
+    display: none;
+  }
 }
 
-/* High contrast */
+
 @media (prefers-contrast: high) {
-  .cta-buttons .btn { border-width: 3px; }
-  .cta-buttons .btn.primary  { border-color: var(--link-color); }
-  .cta-buttons .btn.secondary { border-color: var(--paragraph-color); }
+  .cta-buttons .btn {
+    border-width: 3px;
+  }
+
+  .cta-buttons .btn.primary {
+    border-color: var(--link-color);
+  }
+
+  .cta-buttons .btn.secondary {
+    border-color: var(--paragraph-color);
+  }
 }
 
 @media (max-width: 768px) {

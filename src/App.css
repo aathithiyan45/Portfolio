@@ -5,6 +5,13 @@
   box-sizing: border-box;
 }
 
+.App {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
 /* Light mode variables */
 :root {
   --bg-color: #FFFFFF;
@@ -69,6 +76,8 @@ body.dark {
 /* Base font size for the whole app */
 html {
   font-size: 16px; /* default, scalable with rem */
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 /* Body inherits global font family and adds default text styles */
@@ -80,6 +89,8 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 /* Headings */
@@ -243,4 +254,36 @@ a:focus-visible {
     content: " ";
   }
 
+}
+
+/* ======================================================= */
+/* UNIFIED MOBILE TOP SPACING REDUCTION FOR ALL PAGES      */
+/* ======================================================= */
+
+@media (max-width: 768px) {
+  .home,
+  .about,
+  .skills-page,
+  .experience-page,
+  .contact-page,
+  .projects-page,
+  .uiux-projects-page,
+  .development-projects-page {
+    margin-top: 80px !important;
+    padding-top: 1.5rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .home,
+  .about,
+  .skills-page,
+  .experience-page,
+  .contact-page,
+  .projects-page,
+  .uiux-projects-page,
+  .development-projects-page {
+    margin-top: 70px !important;
+    padding-top: 1rem !important;
+  }
 }

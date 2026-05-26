@@ -39,8 +39,14 @@ const Navbar = ({ darkMode, setDarkMode }) => {
     <nav className="navbar">
       <div className="nav-container">
 
-        <button className="menu-btn" onClick={toggleMenu}>
-          {isMenuOpen ? "✕" : "☰"}
+        <button
+          className={`menu-btn ${isMenuOpen ? "open" : ""}`}
+          onClick={toggleMenu}
+          aria-label="Toggle Menu"
+        >
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
         </button>
 
         <div className={`nav-components ${isMenuOpen ? "open" : ""}`}>
@@ -89,10 +95,32 @@ const Navbar = ({ darkMode, setDarkMode }) => {
 
         <div className={`nav-right ${showThemeToggle ? "show" : "hide"}`}>
           <button
-            className="theme-toggle-btn"
+            className={`theme-toggle-switch ${darkMode ? "dark" : "light"}`}
             onClick={() => setDarkMode(!darkMode)}
+            aria-label="Toggle theme"
           >
-            {darkMode ? "Light Mode" : "Dark Mode"}
+            <span className="switch-text day-text">DAYMODE</span>
+            <span className="switch-text night-text">NIGHTMODE</span>
+            <div className="switch-thumb">
+              {darkMode ? (
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="#0E1011" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" className="icon-moon">
+                  <path d="M12 3a9 9 0 1 0 9 9 9.75 9.75 0 0 0-.21-1.79A6.75 6.75 0 1 1 13.79 3.21 9.75 9.75 0 0 0 12 3z" />
+                  <path d="M19 2v3M17.5 3.5h3" strokeWidth="1.5" />
+                </svg>
+              ) : (
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="#0E1011" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" className="icon-sun">
+                  <circle cx="12" cy="12" r="4"></circle>
+                  <line x1="12" y1="1" x2="12" y2="3"></line>
+                  <line x1="12" y1="21" x2="12" y2="23"></line>
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                  <line x1="1" y1="12" x2="3" y2="12"></line>
+                  <line x1="21" y1="12" x2="23" y2="12"></line>
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+              )}
+            </div>
           </button>
         </div>
 

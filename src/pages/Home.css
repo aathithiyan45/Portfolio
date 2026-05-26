@@ -25,11 +25,15 @@
   margin: 0 auto;
   gap: 2rem;
   padding: 0 1rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .hero-content {
   flex: 1;
   text-align: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .hero-content h1 {
@@ -90,6 +94,7 @@
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -101,6 +106,7 @@
     opacity: 0;
     transform: translateX(-30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -172,16 +178,36 @@
 /* Mobile & Tablet Tweaks */
 @media (max-width: 768px) {
   .home {
-    padding-top: 40px !important;
+    padding: 1.5rem 1rem !important;
     margin-top: 80px !important;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  .hero-section {
+    align-items: center !important;
+    text-align: center !important;
+    padding: 0 !important;
   }
   
+  .hero-content {
+    text-align: center !important;
+  }
+  
+  .hero-image {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
   .mobile-only-img {
     display: flex !important;
     margin-top: 1.5rem !important;
-    margin-bottom: 3rem !important; /* Increased gap */
+    margin-bottom: 3rem !important;
     width: 100%;
   }
+  
   .desktop-only-img {
     display: none !important;
   }
@@ -189,8 +215,8 @@
   .hero-content p {
     font-size: 14px !important;
     line-height: 1.6 !important;
-    text-align: left !important;
-    padding: 0 !important; /* Removing extra padding to increase content length */
+    text-align: center !important;
+    padding: 0 !important;
     max-width: 100%;
   }
 }
