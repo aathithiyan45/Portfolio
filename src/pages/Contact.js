@@ -74,7 +74,7 @@ const Contact = () => {
             <div className="info-item">
               <span className="info-label">Email</span>
               <a href="mailto:aathimi07012006@gmail.com">
-                aathimi07012006@gmail.com
+                aathithiyan.work@gmail.com
               </a>
             </div>
 

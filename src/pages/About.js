@@ -15,7 +15,7 @@ const About = () => {
           <h3 className="animated">Full-Stack Developer & UI/UX Designer</h3>
           
           <div className="hero-image mobile-only-img">
-            <img src="profile.jpeg" alt="Aathithiyan" />
+            <img src="profile.jpg" alt="Aathithiyan" />
           </div>
 
           <p>
@@ -31,7 +31,7 @@ const About = () => {
           <SocialLinks />
         </div>
         <div className="hero-image desktop-only-img">
-          <img src="profile.jpeg" alt="Aathithiyan" />
+          <img src="profile.jpg" alt="Aathithiyan" />
         </div>
       </section>
 

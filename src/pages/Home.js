@@ -13,7 +13,7 @@ const Home = () => {
           <h2>Building Digital Experiences That Matter!</h2>
           
           <div className="hero-image mobile-only-img">
-            <img src="profile.jpeg" alt="Aathithiyan" />
+            <img src="profile.jpg" alt="Aathithiyan" />
           </div>
 
           <p>
@@ -25,7 +25,7 @@ const Home = () => {
 
         </div>
         <div className="hero-image desktop-only-img">
-          <img src="profile.jpeg" alt="Aathithiyan" />
+          <img src="profile.jpg" alt="Aathithiyan" />
         </div>
       </div>
     </div>
