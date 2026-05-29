@@ -97,35 +97,36 @@
 }
 
 .btn.primary {
-  background-color: var(--link-color);
-  color: var(--bg-color);
-  border-color: var(--link-color);
+  background: #0E1011 !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease !important;
 }
 
 .btn.primary:hover {
-  background-color: var(--link-hover-color);
-  border-color: var(--link-hover-color);
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 8px 20px rgba(3, 102, 214, 0.35);
+  transform: translateY(-2px) !important;
+  background: #2f2f2f !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
 }
 
 .btn.primary:active {
-  transform: translateY(0) scale(1);
-  box-shadow: none;
+  transform: translateY(0) scale(1) !important;
+  box-shadow: none !important;
 }
 
 .btn.secondary {
-  background-color: var(--accent-color);
-  color: var(--paragraph-color);
-  border-color: var(--border-color);
+  background-color: var(--accent-color) !important;
+  color: var(--paragraph-color) !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
 }
 
 .btn.secondary:hover {
-  background-color: var(--link-color);
-  color: var(--bg-color);
-  border-color: var(--link-color);
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 8px 20px rgba(3, 102, 214, 0.25);
+  background-color: transparent !important;
+  color: #0E1011 !important;
+  border: 1px solid rgba(0, 0, 0, 0.25) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
 }
 
 .btn.secondary:active {
@@ -139,17 +140,30 @@
 }
 
 body.dark .btn.secondary {
-  color: #e5e7eb;
-  border-color: #4b5563;
-  background: #1f2937;
+  color: #e5e7eb !important;
+  background: #1c1c1e !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark .btn.primary {
+  background: #EDEDED !important;
+  color: #0E1011 !important;
+  border: none !important;
+  border-radius: 8px !important;
 }
 
 body.dark .btn.primary:hover {
-  box-shadow: 0 8px 24px rgba(88, 166, 255, 0.35);
+  background: #CCCCCC !important;
+  color: #0E1011 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25) !important;
 }
 
 body.dark .btn.secondary:hover {
-  box-shadow: 0 8px 24px rgba(88, 166, 255, 0.25);
+  background-color: transparent !important;
+  color: #e5e7eb !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.05) !important;
 }
 
 /* Hero Image */

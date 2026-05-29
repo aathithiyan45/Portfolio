@@ -6,6 +6,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showThemeToggle, setShowThemeToggle] = useState(true);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -75,13 +76,38 @@ const Navbar = ({ darkMode, setDarkMode }) => {
             <div className="nav-text">Skills</div>
           </Link>
 
-          <Link
-            to="/projects"
-            className={`nav-item ${location.pathname.startsWith("/projects") ? "active" : ""}`}
-            onClick={closeMenu}
+          <div
+            className={`nav-item nav-item-dropdown ${location.pathname.startsWith("/projects") ? "active" : ""}`}
+            onMouseEnter={() => setIsDropdownOpen(true)}
+            onMouseLeave={() => setIsDropdownOpen(false)}
           >
-            <div className="nav-text">Projects</div>
-          </Link>
+            <div className="nav-text" style={{ cursor: 'pointer' }}>
+              Projects <span className={`dropdown-arrow ${isDropdownOpen ? "open" : ""}`}>▼</span>
+            </div>
+
+            <div className={`dropdown-menu ${isDropdownOpen ? "open" : ""}`}>
+              <Link
+                to="/projects/development"
+                className={`dropdown-item ${location.pathname === "/projects/development" ? "active" : ""}`}
+                onClick={() => {
+                  setIsDropdownOpen(false);
+                  closeMenu();
+                }}
+              >
+                Development
+              </Link>
+              <Link
+                to="/projects/uiux"
+                className={`dropdown-item ${location.pathname === "/projects/uiux" ? "active" : ""}`}
+                onClick={() => {
+                  setIsDropdownOpen(false);
+                  closeMenu();
+                }}
+              >
+                UI/UX
+              </Link>
+            </div>
+          </div>
 
           <Link
             to="/contact"

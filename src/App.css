@@ -33,12 +33,12 @@
   /* Navbar specific colors - consistent with main theme */
   --navbar-bg: #FFFFFF;
   --navbar-text: #1a1a1a;
-  --navbar-active-bg: #0d1117;
+  --navbar-active-bg: #0E1011;
   --navbar-active-text: #ffffff;
-  --navbar-hover: #0366d6;
+  --navbar-hover: #0E1011;
   --dropdown-bg: #ffffff;
   --dropdown-item-bg-hover: #f6f8fa;
-  --dropdown-item-active-bg: #0366d6;
+  --dropdown-item-active-bg: #0E1011;
   --dropdown-item-active-text: #ffffff;
 }
 
@@ -63,14 +63,13 @@ body.dark {
   /* Navbar specific colors - consistent with dark theme */
   --navbar-bg: #0E1011;
   --navbar-text: #e6edf3;
-  --navbar-hover: #58a6ff;
-  --navbar-active-bg:#58a6ff;
-  --navbar-active-text: #0d1117;
-  --navbar-hover: #58a6ff;
+  --navbar-active-bg: #EDEDED;
+  --navbar-active-text: #0E1011;
+  --navbar-hover: #EDEDED;
   --dropdown-bg: #21262d;
   --dropdown-item-bg-hover: #30363d;
-  --dropdown-item-active-bg: #58a6ff;
-  --dropdown-item-active-text: #ffffff;
+  --dropdown-item-active-bg: #EDEDED;
+  --dropdown-item-active-text: #0E1011;
 }
 
 /* Base font size for the whole app */

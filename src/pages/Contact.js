@@ -85,7 +85,13 @@ const Contact = () => {
           </div>
 
           <Suspense fallback={null}>
-            <CTAButtons />
+            <CTAButtons
+              primaryText="Download Resume"
+              primaryLink="/resume.pdf"
+              primaryDownload={true}
+              secondaryText="View Projects"
+              secondaryLink="/projects"
+            />
           </Suspense>
 
           <Suspense fallback={null}>

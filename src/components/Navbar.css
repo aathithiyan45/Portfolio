@@ -177,6 +177,11 @@
   background: var(--navbar-active-bg);
 }
 
+.nav-item:focus-visible {
+  outline: 2px solid var(--navbar-hover) !important;
+  outline-offset: 2px;
+}
+
 .nav-text {
   display: flex;
   align-items: center;
@@ -268,6 +273,11 @@
 .dropdown-item:hover {
   background-color: var(--dropdown-item-bg-hover);
   color: var(--navbar-hover);
+}
+
+.dropdown-item.active {
+  background-color: var(--dropdown-item-active-bg) !important;
+  color: var(--dropdown-item-active-text) !important;
 }
 
 

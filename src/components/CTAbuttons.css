@@ -48,37 +48,42 @@
 
 /* ===== PRIMARY ===== */
 .cta-buttons .btn.primary {
-  background-color: var(--link-color);
-  color: var(--bg-color);
-  border-color: var(--link-color);
+  background: #0E1011 !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease !important;
 }
 
 .cta-buttons .btn.primary:hover {
-  background-color: var(--link-hover-color);
-  border-color: var(--link-hover-color);
-  color: var(--bg-color);
-  transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 10px 28px rgba(3, 102, 214, 0.45);
+  transform: translateY(-2px) !important;
+  background: #2f2f2f !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+.cta-buttons .btn.primary:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08) !important;
 }
 
 .cta-buttons .btn.primary:active {
-  transform: translateY(0) scale(1);
-  box-shadow: none;
+  transform: translateY(0) scale(1) !important;
+  box-shadow: none !important;
 }
 
 /* ===== SECONDARY ===== */
 .cta-buttons .btn.secondary {
-  background-color: var(--accent-color);
-  color: var(--paragraph-color);
-  border-color: var(--border-color);
+  background-color: var(--accent-color) !important;
+  color: var(--paragraph-color) !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
 }
 
 .cta-buttons .btn.secondary:hover {
-  background-color: transparent;
-  color: var(--link-color);
-  border-color: var(--link-color);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  background-color: transparent !important;
+  color: #0E1011 !important;
+  border: 1px solid rgba(0, 0, 0, 0.25) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
 }
 
 .cta-buttons .btn.secondary:active {
@@ -94,21 +99,30 @@
 
 /* Dark mode */
 body.dark .cta-buttons .btn.primary {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  background: #EDEDED !important;
+  color: #0E1011 !important;
+  border: none !important;
+  border-radius: 8px !important;
 }
 
 body.dark .cta-buttons .btn.primary:hover {
-  box-shadow: 0 8px 24px rgba(88, 166, 255, 0.35);
+  background: #CCCCCC !important;
+  color: #0E1011 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25) !important;
 }
 
 body.dark .cta-buttons .btn.secondary {
-  color: #e5e7eb;
-  border-color: #4b5563;
-  background: #1f2937;
+  color: #e5e7eb !important;
+  background: #1c1c1e !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
 body.dark .cta-buttons .btn.secondary:hover {
-  box-shadow: 0 8px 24px rgba(88, 166, 255, 0.25);
+  background-color: transparent !important;
+  color: #e5e7eb !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.05) !important;
 }
 
 @keyframes fadeInRight {
