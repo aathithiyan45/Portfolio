@@ -19,7 +19,7 @@ The project focuses on clean UI design, component-based architecture, and respon
 
 Frontend:
 - React.js
-- JavaScript (ES6+)
+- JavaScript
 - CSS3
 
 Services:
