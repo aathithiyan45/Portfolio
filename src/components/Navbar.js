@@ -78,10 +78,20 @@ const Navbar = ({ darkMode, setDarkMode }) => {
 
           <div
             className={`nav-item nav-item-dropdown ${location.pathname.startsWith("/projects") ? "active" : ""}`}
-            onMouseEnter={() => setIsDropdownOpen(true)}
-            onMouseLeave={() => setIsDropdownOpen(false)}
+            onMouseEnter={() => window.innerWidth > 768 && setIsDropdownOpen(true)}
+            onMouseLeave={() => window.innerWidth > 768 && setIsDropdownOpen(false)}
           >
-            <div className="nav-text" style={{ cursor: 'pointer' }}>
+            <div 
+              className="nav-text" 
+              style={{ cursor: 'pointer' }}
+              onClick={(e) => {
+                if (isMenuOpen) {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setIsDropdownOpen(!isDropdownOpen);
+                }
+              }}
+            >
               Projects <span className={`dropdown-arrow ${isDropdownOpen ? "open" : ""}`}>▼</span>
             </div>
 

@@ -58,7 +58,7 @@ const DevelopmentProjects = () => {
       title: "SmartSpend.AI",
       description: "AI-powered expense tracker with analytics dashboard.",
       category: "Full-Stack + AI/ML",
-      image: "/images/spendai.png",
+      image: "/images/spend.png",
       detailedDescription: "SmartSpend.AI is an intelligent expense manager that tracks spending, predicts categories using a trained ML model (Naive Bayes with scikit-learn), and provides insights with charts. Built using Django, Tailwind, and Chart.js.",
       technologies: ["Django", "Tailwind CSS", "Chart.js", "SQLite", "scikit-learn", "ReportLab"],
       features: [
