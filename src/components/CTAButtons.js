@@ -3,7 +3,7 @@ import './CTAbuttons.css';
 
 const CTAButtons = ({
   primaryText = "View My Work",
-  primaryLink = "/projects",
+  primaryLink = "/projects/development",
   secondaryText = "Contact Me",
   secondaryLink = "/contact",
   primaryDownload = false,

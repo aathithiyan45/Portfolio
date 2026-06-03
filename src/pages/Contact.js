@@ -90,7 +90,7 @@ const Contact = () => {
               primaryLink="/resume.pdf"
               primaryDownload={true}
               secondaryText="View Projects"
-              secondaryLink="/projects"
+              secondaryLink="/projects/development"
             />
           </Suspense>
 
