@@ -204,6 +204,7 @@ const DevelopmentProjects = () => {
                       <div
                         className="mobile-inline-preview"
                         ref={inlineImageRef}
+                        onClick={() => handleProjectClick(index)}
                       >
                         <div className="mobile-inline-frame">
                           <img
@@ -214,7 +215,7 @@ const DevelopmentProjects = () => {
                           />
                         </div>
                         <div className="mobile-inline-caption">{project.title}</div>
-                        <div className="mobile-inline-hint">Tap the card below to view details →</div>
+                        <div className="mobile-inline-hint">Tap the image or card below to view details →</div>
                       </div>
                     )}
 
@@ -256,6 +257,18 @@ const DevelopmentProjects = () => {
               </div>
 
               <div className="project-details-content">
+                {isMobile && (
+                  <div className="mobile-details-preview">
+                    <div className="mobile-inline-frame">
+                      <img
+                        src={currentProjectData.image}
+                        alt={currentProjectData.title}
+                        className="mobile-inline-image"
+                      />
+                    </div>
+                  </div>
+                )}
+
                 <div className="project-description">
                   <h3>About This Project</h3>
                   <p>{currentProjectData.detailedDescription}</p>
