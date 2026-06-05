@@ -12,18 +12,50 @@ const Contact = () => {
     message: ''
   });
 
+  const [errors, setErrors] = useState({});
   const [submitting, setSubmitting] = useState(false);
   const [status, setStatus] = useState(null);
   // status = { type: 'success' | 'error', message: string }
 
+  const validate = () => {
+    const newErrors = {};
+    if (!formData.name.trim()) {
+      newErrors.name = 'Name is required';
+    }
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email address';
+    }
+    if (!formData.subject.trim()) {
+      newErrors.subject = 'Subject is required';
+    }
+    if (!formData.message.trim()) {
+      newErrors.message = 'Message is required';
+    }
+    return newErrors;
+  };
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    if (errors[e.target.name]) {
+      setErrors({ ...errors, [e.target.name]: '' });
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      setStatus(null);
+      return;
+    }
+
     setSubmitting(true);
     setStatus(null);
+    setErrors({});
 
     try {
       const response = await fetch('https://formspree.io/f/mdkzjwrw', {
@@ -114,7 +146,7 @@ const Contact = () => {
               </div>
             )}
 
-            <div className="form-group">
+            <div className={`form-group ${errors.name ? 'has-error' : ''}`}>
               <input
                 type="text"
                 name="name"
@@ -123,9 +155,10 @@ const Contact = () => {
                 onChange={handleChange}
                 required
               />
+              {errors.name && <span className="error-message">{errors.name}</span>}
             </div>
 
-            <div className="form-group">
+            <div className={`form-group ${errors.email ? 'has-error' : ''}`}>
               <input
                 type="email"
                 name="email"
@@ -134,9 +167,10 @@ const Contact = () => {
                 onChange={handleChange}
                 required
               />
+              {errors.email && <span className="error-message">{errors.email}</span>}
             </div>
 
-            <div className="form-group">
+            <div className={`form-group ${errors.subject ? 'has-error' : ''}`}>
               <input
                 type="text"
                 name="subject"
@@ -145,9 +179,10 @@ const Contact = () => {
                 onChange={handleChange}
                 required
               />
+              {errors.subject && <span className="error-message">{errors.subject}</span>}
             </div>
 
-            <div className="form-group">
+            <div className={`form-group ${errors.message ? 'has-error' : ''}`}>
               <textarea
                 name="message"
                 placeholder="Your Message"
@@ -156,6 +191,7 @@ const Contact = () => {
                 onChange={handleChange}
                 required
               />
+              {errors.message && <span className="error-message">{errors.message}</span>}
             </div>
 
             <button
