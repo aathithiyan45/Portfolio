@@ -393,31 +393,92 @@
   cursor: pointer;
   flex: 1;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.55s ease;
+}
+
+.project-link:hover::before {
+  left: 140%;
 }
 
 .code-link {
-  background-color: var(--heading-color);
-  color: var(--bg-color);
-  border: 1px solid var(--heading-color);
+  /* Primary CTA style in light mode */
+  background-color: #0E1011 !important;
+  color: white !important;
+  border: none !important;
 }
 
 .code-link:hover {
-  background-color: var(--bg-color);
-  color: var(--heading-color);
-  border-color: var(--heading-color);
+  background-color: #2f2f2f !important;
+  color: white !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
 }
 
 .live-link {
-  background-color: var(--link-color);
-  color: var(--bg-color);
-  border: 1px solid var(--link-color);
+  /* Secondary CTA style in light mode */
+  background-color: var(--accent-color) !important;
+  color: var(--paragraph-color) !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
 }
 
 .live-link:hover {
-  background-color: var(--bg-color);
-  color: var(--link-color);
-  border-color: var(--link-color);
+  background-color: transparent !important;
+  color: #0E1011 !important;
+  border: 1px solid rgba(0, 0, 0, 0.25) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
 }
+
+.code-link:active,
+.live-link:active {
+  transform: translateY(0) scale(1) !important;
+  box-shadow: none !important;
+}
+
+body.dark .code-link {
+  /* Primary CTA style in dark mode */
+  background-color: #EDEDED !important;
+  color: #0E1011 !important;
+  border: none !important;
+}
+
+body.dark .code-link:hover {
+  background-color: #CCCCCC !important;
+  color: #0E1011 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25) !important;
+}
+
+body.dark .live-link {
+  /* Secondary CTA style in dark mode */
+  color: #e5e7eb !important;
+  background-color: #1c1c1e !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark .live-link:hover {
+  background-color: transparent !important;
+  color: #e5e7eb !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.05) !important;
+}
+
+
+
+
 
 /* ══════════════════════════════════════════════
    MOBILE / TABLET  (≤ 1023px)
