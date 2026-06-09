@@ -93,8 +93,8 @@ const Experience = () => {
             <div className="experience-card-header">
               <div className="experience-card-number">{card.number}</div>
               <div className="experience-card-nav">
-                <span onClick={prev}>◀</span>
-                <span onClick={next}>▶</span>
+                <span className="experience-nav-arrow" onClick={prev}>◀</span>
+                <span className="experience-nav-arrow" onClick={next}>▶</span>
               </div>
             </div>
 

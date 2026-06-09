@@ -59,7 +59,7 @@
 
 .experience-card {
   width: 500px;
-  min-height: 600px;
+  min-height: 670px;
   background: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: 16px;
