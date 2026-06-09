@@ -22,7 +22,7 @@ const Experience = () => {
         ],
         certificate: {
           name: "Web Development Internship – JADAYU Software Technology",
-          link: "#" // add certificate link if available
+          link: "#" 
         }
       },
       {
