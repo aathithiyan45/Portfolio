@@ -40,7 +40,7 @@ const Experience = () => {
         ],
         certificate: {
           name: "UI/UX Design Internship – JADAYU Software Technology",
-          link: "#"
+           link: "https://drive.google.com/file/d/1z9Cxx47xPbYXzF6D6kDxPKIf-yYqcA7S/view?usp=sharing"
         }
       },
       {
