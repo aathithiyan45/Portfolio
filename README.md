@@ -64,6 +64,6 @@ Push changes to the main branch to trigger redeployment.
 
 ## Author
 
-Aathithiyan  
+Aathithiyan P
 B.Tech Information Technology  
 Thanjavur, Tamil Nadu
