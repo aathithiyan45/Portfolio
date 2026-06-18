@@ -146,7 +146,7 @@ const Contact = () => {
               </div>
             )}
 
-            <div className={`form-group ${errors.name ? 'has-error' : ''}`}>
+            <div className={`form-group ${errors.name ? 'has-error' : ''}`} style={{ '--sibling-index': 0 }}>
               <input
                 type="text"
                 name="name"
@@ -158,7 +158,7 @@ const Contact = () => {
               {errors.name && <span className="error-message">{errors.name}</span>}
             </div>
 
-            <div className={`form-group ${errors.email ? 'has-error' : ''}`}>
+            <div className={`form-group ${errors.email ? 'has-error' : ''}`} style={{ '--sibling-index': 1 }}>
               <input
                 type="email"
                 name="email"
@@ -170,7 +170,7 @@ const Contact = () => {
               {errors.email && <span className="error-message">{errors.email}</span>}
             </div>
 
-            <div className={`form-group ${errors.subject ? 'has-error' : ''}`}>
+            <div className={`form-group ${errors.subject ? 'has-error' : ''}`} style={{ '--sibling-index': 2 }}>
               <input
                 type="text"
                 name="subject"
@@ -182,7 +182,7 @@ const Contact = () => {
               {errors.subject && <span className="error-message">{errors.subject}</span>}
             </div>
 
-            <div className={`form-group ${errors.message ? 'has-error' : ''}`}>
+            <div className={`form-group ${errors.message ? 'has-error' : ''}`} style={{ '--sibling-index': 3 }}>
               <textarea
                 name="message"
                 placeholder="Your Message"
@@ -198,6 +198,7 @@ const Contact = () => {
               type="submit"
               className="submit-btn"
               disabled={submitting}
+              style={{ '--sibling-index': 4 }}
             >
               {submitting ? 'Sending...' : 'Send Message'}
             </button>

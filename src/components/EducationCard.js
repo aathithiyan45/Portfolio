@@ -1,9 +1,9 @@
 import React from "react";
 import "./EducationCard.css";
 
-const EducationCard = ({ year, title, place, details }) => {
+const EducationCard = ({ year, title, place, details, style }) => {
   return (
-    <article className="timeline-item">
+    <article className="timeline-item reveal-on-scroll reveal-slide-up" style={style}>
       {/* Title + Year */}
       <div className="timeline-header">
         <h3 className="timeline-title">{title}</h3>
@@ -28,6 +28,7 @@ const EducationSection = () => {
           title="B.Tech – Information Technology"
           place="Saranathan College of Engineering, Trichy"
           details="CGPA: 8.1"
+          style={{ '--sibling-index': 0 }}
         />
 
         <EducationCard
@@ -35,6 +36,7 @@ const EducationSection = () => {
           title="Higher Secondary Education"
           place="Kalaimagal Higher Secondary School, Thanjavur"
           details="Percentage: 84.5%"
+          style={{ '--sibling-index': 1 }}
         />
 
       </div>

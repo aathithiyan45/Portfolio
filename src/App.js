@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import { Analytics } from '@vercel/analytics/react';
 import Navbar from './components/Navbar';
@@ -15,6 +15,7 @@ import './App.css';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
+  const location = useLocation();
 
   // Remember preference
   useEffect(() => {
@@ -32,6 +33,32 @@ function App() {
       localStorage.setItem("theme", "light");
     }
   }, [darkMode]);
+
+  // Scroll Reveal Observer
+  useEffect(() => {
+    const revealElements = document.querySelectorAll('.reveal-on-scroll');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('reveal-active');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -20px 0px'
+      }
+    );
+
+    revealElements.forEach((el) => observer.observe(el));
+
+    return () => {
+      revealElements.forEach((el) => observer.unobserve(el));
+    };
+  }, [location.pathname]);
 
   return (
     <div className="App">

@@ -225,6 +225,7 @@ const DevelopmentProjects = () => {
                       onMouseEnter={() => handleMouseEnter(index)}
                       onMouseLeave={handleMouseLeave}
                       onClick={() => handleProjectClick(index)}
+                      style={{ '--sibling-index': index }}
                     >
                       <div className="project-list-info">
                         <p className="project-list-item-title">{project.title}</p>

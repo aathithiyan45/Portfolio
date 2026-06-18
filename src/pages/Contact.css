@@ -159,6 +159,19 @@
   gap: 1.5rem;
 }
 
+.form-group, .submit-btn {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: formFieldReveal 0.65s cubic-bezier(0.16, 1, 0.3, 1) calc(var(--sibling-index, 0) * 0.06s + 0.25s) forwards;
+}
+
+@keyframes formFieldReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .form-group input,
 .form-group textarea {
   width: 100%;

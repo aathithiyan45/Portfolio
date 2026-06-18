@@ -76,7 +76,7 @@ const Experience = () => {
   return (
     <div className="experience-page">
       <div className="experience-section">
-        <div className="hero-content">
+        <div className="experience-hero-content">
           <h1>My Journey,</h1>
           <h1>My Growth</h1>
           <h2>Professional Experiences That Define Me</h2>
@@ -89,7 +89,7 @@ const Experience = () => {
         </div>
 
         <div className="experience-cards">
-          <div className="experience-card">
+          <div className="experience-card" key={currentIndex}>
             <div className="experience-card-header">
               <div className="experience-card-number">{card.number}</div>
               <div className="experience-card-nav">
@@ -106,7 +106,7 @@ const Experience = () => {
 
             <ul className="experience-list">
               {card.points.map((p, i) => (
-                <li key={i}>{p}</li>
+                <li key={i} style={{ '--sibling-index': i }}>{p}</li>
               ))}
             </ul>
 

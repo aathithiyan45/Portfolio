@@ -44,7 +44,8 @@ const Achievements = () => {
             href={ach.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="achievement-link"
+            className="achievement-link reveal-on-scroll reveal-slide-up"
+            style={{ '--sibling-index': index }}
           >
             <div
               className={`achievement-card${ach.highlight ? " achievement-card--gold" : ""}`}

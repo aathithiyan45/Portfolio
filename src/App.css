@@ -286,3 +286,64 @@ a:focus-visible {
     padding-top: 1rem !important;
   }
 }
+
+/* ======================================================= */
+/* PROFESSIONAL PAGE NAVIGATION & SCROLL REVEAL ANIMATIONS */
+/* ======================================================= */
+
+/* Smooth page load animation */
+.home,
+.about,
+.skills-page,
+.experience-page,
+.contact-page,
+.development-projects-page,
+.uiux-projects-page {
+  animation: pageFadeInScale 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+}
+
+@keyframes pageFadeInScale {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Base scroll reveal styles */
+.reveal-on-scroll {
+  opacity: 0;
+  will-change: transform, opacity;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-slide-up {
+  transform: translateY(30px);
+}
+
+.reveal-slide-left {
+  transform: translateX(-30px);
+}
+
+.reveal-slide-right {
+  transform: translateX(30px);
+}
+
+.reveal-fade {
+  transform: none;
+}
+
+/* Active states when revealed by observer */
+.reveal-on-scroll.reveal-active {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* Stagger delay helper styling */
+.reveal-active[style*="--sibling-index"] {
+  transition-delay: calc(var(--sibling-index) * 0.08s);
+}

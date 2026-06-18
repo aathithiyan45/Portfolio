@@ -95,7 +95,7 @@ const Skills = () => {
         </div>
 
         <div className="skills-cards">
-          <div className="skill-card">
+          <div className="skill-card" key={currentIndex}>
             <div className="skill-card-header">
               <div className="skill-card-number">{currentCard.number}</div>
               <div className="skill-card-nav">
@@ -109,7 +109,9 @@ const Skills = () => {
 
             <ul className="skill-card-list">
               {currentCard.skills.map((skill, index) => (
-                <li key={index}>{skill}</li>
+                <li key={index} style={{ '--sibling-index': index }}>
+                  {skill}
+                </li>
               ))}
             </ul>
 

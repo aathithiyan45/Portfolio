@@ -39,15 +39,15 @@ const About = () => {
       <hr className="section-divider" />
 
       {/* Education Timeline */}
-      
-      <EducationSection />
+      <div className="reveal-on-scroll reveal-slide-up">
+        <EducationSection />
+      </div>
 
-       <hr className="section-divider" />
-       <section className="achievements-section">
-  <Achievements />
-</section>
+      <hr className="section-divider" />
+      <section className="achievements-section reveal-on-scroll reveal-slide-up">
+        <Achievements />
+      </section>
     </div>
-    
   );
 };
 
