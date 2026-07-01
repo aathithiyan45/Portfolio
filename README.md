@@ -20,7 +20,7 @@ The project focuses on clean UI design, component-based architecture, and respon
 Frontend:
 - React.js
 - JavaScript
-- CSS3
+- CSS3 
 
 Services:
 - Formspree (Contact Form Handling)
