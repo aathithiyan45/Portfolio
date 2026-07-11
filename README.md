@@ -1,6 +1,6 @@
 #  
 
-Personal developer portfolio built with React and deployed on Vercel.
+Personal developer portfolio built with React and deployed on Vercel. 
 
 Live Demo: https://portfolio-aathithiyan.vercel.app
 
