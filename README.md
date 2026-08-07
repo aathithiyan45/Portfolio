@@ -9,8 +9,8 @@ Live Demo: https://portfolio-aathithiyan.vercel.app
 ## About
 
 This repository contains the source code for my personal portfolio website.  
-It showcases my projects, skills, education, and achievement.
-
+It showcases my projects, skills, education, and achievements.
+  
 The project focuses on clean UI design, component-based architecture, and responsive layout.  
 
 ---
